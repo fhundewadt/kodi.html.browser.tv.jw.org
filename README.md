@@ -17,7 +17,7 @@ The DIST branch is considered STABLE, and it's updated ONLY to release a new ver
 
 ## Pull requests
 
-Please feel free to fork, update the code, and request a marge. 
+Please feel free to fork, update the code, and request a merge. 
 
 But FORK ONLY FROM MASTER !
 
