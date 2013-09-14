@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon 
-	id="plugin.video.jworg" 
-	name="jw.org audio/video browser" 
-	version="00.00.01" 
-	provider-name="Realtebo (mirkotebaldi@yahoo.it)">
+    id="plugin.video.jworg" 
+    name="jw.org audio/video browser" 
+    version="00.00.03" 
+    provider-name="Realtebo (mirkotebaldi@yahoo.it)">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
     </requires>
@@ -15,18 +15,21 @@
     <extension point="xbmc.addon.metadata">
         <language />
         <platform>all</platform>
-        <website>website url</website>
-        <source>source url</source>
-        <forum>Forum url</forum>
+        <website>https://github.com/realtebo/plugin.video.jworg</website>
+        <source>https://github.com/realtebo/plugin.video.jworg/dist.zip</source>
         <email>mirkotebaldi@yahoo.it</email>
         <license>GPL-2</license>
-        <summary lang="it">Sommario</summary>
-        <summary lang="en">Summary</summary>
+        <summary lang="it">
+            Un semplice browser per i contenuti di jw.org
+        </summary>
+        <summary lang="en">
+            A simple browser for jw.org media content
+        </summary>
         <description lang="it">
-            Descrizione
+            Scorri direttamente su xmbc i contenuti multimediali del sito jw.org
         </description>
         <description lang="en">
-            Description
+            Browser on xmbc the media files provided by jw.org webiste
         </description>
     </extension>
 </addon>

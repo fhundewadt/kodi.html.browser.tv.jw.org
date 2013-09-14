@@ -1,0 +1,20 @@
+00.00.03
+---------
+Feature
++ Enabled autoupdate feature
++ Added changelog
+
+00.00.02
+---------
+Release on github
+
+00.00.01 
+-------
+Initial release
+
+Feature
++ Browse video with pagination 
++ Video format chooser
+
+Locales: 
++ Italian
