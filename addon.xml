@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon 
+	id="plugin.video.jworg" 
+	name="jw.org audio/video browser" 
+	version="00.00.01" 
+	provider-name="Realtebo (mirkotebaldi@yahoo.it)">
+    <requires>
+        <import addon="xbmc.python" version="2.1.0"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="addon.py">
+        <provides>
+            video
+        </provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <language />
+        <platform>all</platform>
+        <website>website url</website>
+        <source>source url</source>
+        <forum>Forum url</forum>
+        <email>mirkotebaldi@yahoo.it</email>
+        <license>GPL-2</license>
+        <summary lang="it">Sommario</summary>
+        <summary lang="en">Summary</summary>
+        <description lang="it">
+            Descrizione
+        </description>
+        <description lang="en">
+            Description
+        </description>
+    </extension>
+</addon>
+
