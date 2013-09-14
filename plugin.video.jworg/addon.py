@@ -3,6 +3,7 @@
 # for utf-8 see http://www.python.org/dev/peps/pep-0263/
 
 import xbmc
+import xbmcaddon
 import xbmcplugin
 import xbmcgui
 import sys
@@ -19,9 +20,11 @@ FUNCTION PRINCIPALI
 
 # elenca le pagine disponibili
 def showVideoIndex(start):
-	global pluginPid
+	global pluginPid, plugin
 
-	url = "http://www.jw.org/it/video/?start=" + str(start)
+	l18n_code = plugin.getLocalizedString(30006) + " ";
+
+	url = "http://www.jw.org/"+ l18n_code + "/video/?start=" + str(start)
 	print "JWORG VIDEO url: " + url
 
 	html = loadUrl (url)
@@ -57,9 +60,6 @@ def showVideoIndex(start):
 	regexp_video_json = 'data-jsonurl="([^"]+)"';
 	video_json = re.findall(regexp_video_json, html)
 
-	print "JWORG video_json: " 
-	print video_json
-
 	count = 0
 	for title in videos:
 		# print "JWORG title n. " + str(count) + ": " + title + " image at: " + posters[count]
@@ -82,7 +82,8 @@ def showVideoIndex(start):
 	for page in other_pages:
 		next_start =  page[0] 
 		pagina = page[1] 
-		title = "Vai a pagina " + str(page[1])
+		l18n_gotopage = plugin.getLocalizedString(30001) + " ";
+		title = l18n_gotopage + str(page[1])
 		print "JWORG title " + title
 		listItem = xbmcgui.ListItem(title)
 		params = {"content_type" : "video", "start" : next_start} 
@@ -152,9 +153,12 @@ START
 
 
 # Usato in tutte le chiamate ad addDirectory
+plugin       = xbmcaddon.Addon("plugin.video.jworg")
 pluginPid    = int(sys.argv[1])
-print "JWORG pluginPid " + str(pluginPid)
-
+language     = xbmcplugin.getSetting(pluginPid, "language")
+print "JWORG language: " + language
+if language == "":
+	language = "English"
 
 # Stampo per debug gli argomenti della chiamata
 params 		 = urlparse.parse_qs((sys.argv[2])[1:])
@@ -179,6 +183,8 @@ try:
 	start = params["start"][0]        
 except:
     pass
+
+#lingua
 
 if content_type == "video" and mode is None:
 	showVideoIndex(start);
