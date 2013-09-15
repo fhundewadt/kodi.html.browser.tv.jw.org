@@ -1,12 +1,27 @@
+# Changelog
+
+00.00.04
+--------
+
+Feature
+- Autoupdate not working
+
+Code
++ Added some error catching to avoid errors shown to users
+
+Locale
++ English
+
 00.00.03
 ---------
-Feature
+Code
 + Enabled autoupdate feature
 + Added changelog
 
 00.00.02
 ---------
-Release on github
+Code
++ Release on github
 
 00.00.01 
 -------

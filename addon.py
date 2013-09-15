@@ -22,10 +22,10 @@ FUNCTION PRINCIPALI
 def showVideoIndex(start):
 	global pluginPid, plugin
 
-	l18n_code = plugin.getLocalizedString(30006) + " ";
+	settings_l18n_code = getVideoByLanguageCode();
 
-	url = "http://www.jw.org/"+ l18n_code + "/video/?start=" + str(start)
-	print "JWORG VIDEO url: " + url
+	url = "http://www.jw.org/"+ settings_l18n_code + "/?start=" + str(start)
+	print "JWORG ShowVideoIndex url: " + url
 
 	html = loadUrl (url)
 
@@ -35,16 +35,6 @@ def showVideoIndex(start):
 	other_pages = re.findall(regexp_video_pages, html)
 	
 	# print other_pages
-	"""
-	grazie a set() forzo l'univocità 
-	[i link di cambio pagina sono presenti sia in cima che sotto la pagina]
-	riguardo a set see comments here: http://www.peterbe.com/plog/uniqifiers-benchmark
-	
-	ottengo una lista di coppie start index, page num
-	 [('10', '2'), ('20', '3'), ('30', '4'), ('40', '5'), ('50', '6')]
-	grazie a come è fatto il sito della società, la pagina corrente è automaticamente esclusa
-	il link non matcha
-	"""
 	other_pages =  list(set(other_pages))
 	other_pages.sort()
 
@@ -67,7 +57,7 @@ def showVideoIndex(start):
 			label=title, 
 			thumbnailImage= "http://www.jw.org/" + posters[count]
 		)
-		# TODO: link termporaneo
+
 		params = {"content_type" : "video", "mode" : "open_json_video", "json_url": video_json[count]} 
 		url = sys.argv[0] + '?' + urllib.urlencode(params)
 		xbmcplugin.addDirectoryItem(
@@ -81,6 +71,8 @@ def showVideoIndex(start):
 	# Link alle pagine
 	for page in other_pages:
 		next_start =  page[0] 
+		if next_start <= start:
+			continue;
 		pagina = page[1] 
 		l18n_gotopage = plugin.getLocalizedString(30001) + " ";
 		title = l18n_gotopage + str(page[1])
@@ -90,15 +82,23 @@ def showVideoIndex(start):
 		url = sys.argv[0] + '?' + urllib.urlencode(params)
 		print "JWORG list url " + url
 		xbmcplugin.addDirectoryItem(handle=pluginPid, url=url, listitem=listItem, isFolder=True )  
-		
+		# appena trovo il link alla pagina successiva esco
+		break;
 
 	xbmcplugin.endOfDirectory(handle=pluginPid)
 	
 	
 def showVideoJsonUrl(json_url):
-	# print "JWORG video json url: " + json_url
+	global plugin;
+
+	print "JWORG video json url: " + json_url
 	#  /apps/I_TRGCHlZRQVNYVrXF?fileformat=mp4&output=json&pub=ivfe&langwritten=I&alllangs=1
 	json = loadJsonFromUrl("http://www.jw.org" + json_url)
+
+	if json is None :
+		string = plugin.getLocalizedString(30008) + " ";
+		xbmcgui.Dialog().ok("jworg browser", string)
+		return
 
 	language_code = None;
 	for language in  json["languages"]:
@@ -109,7 +109,8 @@ def showVideoJsonUrl(json_url):
 
 	#adesso ho in locale una lettera tipo 'I' per l'italiano per accedere all'url del file
 	if language_code == None:
-		xbmcgui.Dialog().ok("jworg browser", "Sembra che il file non sia disponibile nella tua lingua")
+		string = plugin.getLocalizedString(30006) + " ";
+		xbmcgui.Dialog().ok("jworg browser", string)
 		return
 
 	options = []
@@ -124,14 +125,14 @@ def showVideoJsonUrl(json_url):
 		mp4_to_play.append(url);
 		options.append(title.encode('utf8'))
 		print title.encode('utf8')
-	
+
+	# Scelta formato e filmato da eseguire
 	dia = xbmcgui.Dialog()
-	selected = dia.select("Scegli cosa guardare", options)
-	
-	print "JWOORG Hai scelto " + str(selected)
-	print "JWORG I'll play " + mp4_to_play[selected]
-	xbmc.Player(xbmc.PLAYER_CORE_AUTO).play(mp4_to_play[selected])
-	
+	string = plugin.getLocalizedString(30007) + " ";
+	selected = dia.select(string, options)
+	if selected != -1 :
+		print "JWORG I'll play " + mp4_to_play[selected]
+		xbmc.Player(xbmc.PLAYER_CORE_AUTO).play(mp4_to_play[selected])
 
 """
 UTILITY
@@ -143,14 +144,22 @@ def loadUrl (url):
 
 
 def loadJsonFromUrl (url):
-	response = urllib2.urlopen(url)
-	data = json.load(response)
+	data = None
+	try:
+		response = urllib2.urlopen(url)
+		data = json.load(response)
+	except:
+		pass
 	return data
+
+def getVideoByLanguageCode ():
+	global language;
+	locale_codes = { "Italiano": "it/video", "English" : "en/videos" }
+	return locale_codes[language]
 
 """
 START
 """
-
 
 # Usato in tutte le chiamate ad addDirectory
 plugin       = xbmcaddon.Addon("plugin.video.jworg")

@@ -32,5 +32,11 @@
             Browser on xmbc the media files provided by jw.org webiste
         </description>
     </extension>
+     <extension point="xbmc.addon.repository"
+                  name="Realtebo Github Repository">
+        <info compressed="true">https://github.com/realtebo/plugin.video.jworg/blob/dist/plugin.video.jworg/addon.xml</info>
+        <checksum>http://mirrors.xbmc.org/addons/dharma-pre/addons.xml.md5</checksum>
+        <datadir zip="true">http://mirrors.xbmc.org/addons/dharma-pre</datadir>
+      </extension>
 </addon>
 

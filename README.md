@@ -3,27 +3,13 @@ plugin.video.jworg
 
 XMBC: plugin.video.jworg
 
-## Installation
+## CHANGELOG
+============
 
-Download https://github.com/realtebo/plugin.video.jworg/archive/dist.zip
+00.00.01 - Initial release
 
-Install from within XBMC 
-
-## Branches
-
-The MASTER branch is used for ongoing development
-
-The DIST branch is considered STABLE, and it's updated ONLY to release a new version
-
-## Pull requests
-
-Please feel free to fork, update the code, and request a merge. 
-
-But FORK ONLY FROM MASTER !
-
-## Bugs? Ideas? Others?
-
-Open an Issue !
-
-
-
+Functions:
+- Browse video
+- Video paginationation with link to all pages
+Locale:
+- Italian

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <string id="30001">Go to page</string>
+    <string id="30002">Language of multiemdia file</string>
+    <string id="30003">Italiano</string>
+    <string id="30004">English</string>
+    <string id="30005">General</string>
+    <string id="30006">Stream not available in selected language,[CR]contact plugin author if you thinks that's an error</string>
+    <string id="30007">Choose a video</string>
+    <string id="30008">Unable to load stream list</string>
+</strings>
