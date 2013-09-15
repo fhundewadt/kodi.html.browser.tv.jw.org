@@ -22,7 +22,7 @@ FUNCTION PRINCIPALI
 def showVideoIndex(start):
 	global pluginPid, plugin
 
-	settings_l18n_code = getVideoByLanguageCode();
+	settings_l18n_code = getVideoPathByLanguage();
 
 	url = "http://www.jw.org/"+ settings_l18n_code + "/?start=" + str(start)
 	print "JWORG ShowVideoIndex url: " + url
@@ -89,9 +89,12 @@ def showVideoIndex(start):
 def showVideoJsonUrl(json_url):
 	global plugin;
 
+	json_url = "http://www.jw.org" + json_url
 	print "JWORG video json url: " + json_url
 	#  /apps/I_TRGCHlZRQVNYVrXF?fileformat=mp4&output=json&pub=ivfe&langwritten=I&alllangs=1
-	json = loadJsonFromUrl("http://www.jw.org" + json_url)
+	json = loadJsonFromUrl(json_url)
+	print "JWORG json url dump"
+	print json
 
 	if json is None :
 		string = plugin.getLocalizedString(30008) + " ";
@@ -101,7 +104,7 @@ def showVideoJsonUrl(json_url):
 	language_code = None;
 	for language in  json["languages"]:
 		locale =  json["languages"][language]["locale"]
-		if locale == "it":
+		if locale == getVideoLangCodeByLanguage():
 			language_code = language
 			break
 
@@ -150,10 +153,16 @@ def loadJsonFromUrl (url):
 		pass
 	return data
 
-def getVideoByLanguageCode ():
+def getVideoPathByLanguage ():
 	global language;
 	locale_codes = { "Italiano": "it/video", "English" : "en/videos" }
 	return locale_codes[language]
+
+def getVideoLangCodeByLanguage ():
+	global language;
+	locale_codes = { "Italiano": "it", "English" : "en" }
+	return locale_codes[language]
+
 
 """
 START

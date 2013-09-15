@@ -26,10 +26,10 @@
             A simple browser for jw.org media content
         </summary>
         <description lang="it">
-            Scorri direttamente su xmbc i contenuti multimediali del sito jw.org. <BR>
+            Scorri direttamente su xmbc i contenuti multimediali del sito jw.org.E' possibile configurare il plugin per accedere ai contenuti in una lingua diversa.Per ora sono supporati l'italiano e l'inglese[CR][CR]Bug? Idee? Vuoi che sia supportato un nuovo linguaggio? Apri una 'issue' a questo indirizzo:[CR]https://github.com/realtebo/plugin.video.jworg
         </description>
         <description lang="en">
-            Browser on xmbc the media files provided by jw.org webiste. <BR>
+            Browser on xmbc the media files provided by jw.org webiste.You can configure this plugin to access to multimedia in a different language.Actually supported: italian and english[CR][CR]Bug? Ideas? New languages? Open an issue here:[CR]https://github.com/realtebo/plugin.video.jworg
         </description>
     </extension>
 </addon>
