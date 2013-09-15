@@ -1,40 +1,20 @@
-# Changelog
-
 Legend:
+-------
 + = Things added 
 - = Things removed
 
-00.00.04
---------
 
-Feature
-- Autoupdate from xml source not working, removed. I'll try to send my addon to official repo
-- Browse with pagination
-+ Browse page with a more classical "one forward link only"
-
-Code
-+ Added some error catching to avoid errors shown to users
-
-Locale
-+ English
-
-00.00.03
----------
-Code
-+ Enabled autoupdate feature
-+ Added changelog
-
-00.00.02
+00.00.01
 ---------
 Code
 + Release on github
-
-00.00.01 
--------
++ Added changelog
++ Added some error catching to avoid errors shown to users
 
 Feature
-+ Browse video with pagination 
++ Browse page 
 + Video format chooser
 
 Locales: 
 + Italian
++ English

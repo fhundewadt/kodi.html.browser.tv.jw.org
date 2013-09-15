@@ -18,7 +18,7 @@ import json
 FUNCTION PRINCIPALI
 """
 
-# elenca le pagine disponibili
+# show available video pages
 def showVideoIndex(start):
 	global pluginPid, plugin
 
@@ -29,30 +29,27 @@ def showVideoIndex(start):
 
 	html = loadUrl (url)
 
-	# Recupero link delle pagine
-
+	# Grep video pages links [0, 1, 2, etc..]
 	regexp_video_pages = '<a href="[^"]+=([0-9]+)" class="pageNum">([0-9]+)</a>'
 	other_pages = re.findall(regexp_video_pages, html)
-	
-	# print other_pages
-	other_pages =  list(set(other_pages))
+	other_pages =  list(set(other_pages))   # made univoque and sorted by 'start'
 	other_pages.sort()
 
-	# Recupero titoli dei video
-	# C'è una sola regexp quindi è una semplice lista, un array non associativo
+	# Grep video titles
 	regexp_video_title = 'data-onpagetitle="([^"]+)"'
-	videos = re.findall(regexp_video_title, html) 
+	videos = re.findall(regexp_video_title, html)  # I'ts a list not a Dict
 
-	# Recupero immagine "locandina" del video
+	# Grep poster of video
 	regexp_video_poster = '<img src=["\'](assets[^"\']+)["\']'
 	posters = re.findall(regexp_video_poster, html)
 
+	# Grep url of json wich contain data on different version of the video [240,360, etc..]
 	regexp_video_json = 'data-jsonurl="([^"]+)"';
 	video_json = re.findall(regexp_video_json, html)
 
 	count = 0
+	# Output video list 
 	for title in videos:
-		# print "JWORG title n. " + str(count) + ": " + title + " image at: " + posters[count]
 		listItem = xbmcgui.ListItem(
 			label=title, 
 			thumbnailImage= "http://www.jw.org/" + posters[count]
@@ -68,7 +65,8 @@ def showVideoIndex(start):
 		)  
 		count = count + 1
 
-	# Link alle pagine
+	# Output next page link
+	# TODO: simplyfy it !
 	for page in other_pages:
 		next_start =  page[0] 
 		if next_start <= start:
@@ -82,7 +80,7 @@ def showVideoIndex(start):
 		url = sys.argv[0] + '?' + urllib.urlencode(params)
 		print "JWORG list url " + url
 		xbmcplugin.addDirectoryItem(handle=pluginPid, url=url, listitem=listItem, isFolder=True )  
-		# appena trovo il link alla pagina successiva esco
+		# next page link found [and added at the bottom of the list]
 		break;
 
 	xbmcplugin.endOfDirectory(handle=pluginPid)
