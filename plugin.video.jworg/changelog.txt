@@ -1,10 +1,16 @@
 # Changelog
 
+Legend:
++ = Things added 
+- = Things removed
+
 00.00.04
 --------
 
 Feature
-- Autoupdate not working
+- Autoupdate from xml source not working, removed. I'll try to send my addon to official repo
+- Browse with pagination
++ Browse page with a more classical "one forward link only"
 
 Code
 + Added some error catching to avoid errors shown to users
@@ -25,7 +31,6 @@ Code
 
 00.00.01 
 -------
-Initial release
 
 Feature
 + Browse video with pagination 

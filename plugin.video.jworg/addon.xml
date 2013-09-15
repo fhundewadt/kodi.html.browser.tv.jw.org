@@ -2,7 +2,7 @@
 <addon 
     id="plugin.video.jworg" 
     name="jw.org audio/video browser" 
-    version="00.00.03" 
+    version="00.00.04" 
     provider-name="Realtebo (mirkotebaldi@yahoo.it)">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
@@ -26,17 +26,11 @@
             A simple browser for jw.org media content
         </summary>
         <description lang="it">
-            Scorri direttamente su xmbc i contenuti multimediali del sito jw.org
+            Scorri direttamente su xmbc i contenuti multimediali del sito jw.org. <BR>
         </description>
         <description lang="en">
-            Browser on xmbc the media files provided by jw.org webiste
+            Browser on xmbc the media files provided by jw.org webiste. <BR>
         </description>
     </extension>
-     <extension point="xbmc.addon.repository"
-                  name="Realtebo Github Repository">
-        <info compressed="true">https://github.com/realtebo/plugin.video.jworg/blob/dist/plugin.video.jworg/addon.xml</info>
-        <checksum>http://mirrors.xbmc.org/addons/dharma-pre/addons.xml.md5</checksum>
-        <datadir zip="true">http://mirrors.xbmc.org/addons/dharma-pre</datadir>
-      </extension>
 </addon>
 
