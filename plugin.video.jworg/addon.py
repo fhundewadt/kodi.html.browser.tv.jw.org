@@ -13,31 +13,51 @@ import urllib
 import urllib2
 import urlparse
 import json
+import HTMLParser
 
 """
 FUNCTION PRINCIPALI
 """
 
-# show available video pages
-def showVideoIndex(start):
+# show available video categories
+def showVideoFilter():
 	global pluginPid, plugin
+	settings_l18n_code = getVideoPathByLanguage();	
+	url = "http://www.jw.org/"+ settings_l18n_code
+	html = loadUrl(url)
+	# print "JWORG html dump" + html
+	regexp_video_filters = '<option data-priority.* value="([^"]+)">([^<]+)</option>'
+	filters = re.findall(regexp_video_filters, html) 
+	# print "JWORG filters:"
+	# print filters
+	# Output video filter list
+	for video_filter in filters:
+		# print "JWORG filtro trovato:"
+		# print video_filter
+		title = video_filter[1].replace("&amp;","&")
+		listItem = xbmcgui.ListItem( title )	
+		params = {"content_type" : "video", "mode": "open_video_page", "start" : 0, "video_filter" : video_filter[0]} 
+		url = sys.argv[0] + '?' + urllib.urlencode(params)
+		xbmcplugin.addDirectoryItem(handle=pluginPid, url=url, listitem=listItem, isFolder=True )  
+	
+	xbmcplugin.endOfDirectory(handle=pluginPid)
+	
 
+# show available video pages
+def showVideoIndex(start, video_filter):
+	global pluginPid, plugin
+	print "JWORG showVideoIndex start " + str(start)
+	print "JWORG showVideoIndex video_filter " + str(video_filter)
 	settings_l18n_code = getVideoPathByLanguage();
 
-	url = "http://www.jw.org/"+ settings_l18n_code + "/?start=" + str(start)
+	url = "http://www.jw.org/"+ settings_l18n_code + "/?start=" + str(start) + "&videoFilter=" + video_filter
 	print "JWORG ShowVideoIndex url: " + url
 
 	html = loadUrl (url)
 
-	# Grep video pages links [0, 1, 2, etc..]
-	regexp_video_pages = '<a href="[^"]+=([0-9]+)" class="pageNum">([0-9]+)</a>'
-	other_pages = re.findall(regexp_video_pages, html)
-	other_pages =  list(set(other_pages))   # made univoque and sorted by 'start'
-	other_pages.sort()
-
 	# Grep video titles
 	regexp_video_title = 'data-onpagetitle="([^"]+)"'
-	videos = re.findall(regexp_video_title, html)  # I'ts a list not a Dict
+	videos = re.findall(regexp_video_title, html)  
 
 	# Grep poster of video
 	regexp_video_poster = '<img src=["\'](assets[^"\']+)["\']'
@@ -46,6 +66,13 @@ def showVideoIndex(start):
 	# Grep url of json wich contain data on different version of the video [240,360, etc..]
 	regexp_video_json = 'data-jsonurl="([^"]+)"';
 	video_json = re.findall(regexp_video_json, html)
+
+	# Grep video pages links [0, 1, 2, etc..]
+	regexp_video_next_page = '<a class="iconNext.*start=([0-9]+).*title="([^""]+)"'
+	next_link = re.findall(regexp_video_next_page, html)
+	print "JWORG link other pages"
+	print next_link
+	
 
 	count = 0
 	# Output video list 
@@ -66,25 +93,18 @@ def showVideoIndex(start):
 		count = count + 1
 
 	# Output next page link
-	# TODO: simplyfy it !
-	for page in other_pages:
-		next_start =  page[0] 
-		if next_start <= start:
-			continue;
-		pagina = page[1] 
-		l18n_gotopage = plugin.getLocalizedString(30001) + " ";
-		title = l18n_gotopage + str(page[1])
-		print "JWORG title " + title
+	try: 
+		next_start =  next_link[0][0]
+		title = next_link[0][1] 
 		listItem = xbmcgui.ListItem(title)
-		params = {"content_type" : "video", "start" : next_start} 
+		params = {"content_type" : "video", "mode": "open_video_page", "start" : next_start, "video_filter" : video_filter} 
 		url = sys.argv[0] + '?' + urllib.urlencode(params)
-		print "JWORG list url " + url
+		print "JWORG next url " + url
 		xbmcplugin.addDirectoryItem(handle=pluginPid, url=url, listitem=listItem, isFolder=True )  
-		# next page link found [and added at the bottom of the list]
-		break;
+	except:
+		pass
 
 	xbmcplugin.endOfDirectory(handle=pluginPid)
-	
 	
 def showVideoJsonUrl(json_url):
 	global plugin;
@@ -143,7 +163,6 @@ def loadUrl (url):
 	html = response.read()
 	return html	
 
-
 def loadJsonFromUrl (url):
 	data = None
 	try:
@@ -194,19 +213,26 @@ try:
 except:
 	pass
 
-start = 0
+start = None
 try:
 	start = params["start"][0]        
 except:
     pass
 
-#lingua
+video_filter = None
+try:
+	video_filter = params["video_filter"][0]	#Note: video_filter can be 'none', and it's a valid filter for jw.org !
+except:
+	pass
 
-if content_type == "video" and mode is None:
-	showVideoIndex(start);
+#lingua
+if content_type == "video" and mode is None :
+	showVideoFilter();
+
+if content_type == "video" and mode == "open_video_page" and start is not None:
+	showVideoIndex(start, video_filter);
 
 if content_type == "video" and mode == "open_json_video":
 	json_url = params["json_url"][0]
 	showVideoJsonUrl(json_url);
-
 

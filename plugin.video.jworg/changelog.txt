@@ -3,6 +3,9 @@ Legend:
 + = Things added 
 - = Things removed
 
+00.00.02
+--------
++ Filter videos
 
 00.00.01
 ---------
@@ -12,7 +15,7 @@ Code
 + Added some error catching to avoid errors shown to users
 
 Feature
-+ Browse page 
++ Browse video page 
 + Video format chooser
 
 Locales: 
