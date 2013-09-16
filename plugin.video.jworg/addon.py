@@ -95,7 +95,7 @@ def showVideoIndex(start, video_filter):
 	# Output next page link
 	try: 
 		next_start =  next_link[0][0]
-		title = next_link[0][1] 
+		title = plugin.getLocalizedString(30001);
 		listItem = xbmcgui.ListItem(title)
 		params = {"content_type" : "video", "mode": "open_video_page", "start" : next_start, "video_filter" : video_filter} 
 		url = sys.argv[0] + '?' + urllib.urlencode(params)
