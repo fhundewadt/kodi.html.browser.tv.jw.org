@@ -194,7 +194,7 @@ def getVideoLangCodeByLanguage ():
 START
 """
 
-# Gloal used in tutte le chiamate ad addDirectory
+# Gloal used in all xbmc 
 plugin       = xbmcaddon.Addon("plugin.video.jworg")
 pluginPid    = int(sys.argv[1])
 language     = xbmcplugin.getSetting(pluginPid, "language")
