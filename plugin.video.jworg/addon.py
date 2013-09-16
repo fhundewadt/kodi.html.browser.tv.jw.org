@@ -16,7 +16,7 @@ import json
 import HTMLParser
 
 """
-FUNCTION PRINCIPALI
+VIDEO RELATED FUNCTION
 """
 
 # show available video categories
@@ -105,7 +105,8 @@ def showVideoIndex(start, video_filter):
 		pass
 
 	xbmcplugin.endOfDirectory(handle=pluginPid)
-	
+
+# show available resolutions for a video (ed eventually other related titles, like interviews, etc.)	
 def showVideoJsonUrl(json_url):
 	global plugin;
 
@@ -155,6 +156,12 @@ def showVideoJsonUrl(json_url):
 		print "JWORG I'll play " + mp4_to_play[selected]
 		xbmc.Player(xbmc.PLAYER_CORE_AUTO).play(mp4_to_play[selected])
 
+
+"""
+AUDIO RELATED FUNCTION
+"""
+
+
 """
 UTILITY
 """
@@ -187,7 +194,7 @@ def getVideoLangCodeByLanguage ():
 START
 """
 
-# Usato in tutte le chiamate ad addDirectory
+# Gloal used in tutte le chiamate ad addDirectory
 plugin       = xbmcaddon.Addon("plugin.video.jworg")
 pluginPid    = int(sys.argv[1])
 language     = xbmcplugin.getSetting(pluginPid, "language")
@@ -195,7 +202,7 @@ print "JWORG language: " + language
 if language == "":
 	language = "English"
 
-# Stampo per debug gli argomenti della chiamata
+# Debug; call arguments
 params 		 = urlparse.parse_qs((sys.argv[2])[1:])
 print "JWORG argomenti lancio: " 
 print sys.argv
@@ -225,7 +232,7 @@ try:
 except:
 	pass
 
-#lingua
+# Call router
 if content_type == "video" and mode is None :
 	showVideoFilter();
 
