@@ -54,14 +54,16 @@ def showVideoIndex(start, video_filter):
 	print "JWORG ShowVideoIndex url: " + url
 
 	html = loadUrl (url)
+	print html
 
 	# Grep video titles
 	regexp_video_title = 'data-onpagetitle="([^"]+)"'
 	videos = re.findall(regexp_video_title, html)  
 
 	# Grep poster of video
-	regexp_video_poster = '<img src=["\'](assets[^"\']+)["\']'
+	regexp_video_poster = 'data-img-size-md=["\']([^"\']+)["\']'
 	posters = re.findall(regexp_video_poster, html)
+	print posters
 
 	# Grep url of json wich contain data on different version of the video [240,360, etc..]
 	regexp_video_json = 'data-jsonurl="([^"]+)"';
@@ -79,7 +81,7 @@ def showVideoIndex(start, video_filter):
 	for title in videos:
 		listItem = xbmcgui.ListItem(
 			label=title, 
-			thumbnailImage= "http://www.jw.org/" + posters[count]
+			thumbnailImage= posters[count]
 		)
 
 		params = {"content_type" : "video", "mode" : "open_json_video", "json_url": video_json[count]} 

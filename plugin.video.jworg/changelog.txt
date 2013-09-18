@@ -12,6 +12,7 @@ Feature
 Code
 - Localized strings for next page
 + Simplified 'next' page link code
++ Changed video image detecting code
 
 00.00.01
 ---------
