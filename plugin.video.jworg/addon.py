@@ -13,7 +13,6 @@ import urllib
 import urllib2
 import urlparse
 import json
-import HTMLParser
 
 """
 VIDEO RELATED FUNCTION
@@ -163,6 +162,29 @@ def showVideoJsonUrl(json_url):
 AUDIO RELATED FUNCTION
 """
 
+def showAudioTypeIndex():
+	global pluginPid, plugin
+	
+	# Books of the bible
+	listItem = xbmcgui.ListItem( plugin.getLocalizedString(30010) )	
+	params = {"content_type" : "audio", "mode": "open_bible_index"} 
+	url = sys.argv[0] + '?' + urllib.urlencode(params)
+	print "JWORG: bible index url: " + url
+	xbmcplugin.addDirectoryItem(handle=pluginPid, url=url, listitem=listItem, isFolder=True )  
+	
+	xbmcplugin.endOfDirectory(handle=pluginPid)
+	
+def showAudioBibleIndex():
+	global pluginPid, plugin
+
+	bible_index_url = plugin.getLocalizedString(30011) 
+	html = loadUrl(bible_index_url)
+	
+	# Grep book names
+	regexp_book_names = '<a>([^<]+)</a>'
+	book_names = re.findall(regexp_book_names, html)  	
+	print "JWORG: bible book names"
+	print book_names
 
 """
 UTILITY
@@ -180,6 +202,10 @@ def loadJsonFromUrl (url):
 	except:
 		pass
 	return data
+
+"""
+AUTO CONFIG by language settings
+"""
 
 def getVideoPathByLanguage ():
 	global language;
@@ -202,7 +228,8 @@ pluginPid    = int(sys.argv[1])
 language     = xbmcplugin.getSetting(pluginPid, "language")
 print "JWORG language: " + language
 if language == "":
-	language = "English"
+	language = plugin.getLocalizedString(30009)
+	print "JWORG forced language: " + language
 
 # Debug; call arguments
 params 		 = urlparse.parse_qs((sys.argv[2])[1:])
@@ -245,3 +272,8 @@ if content_type == "video" and mode == "open_json_video":
 	json_url = params["json_url"][0]
 	showVideoJsonUrl(json_url);
 
+if content_type == "audio" and mode is None :
+	showAudioTypeIndex();
+
+if content_type == "audio" and mode == "open_bible_index" :
+	showAudioBibleIndex();

@@ -3,6 +3,13 @@ Legend:
 + = Things added 
 - = Things removed
 
+00.00.03
+--------
+
+Feature
++ Default streaming and titles language is set depending on xmbc actual locale, so if you're italian, the default will be in 'Italiano', if xmbc starts in English, even jworg will start with 'English'; the streaming locale is still configurable
+
+
 00.00.02
 --------
 
