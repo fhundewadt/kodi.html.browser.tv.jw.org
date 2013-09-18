@@ -46,15 +46,13 @@ def showVideoFilter():
 # show available video pages
 def showVideoIndex(start, video_filter):
 	global pluginPid, plugin
-	print "JWORG showVideoIndex start " + str(start)
-	print "JWORG showVideoIndex video_filter " + str(video_filter)
+
 	settings_l18n_code = getVideoPathByLanguage();
 
 	url = "http://www.jw.org/"+ settings_l18n_code + "/?start=" + str(start) + "&videoFilter=" + video_filter
 	print "JWORG ShowVideoIndex url: " + url
 
 	html = loadUrl (url)
-	print html
 
 	# Grep video titles
 	regexp_video_title = 'data-onpagetitle="([^"]+)"'
@@ -63,18 +61,15 @@ def showVideoIndex(start, video_filter):
 	# Grep poster of video
 	regexp_video_poster = 'data-img-size-md=["\']([^"\']+)["\']'
 	posters = re.findall(regexp_video_poster, html)
-	print posters
 
 	# Grep url of json wich contain data on different version of the video [240,360, etc..]
-	regexp_video_json = 'data-jsonurl="([^"]+)"';
+	# regexp_video_json = '^data-jsonurl="([^"]+)"';
+	regexp_video_json = '.*[^"] data-jsonurl="([^"]+)".*';
 	video_json = re.findall(regexp_video_json, html)
 
 	# Grep video pages links [0, 1, 2, etc..]
 	regexp_video_next_page = '<a class="iconNext.*start=([0-9]+).*title="([^""]+)"'
 	next_link = re.findall(regexp_video_next_page, html)
-	print "JWORG link other pages"
-	print next_link
-	
 
 	count = 0
 	# Output video list 
@@ -84,7 +79,10 @@ def showVideoIndex(start, video_filter):
 			thumbnailImage= posters[count]
 		)
 
-		params = {"content_type" : "video", "mode" : "open_json_video", "json_url": video_json[count]} 
+		print "JWORG title: " + title
+		json_url = video_json[count]
+		print "JWORG json_url: " + json_url
+		params = {"content_type" : "video", "mode" : "open_json_video", "json_url": json_url} 
 		url = sys.argv[0] + '?' + urllib.urlencode(params)
 		xbmcplugin.addDirectoryItem(
 			handle=pluginPid, 
@@ -101,7 +99,6 @@ def showVideoIndex(start, video_filter):
 		listItem = xbmcgui.ListItem(title)
 		params = {"content_type" : "video", "mode": "open_video_page", "start" : next_start, "video_filter" : video_filter} 
 		url = sys.argv[0] + '?' + urllib.urlencode(params)
-		print "JWORG next url " + url
 		xbmcplugin.addDirectoryItem(handle=pluginPid, url=url, listitem=listItem, isFolder=True )  
 	except:
 		pass
@@ -116,8 +113,6 @@ def showVideoJsonUrl(json_url):
 	print "JWORG video json url: " + json_url
 	#  /apps/I_TRGCHlZRQVNYVrXF?fileformat=mp4&output=json&pub=ivfe&langwritten=I&alllangs=1
 	json = loadJsonFromUrl(json_url)
-	print "JWORG json url dump"
-	print json
 
 	if json is None :
 		string = plugin.getLocalizedString(30008) + " ";
@@ -125,11 +120,16 @@ def showVideoJsonUrl(json_url):
 		return
 
 	language_code = None;
+	video_lang_code =getVideoLangCodeByLanguage() 
+	print "JWORG video lang code " + video_lang_code
 	for language in  json["languages"]:
 		locale =  json["languages"][language]["locale"]
-		if locale == getVideoLangCodeByLanguage():
+		if locale == video_lang_code:
 			language_code = language
 			break
+
+
+	print "JWORG language_code " + language_code
 
 	#adesso ho in locale una lettera tipo 'I' per l'italiano per accedere all'url del file
 	if language_code == None:
