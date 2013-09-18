@@ -3,7 +3,7 @@ plugin.video.jworg for XBMC
 
 ### Install: 
 
-* Download latest release from [releases folder](https://github.com/realtebo/plugin.video.jworg/releases). Actually this is the [latest zip available](https://github.com/realtebo/plugin.video.jworg/raw/master/releases/plugin.video.jworg-00.00.01.zip)
+* Download latest release from [releases folder](https://github.com/realtebo/plugin.video.jworg/releases). Actually this is the [latest zip available](https://github.com/realtebo/plugin.video.jworg/raw/master/releases/plugin.video.jworg-00.00.02.zip)
 * Copy the contained folder plugin.video.jworg into XBMC addon directory or, better, simply use the xmbc 'install addon from a zip file' feature
 
 ### Bug ? Ideas ? Complains ?
@@ -13,6 +13,14 @@ Feel free to [open a new issue](https://github.com/realtebo/plugin.video.jworg/i
 ### New languages ?
 
 Fork the project FROM MASTER BRANCH and create new strings.xml file for your language, then send a pull request. 
+
+### Tested platforms
+
+* Windows 8 Pro 64bit
+* Linux Mint 12-14
+* Raspberry PI 
+
+All of these have Frodo "12.2" version of XBMC
 
 ###  FAQ 
 
