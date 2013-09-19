@@ -5,10 +5,8 @@
     <string id="30003">Italiano</string>
     <string id="30004">English</string>
     <string id="30005">General</string>
-    <string id="30006">Stream not available in selected language,[CR]contact plugin author if you thinks that's an error</string>
     <string id="30007">Choose a video</string>
     <string id="30008">Unable to load stream list</string>
     <string id="30009">English</string>
     <string id="30010">Books of the Bible</string>
-    <string id="30012">http://www.jw.org/en/publications/bible/nwt/books/</string>
 </strings>

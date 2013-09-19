@@ -3,7 +3,7 @@
     id="plugin.video.jworg" 
     name="jw.org audio/video browser" 
     version="00.00.03" 
-    provider-name="Realtebo (mirkotebaldi@yahoo.it)">
+    provider-name="Realtebo">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
     </requires>

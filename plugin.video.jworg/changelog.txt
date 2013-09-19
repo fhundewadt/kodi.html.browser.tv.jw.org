@@ -7,8 +7,12 @@ Legend:
 --------
 
 Feature
++ Audio listening for bible chapters
 + Default streaming and titles language is set depending on xmbc actual locale, so if you're italian, the default will be in 'Italiano', if xmbc starts in English, even jworg will start with 'English'; the streaming locale is still configurable
 
+Code
++ Modularized for better code reading and maintenability. Of course, must be improved the design approach
++ Enforced video detecting code for "neutral langauge" videos, like "Bible from Japan", which has no language code
 
 00.00.02
 --------
