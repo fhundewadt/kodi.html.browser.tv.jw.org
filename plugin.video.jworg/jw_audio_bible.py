@@ -53,7 +53,8 @@ def showAudioBibleBookJson(language, book_num):
 	mp3_to_play = []
 	for mp3 in json["files"][lang_code]["MP3"]:
 
-		if mp3["track"] == 0:
+		# Salto gli 'zip'
+		if mp3["mimetype"] != "audio/mpeg":
 			continue;
 
 		url = mp3["file"]["url"]
