@@ -125,7 +125,7 @@ def showVideoJsonUrl(language, json_url):
 		title = title.replace("&quot;", '"')
 
 		listItem = xbmcgui.ListItem(label=title)
-		listItem.setInfo(type='Video', infoLabels={'Title': title })
+		listItem.setInfo(type='Video', infoLabels={'Title': mp4["title"] })
 
 		xbmcplugin.addDirectoryItem(
 			handle=jw_config.pluginPid, 
@@ -135,15 +135,3 @@ def showVideoJsonUrl(language, json_url):
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
 
-	"""
-	# Choose format and specific video 
-	dia = xbmcgui.Dialog()
-	string = jw_config.t(30007)
-	selected = dia.select(string, options)
-	if selected != -1 :
-		print "JWORG I'll play " + mp4_to_play[selected]
-		
-		# xbmcplugin.setResolvedUrl(jw_config.pluginPid, True, listitem)
-
-		xbmc.Player(xbmc.PLAYER_CORE_AUTO).play(mp4_titles[selected], listitem)
-	"""
