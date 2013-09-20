@@ -49,8 +49,6 @@ def showAudioBibleBookJson(language, book_num):
 	json = jw_load.loadJsonFromUrl(json_url)
 	lang_code = jw_config.const[language]["lang_code"]
 
-	options = []
-	mp3_to_play = []
 	for mp3 in json["files"][lang_code]["MP3"]:
 
 		# Salto gli 'zip'
@@ -58,16 +56,15 @@ def showAudioBibleBookJson(language, book_num):
 			continue;
 
 		url = mp3["file"]["url"]
-		mp3_to_play.append(url);
-
 		title = mp3["title"]
 
-		options.append(title.encode('utf8'))
+		listItem = xbmcgui.ListItem(label=title)
+		listItem.setInfo(type='Video', infoLabels={'Title': title })
 
-	# Choose chapter
-	dia = xbmcgui.Dialog()
-	string = json["pubName"]
-	selected = dia.select(string, options)
-	if selected != -1 :
-		print "JWORG: play " + mp3_to_play[selected]
-		xbmc.Player(xbmc.PLAYER_CORE_PAPLAYER).play(mp3_to_play[selected])
+		xbmcplugin.addDirectoryItem(
+			handle=jw_config.pluginPid, 
+			url=url, 
+			listitem=listItem, 
+			isFolder=False )  
+
+	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)

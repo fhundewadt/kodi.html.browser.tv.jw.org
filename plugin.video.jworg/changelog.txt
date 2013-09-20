@@ -2,6 +2,7 @@ Legend:
 -------
 + = Things added 
 - = Things removed
+C = Things changed
 
 00.00.03
 --------
@@ -9,6 +10,8 @@ Legend:
 Feature
 + Audio listening for bible chapters
 + Default streaming and titles language is set depending on xmbc actual locale, so if you're italian, the default will be in 'Italiano', if xmbc starts in English, even jworg will start with 'English'; the streaming locale is still configurable
+C Now list of stream  appears no more like a popup, it's just a classic video title list
++ Now streams has video title setup rightly, no more file name used for titling
 
 Code
 + Modularized for better code reading and maintenability. Of course, must be improved the design approach
