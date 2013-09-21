@@ -7,6 +7,7 @@ import xbmcplugin
 import jw_config
 import jw_video
 import jw_audio_bible
+import jw_audio_music
 
 """
 START
@@ -50,14 +51,21 @@ if content_type == "video" and mode == "open_video_page" and start is not None:
 
 if content_type == "video" and mode == "open_json_video":
 	json_url = params["json_url"][0]
-	jw_video.showVideoJsonUrl(language, json_url);
+	jw_video.showVideoJsonUrl(language, json_url)
 
 if content_type == "audio" and mode is None :
-	jw_audio_bible.showAudioTypeIndex();
+	jw_audio_bible.showAudioTypeIndex()
 
 if content_type == "audio" and mode == "open_bible_index" :
-	jw_audio_bible.showAudioBibleIndex(language);
+	jw_audio_bible.showAudioBibleIndex(language)
 
 if content_type == "audio" and mode == "open_bible_book_index"  :
 	book_num = params["book_num"][0]
-	jw_audio_bible.showAudioBibleBookJson(language, book_num);	
+	jw_audio_bible.showAudioBibleBookJson(language, book_num)
+
+if content_type == "audio" and mode == "open_music_index"  and start is not None: 
+	jw_audio_music.showMusicIndex(language, start);
+
+if content_type == "audio" and mode == "open_music_json" : 
+	json_url = params["json_url"][0]
+	jw_audio_music.showMusicJsonUrl(language, json_url);

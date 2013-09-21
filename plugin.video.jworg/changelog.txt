@@ -4,6 +4,16 @@ Legend:
 - = Things removed
 C = Things changed
 
+00.00.04
+--------
+
+Feature
++ Added streaming of music and songs 
+
+Code
++ Init developing script section to show "Daily Text"
++ Changed icon to not infring trade mark on jw.org logo
+
 00.00.03
 --------
 

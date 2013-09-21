@@ -51,11 +51,10 @@ def showVideoIndex(language, start, video_filter):
 	posters = re.findall(regexp_video_poster, html)
 
 	# Grep url of json wich contain data on different version of the video [240,360, etc..]
-	# regexp_video_json = '^data-jsonurl="([^"]+)"';
 	regexp_video_json = '.*[^"] data-jsonurl="([^"]+)".*'
 	video_json = re.findall(regexp_video_json, html)
 
-	# Grep video pages links [0, 1, 2, etc..]
+	# Grep video pages "NEXT" link
 	regexp_video_next_page = '<a class="iconNext.*start=([0-9]+).*title="([^""]+)"'
 	next_link = re.findall(regexp_video_next_page, html)
 
@@ -101,8 +100,6 @@ def showVideoIndex(language, start, video_filter):
 def showVideoJsonUrl(language, json_url):
 
 	json_url = "http://www.jw.org" + json_url
-	print "JWORG video json url: " + json_url
-	#  /apps/I_TRGCHlZRQVNYVrXF?fileformat=mp4&output=json&pub=ivfe&langwritten=I&alllangs=1
 	json = jw_load.loadJsonFromUrl(json_url)
 
 	if json is None :

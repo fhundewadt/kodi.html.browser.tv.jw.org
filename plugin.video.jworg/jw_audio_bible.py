@@ -19,6 +19,13 @@ def showAudioTypeIndex():
 	params = {"content_type" : "audio", "mode": "open_bible_index"} 
 	url = jw_config.plugin_name + '?' + urllib.urlencode(params)
 	xbmcplugin.addDirectoryItem(handle=jw_config.pluginPid, url=url, listitem=listItem, isFolder=True )  
+	
+	# 2. Music and  songs
+	listItem = xbmcgui.ListItem( jw_config.t(30011) )	
+	params = {"content_type" : "audio", "mode": "open_music_index", "start" : 0} 
+	url = jw_config.plugin_name + '?' + urllib.urlencode(params)
+	xbmcplugin.addDirectoryItem(handle=jw_config.pluginPid, url=url, listitem=listItem, isFolder=True )  
+	
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
 	
 # List of bible books
@@ -51,7 +58,7 @@ def showAudioBibleBookJson(language, book_num):
 
 	for mp3 in json["files"][lang_code]["MP3"]:
 
-		# Salto gli 'zip'
+		# Skip 'zip' files
 		if mp3["mimetype"] != "audio/mpeg":
 			continue;
 
