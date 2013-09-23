@@ -1,6 +1,5 @@
 plugin.video.jworg for XBMC
 ===========================
-#Prova
 
 ### Install: 
 
