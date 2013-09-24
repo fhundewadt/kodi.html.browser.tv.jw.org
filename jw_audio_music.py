@@ -51,12 +51,21 @@ def showMusicIndex(language, start):
 
 	# Output next page link
 	try: 
-		next_start =  next_link[0][0]
-		title = jw_config.t(30001);	
-		listItem = xbmcgui.ListItem(title)
-		params = {"content_type" : "audio", "mode": "open_music_index", "start" : next_start } 
+		next_start  = next_link[0][0]
+		title 		= jw_config.t(30001);	
+		listItem 	= xbmcgui.ListItem(title)
+		params = {
+			"content_type" : "audio", 
+			"mode": "open_music_index", 
+			"start" : next_start 
+		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
-		xbmcplugin.addDirectoryItem(handle=jw_config.pluginPid, url=url, listitem=listItem, isFolder=True )  
+		xbmcplugin.addDirectoryItem(
+			handle		= jw_config.pluginPid, 
+			url			= url, 
+			listitem	= listItem, 
+			isFolder	= True 
+		)  
 	except:
 		pass
 
@@ -71,8 +80,8 @@ def showMusicJsonUrl(language, json_url):
 	language_code = jw_config.const[language]["lang_code"]
 	
 	for mp3 in json["files"][language_code]["MP3"]:
-		url = mp3["file"]["url"]
-		title = mp3["title"]
+		url 	= mp3["file"]["url"]
+		title 	= mp3["title"]
 
 		# Skip 'zip' files
 		if mp3["mimetype"] != "audio/mpeg":

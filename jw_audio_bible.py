@@ -16,15 +16,32 @@ def showAudioTypeIndex():
 	
 	# 1. Books of the bible
 	listItem = xbmcgui.ListItem( jw_config.t(30010) )	
-	params = {"content_type" : "audio", "mode": "open_bible_index"} 
+	params = {
+		"content_type"  : "audio", 
+		"mode" 			: "open_bible_index"
+	} 
 	url = jw_config.plugin_name + '?' + urllib.urlencode(params)
-	xbmcplugin.addDirectoryItem(handle=jw_config.pluginPid, url=url, listitem=listItem, isFolder=True )  
+	xbmcplugin.addDirectoryItem(
+		handle		= jw_config.pluginPid, 
+		url			= url, 
+		listitem	= listItem, 
+		isFolder	= True 
+	)  
 	
 	# 2. Music and  songs
 	listItem = xbmcgui.ListItem( jw_config.t(30011) )	
-	params = {"content_type" : "audio", "mode": "open_music_index", "start" : 0} 
+	params = {
+		"content_type"  : "audio", 
+		"mode" 			: "open_music_index", 
+		"start" 		: 0
+	} 
 	url = jw_config.plugin_name + '?' + urllib.urlencode(params)
-	xbmcplugin.addDirectoryItem(handle=jw_config.pluginPid, url=url, listitem=listItem, isFolder=True )  
+	xbmcplugin.addDirectoryItem(
+		handle		= jw_config.pluginPid, 
+		url			= url, 
+		listitem	= listItem, 
+		isFolder	= True 
+	)  
 	
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
 	
@@ -42,16 +59,24 @@ def showAudioBibleIndex(language):
 	for book in book_names:
 		book_num = book_num + 1
 		listItem = xbmcgui.ListItem( book_names[book_num -1] )	
-		params = {"content_type" : "audio", "mode": "open_bible_book_index",
-					"book_num" : book_num} 
+		params = {
+			"content_type" 	: "audio", 
+			"mode" 			: "open_bible_book_index",
+			"book_num" 		: book_num
+		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)	
-		xbmcplugin.addDirectoryItem(handle=jw_config.pluginPid, url=url, listitem=listItem, isFolder=True )  
+		xbmcplugin.addDirectoryItem(
+			handle		= jw_config.pluginPid, 
+			url			= url, 
+			listitem	= listItem, 
+			isFolder	= True 
+		)  
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
 
 # List of chapter of a specific book, playable
 def showAudioBibleBookJson(language, book_num):
-	print "JWORG: audio bible book num: " + book_num
+
 	json_url = jw_config.const[language]["bible_audio_json"] + "&booknum=" + book_num
 	json = jw_load.loadJsonFromUrl(json_url)
 	lang_code = jw_config.const[language]["lang_code"]
@@ -66,12 +91,16 @@ def showAudioBibleBookJson(language, book_num):
 		title = mp3["title"]
 
 		listItem = xbmcgui.ListItem(label=title)
-		listItem.setInfo(type='Video', infoLabels={'Title': title })
+		listItem.setInfo(
+			type 		= 'Video', 
+			infoLabels 	= {'Title': title }
+		)
 
 		xbmcplugin.addDirectoryItem(
-			handle=jw_config.pluginPid, 
-			url=url, 
-			listitem=listItem, 
-			isFolder=False )  
+			handle		= jw_config.pluginPid, 
+			url			= url, 
+			listitem	= listItem, 
+			isFolder	= False 
+		)  
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
