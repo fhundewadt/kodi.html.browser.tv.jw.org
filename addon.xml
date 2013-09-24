@@ -2,7 +2,7 @@
 <addon 
     id="plugin.video.jworg" 
     name="jw.org audio/video browser" 
-    version="0.1.0" 
+    version="0.1.1" 
     provider-name="Realtebo">
     <requires>
         <import addon="xbmc.python" version="2.1.0"/>
@@ -14,7 +14,10 @@
         <language />
         <platform>all</platform>
         <website>https://github.com/realtebo/plugin.video.jworg</website>
+        <source>https://github.com/realtebo/plugin.video.jworg</source>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
+        <email></email>
+        <forum></forum>
         <summary lang="it">
             Un semplice browser per i contenuti di jw.org
         </summary>
