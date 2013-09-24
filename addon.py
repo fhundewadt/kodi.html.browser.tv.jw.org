@@ -14,10 +14,8 @@ START
 """
 
 language     = xbmcplugin.getSetting(jw_config.pluginPid, "language")
-print "JWORG language: " + language
 if language == "":
 	language = jw_config.t(30009)
-	print "JWORG forced language: " + language
 
 # call arguments
 params 		 = jw_config.plugin_params
@@ -50,8 +48,9 @@ if content_type == "video" and mode == "open_video_page" and start is not None:
 	jw_video.showVideoIndex(language, start, video_filter)
 
 if content_type == "video" and mode == "open_json_video":
-	json_url = params["json_url"][0]
-	jw_video.showVideoJsonUrl(language, json_url)
+	json_url 	= params["json_url"][0]
+	thumb 		= params["thumb"][0]
+	jw_video.showVideoJsonUrl(language, json_url, thumb)
 
 if content_type == "audio" and mode is None :
 	jw_audio_bible.showAudioTypeIndex()
@@ -67,5 +66,5 @@ if content_type == "audio" and mode == "open_music_index"  and start is not None
 	jw_audio_music.showMusicIndex(language, start);
 
 if content_type == "audio" and mode == "open_music_json" : 
-	json_url = params["json_url"][0]
+	json_url 	= params["json_url"][0]
 	jw_audio_music.showMusicJsonUrl(language, json_url);

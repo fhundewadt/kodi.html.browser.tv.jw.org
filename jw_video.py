@@ -38,8 +38,6 @@ def showVideoFilter(language):
 def showVideoIndex(language, start, video_filter):
 
 	url = jw_config.const[language]["video_path"] + "/?start=" + str(start) + "&videoFilter=" + video_filter
-	print "JWORG ShowVideoIndex url: " + url
-
 	html = jw_load.loadUrl (url)
 
 	# Grep video titles
@@ -67,7 +65,12 @@ def showVideoIndex(language, start, video_filter):
 		)
 
 		json_url = video_json[count]
-		params = {"content_type" : "video", "mode" : "open_json_video", "json_url": json_url} 
+		params = { 
+			"content_type" 	: "video", 
+			"mode" 			: "open_json_video", 
+			"json_url"		: json_url,
+			"thumb" 		: posters[count]
+		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
 		xbmcplugin.addDirectoryItem(
 			handle=jw_config.pluginPid, 
@@ -84,7 +87,11 @@ def showVideoIndex(language, start, video_filter):
 		listItem = xbmcgui.ListItem(title)
 		params = {"content_type" : "video", "mode": "open_video_page", "start" : next_start, "video_filter" : video_filter} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
-		xbmcplugin.addDirectoryItem(handle=jw_config.pluginPid, url=url, listitem=listItem, isFolder=True )  
+		xbmcplugin.addDirectoryItem(
+			handle=jw_config.pluginPid, 
+			url=url, 
+			listitem=listItem, 
+			isFolder=True )  
 	except:
 		pass
 
@@ -98,7 +105,7 @@ def showVideoIndex(language, start, video_filter):
 	
 
 # show available resolutions for a video (ed eventually other related titles, like interviews, etc.)	
-def showVideoJsonUrl(language, json_url):
+def showVideoJsonUrl(language, json_url, thumb):
 
 	json_url = "http://www.jw.org" + json_url
 	json = jw_load.loadJsonFromUrl(json_url)
@@ -122,7 +129,9 @@ def showVideoJsonUrl(language, json_url):
 		title = "[" + res + "] - " + mp4["title"]
 		title = title.replace("&quot;", '"')
 
-		listItem = xbmcgui.ListItem(label=title)
+		listItem = xbmcgui.ListItem(
+			label=title,
+			thumbnailImage= thumb)
 		listItem.setInfo(type='Video', infoLabels={'Title': mp4["title"] })
 
 		xbmcplugin.addDirectoryItem(
