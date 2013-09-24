@@ -25,15 +25,24 @@ def showMusicIndex(language, start):
 	regexp_music_json = 'class="jsDownload" data-jsonurl="([^"]+MP3[^"]+)".*'
 	music_json = re.findall(regexp_music_json, html)
 
-	for music in music_json:
-		print "JWORG music json: " + music
+	# Grep compilation image - [A-Z]+ discards ".prd_md" duplicated images
+	regexp_music_thumb = 'data-img-size-md=["\']([^"\']+[A-Z]+_md\.jpg)["\']'
+	music_thumb = re.findall(regexp_music_thumb, html)
 
 	book_num = 0
 	for book in music_titles:
-		listItem = xbmcgui.ListItem( music_titles[book_num] )	
+		listItem = xbmcgui.ListItem(
+			label 			= music_titles[book_num], 
+			thumbnailImage  = music_thumb[book_num]
+		)	
 		params = {"content_type" : "audio", "mode": "open_music_json", "json_url" : music_json[book_num] }
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)	
-		xbmcplugin.addDirectoryItem(handle=jw_config.pluginPid, url=url, listitem=listItem, isFolder=True )  
+		xbmcplugin.addDirectoryItem(
+			handle		= jw_config.pluginPid, 
+			url 		= url, 
+			listitem 	= listItem, 
+			isFolder	= True 
+		)  
 		book_num = book_num + 1
 
 	# Grep video pages "NEXT" link
@@ -56,8 +65,6 @@ def showMusicIndex(language, start):
 # Track list
 def showMusicJsonUrl(language, json_url):
 
-	print "JWORG showMusicJsonUrl "+ json_url
-
 	json_url = "http://www.jw.org" + json_url
 	json = jw_load.loadJsonFromUrl(json_url)
 
@@ -75,9 +82,10 @@ def showMusicJsonUrl(language, json_url):
 		listItem.setInfo(type='Audio', infoLabels={'Title': mp3["title"] })
 
 		xbmcplugin.addDirectoryItem(
-			handle=jw_config.pluginPid, 
-			url=url, 
-			listitem=listItem, 
-			isFolder=False )  
+			handle 		= jw_config.pluginPid, 
+			url 		= url, 
+			listitem 	= listItem, 
+			isFolder 	= False
+		)  
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
