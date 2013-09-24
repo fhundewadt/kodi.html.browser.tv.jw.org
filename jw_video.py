@@ -89,7 +89,7 @@ def showVideoIndex(language, start, video_filter):
 		pass
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
-	# "Thumbnail" view
+	# "Thumbnail" view 
 	if jw_config.skin_used == 'skin.confluence': 
 		xbmc.executebuiltin('Container.SetViewMode(500)') 
 
