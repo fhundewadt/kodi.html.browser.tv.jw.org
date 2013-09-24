@@ -1,54 +1,17 @@
-Legend:
--------
-+ = Things added 
-- = Things removed
-C = Things changed
-
-00.00.04
+0.1.0
 --------
+First public release
 
-Feature
-+ Added streaming of music and songs 
-
-Code
-+ Init developing script section to show "Daily Text"
-+ Changed icon to not infring trade mark on jw.org logo
-
-00.00.03
---------
-
-Feature
-+ Audio listening for bible chapters
-+ Default streaming and titles language is set depending on xmbc actual locale, so if you're italian, the default will be in 'Italiano', if xmbc starts in English, even jworg will start with 'English'; the streaming locale is still configurable
-C Now list of stream  appears no more like a popup, it's just a classic video title list
-+ Now streams has video title setup rightly, no more file name used for titling
-
-Code
-+ Modularized for better code reading and maintenability. Of course, must be improved the design approach
-+ Enforced video detecting code for "neutral langauge" videos, like "Bible from Japan", which has no language code
-
-00.00.02
---------
-
-Feature
-+ Filter videos
-
-Code
-- Localized strings for next page
-+ Simplified 'next' page link code
-+ Improved video and video poster detecting code
-
-00.00.01
----------
-Code
-+ Release on github
-+ Added changelog
-+ Added some error catching to avoid errors shown to users
-
-Feature
-+ Browse video page 
-+ Video format chooser
-
-Locales: 
+Supported locale
 + Italian
 + English
++ You can easily switch from one locale to one other from Addon Setting context menu
+
+Audio Feature
++ Listen streaming of music and songs 
++ Listen streaming of reading of the bible
+
+Feature
++ Watch video, not only film, but also from news or from articles
++ Filter videos by categories
+
