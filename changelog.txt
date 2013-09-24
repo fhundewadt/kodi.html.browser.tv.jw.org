@@ -11,7 +11,7 @@ Audio Feature
 + Listen streaming of music and songs 
 + Listen streaming of reading of the bible
 
-Feature
+Video Feature
 + Watch video, not only film, but also from news or from articles
 + Filter videos by categories
 
