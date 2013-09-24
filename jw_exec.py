@@ -44,4 +44,4 @@ def showDailyText(language, date):
 	json_url = jw_config.const[language]["daily_text_json"] + "/" + date
 	print "JWORG daily text json " + json_url
 	json = jw_load.loadJsonFromUrl(json_url)
-	print json
+	print json["items"][0]["content"].encode("utf8")
