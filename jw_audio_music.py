@@ -11,6 +11,7 @@ import re
 import jw_config
 import jw_load
 
+
 # List of bible books
 def showMusicIndex(language, start):
 	
@@ -35,7 +36,11 @@ def showMusicIndex(language, start):
 			label 			= music_titles[book_num], 
 			thumbnailImage  = music_thumb[book_num]
 		)	
-		params = {"content_type" : "audio", "mode": "open_music_json", "json_url" : music_json[book_num] }
+		params = {
+			"content_type"  : "audio", 
+			"mode" 			: "open_music_json", 
+			"json_url" 		: music_json[book_num] 
+		}
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)	
 		xbmcplugin.addDirectoryItem(
 			handle		= jw_config.pluginPid, 
@@ -54,10 +59,10 @@ def showMusicIndex(language, start):
 		next_start  = next_link[0][0]
 		title 		= jw_config.t(30001);	
 		listItem 	= xbmcgui.ListItem(title)
-		params = {
-			"content_type" : "audio", 
-			"mode": "open_music_index", 
-			"start" : next_start 
+		params 		= {
+			"content_type" 	: "audio", 
+			"mode" 			: "open_music_index", 
+			"start" 		: next_start 
 		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
 		xbmcplugin.addDirectoryItem(
@@ -70,6 +75,7 @@ def showMusicIndex(language, start):
 		pass
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
+
 
 # Track list
 def showMusicJsonUrl(language, json_url):
@@ -88,7 +94,10 @@ def showMusicJsonUrl(language, json_url):
 			continue;
 
 		listItem = xbmcgui.ListItem(label=title)
-		listItem.setInfo(type='Audio', infoLabels={'Title': mp3["title"] })
+		listItem.setInfo(
+			type 		= 'Music', 
+			infoLabels  = {'Title': mp3["title"] }
+		)
 
 		xbmcplugin.addDirectoryItem(
 			handle 		= jw_config.pluginPid, 

@@ -8,7 +8,6 @@ pluginPid   	= int(sys.argv[1])
 plugin_params 	= urlparse.parse_qs((sys.argv[2])[1:])
 skin_used 		= xbmc.getSkinDir()
 
-
 const = {
 	"Italiano" 	: {
 		"video_path" 		: "http://www.jw.org/it/video",

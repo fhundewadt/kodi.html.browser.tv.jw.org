@@ -14,7 +14,7 @@
         <language />
         <platform>all</platform>
         <website>https://github.com/realtebo/plugin.video.jworg</website>
-        <license>GPL-2</license>
+        <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
         <summary lang="it">
             Un semplice browser per i contenuti di jw.org
         </summary>

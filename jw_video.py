@@ -16,9 +16,8 @@ import jw_config
 # show available video categories
 def showVideoFilter(language):
 	
-	url = jw_config.const[language]["video_path"];
-	print "JWORG url for vdeo filters: " + url
-	html = jw_load.loadUrl(url)
+	url 	= jw_config.const[language]["video_path"];
+	html 	= jw_load.loadUrl(url)
 
 	regexp_video_filters = '<option data-priority.* value="([^"]+)">([^<]+)</option>'
 	filters = re.findall(regexp_video_filters, html) 
@@ -27,9 +26,19 @@ def showVideoFilter(language):
 	for video_filter in filters:
 		title = video_filter[1].replace("&amp;","&")
 		listItem = xbmcgui.ListItem( title )	
-		params = {"content_type" : "video", "mode": "open_video_page", "start" : 0, "video_filter" : video_filter[0]} 
+		params = {
+			"content_type"  : "video", 
+			"mode" 			: "open_video_page", 
+			"start" 		: 0, 
+			"video_filter"  : video_filter[0]
+		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
-		xbmcplugin.addDirectoryItem(handle=jw_config.pluginPid, url=url, listitem=listItem, isFolder=True )  
+		xbmcplugin.addDirectoryItem(
+			handle		= jw_config.pluginPid, 
+			url			= url, 
+			listitem	= listItem, 
+			isFolder	= True 
+		)  
 	
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
 
@@ -60,8 +69,8 @@ def showVideoIndex(language, start, video_filter):
 	# Output video list 
 	for title in videos:
 		listItem = xbmcgui.ListItem(
-			label=title, 
-			thumbnailImage= posters[count]
+			label 			= title, 
+			thumbnailImage 	= posters[count]
 		)
 
 		json_url = video_json[count]
@@ -82,16 +91,22 @@ def showVideoIndex(language, start, video_filter):
 
 	# Output next page link
 	try: 
-		next_start =  next_link[0][0]
-		title = jw_config.t(30001);
-		listItem = xbmcgui.ListItem(title)
-		params = {"content_type" : "video", "mode": "open_video_page", "start" : next_start, "video_filter" : video_filter} 
+		next_start 	=  next_link[0][0]
+		title 		= jw_config.t(30001);
+		listItem 	= xbmcgui.ListItem(title)
+		params 		= {
+			"content_type" : "video", 
+			"mode": "open_video_page", 
+			"start" : next_start, 
+			"video_filter" : video_filter
+		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
 		xbmcplugin.addDirectoryItem(
-			handle=jw_config.pluginPid, 
-			url=url, 
-			listitem=listItem, 
-			isFolder=True )  
+			handle 		= jw_config.pluginPid, 
+			url 		= url, 
+			listitem 	= listItem, 
+			isFolder 	= True 
+		)  
 	except:
 		pass
 
@@ -100,9 +115,6 @@ def showVideoIndex(language, start, video_filter):
 	if jw_config.skin_used == 'skin.confluence': 
 		xbmc.executebuiltin('Container.SetViewMode(500)') 
 
-
-
-	
 
 # show available resolutions for a video (ed eventually other related titles, like interviews, etc.)	
 def showVideoJsonUrl(language, json_url, thumb):
@@ -123,22 +135,26 @@ def showVideoJsonUrl(language, json_url, thumb):
 		language_code = ""
  	
 	for mp4 in json["files"][language_code]["MP4"]:
-		url = mp4["file"]["url"]
 
-		res = mp4["label"]
-		title = "[" + res + "] - " + mp4["title"]
-		title = title.replace("&quot;", '"')
+		url 	= mp4["file"]["url"]
+		res 	= mp4["label"]
+		title 	= "[" + res + "] - " + mp4["title"]
+		title 	= title.replace("&quot;", '"')
 
 		listItem = xbmcgui.ListItem(
-			label=title,
-			thumbnailImage= thumb)
-		listItem.setInfo(type='Video', infoLabels={'Title': mp4["title"] })
-
+			label 			= title,
+			thumbnailImage	= thumb
+		)
+		listItem.setInfo(
+			type 		= 'Video', 
+			infoLabels 	= {'Title': mp4["title"] }
+		)
 		xbmcplugin.addDirectoryItem(
-			handle=jw_config.pluginPid, 
-			url=url, 
-			listitem=listItem, 
-			isFolder=False )  
+			handle		= jw_config.pluginPid, 
+			url			= url, 
+			listitem	= listItem, 
+			isFolder	= False 
+		)  
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
 

@@ -15,8 +15,8 @@ import jw_load
 def showAudioTypeIndex():
 	
 	# 1. Books of the bible
-	listItem = xbmcgui.ListItem( jw_config.t(30010) )	
-	params = {
+	listItem 	= xbmcgui.ListItem( jw_config.t(30010) )	
+	params  	= {
 		"content_type"  : "audio", 
 		"mode" 			: "open_bible_index"
 	} 
@@ -30,7 +30,7 @@ def showAudioTypeIndex():
 	
 	# 2. Music and  songs
 	listItem = xbmcgui.ListItem( jw_config.t(30011) )	
-	params = {
+	params	 = {
 		"content_type"  : "audio", 
 		"mode" 			: "open_music_index", 
 		"start" 		: 0
@@ -58,8 +58,8 @@ def showAudioBibleIndex(language):
 	book_num = 0
 	for book in book_names:
 		book_num = book_num + 1
-		listItem = xbmcgui.ListItem( book_names[book_num -1] )	
-		params = {
+		listItem 	= xbmcgui.ListItem( book_names[book_num -1] )	
+		params 		= {
 			"content_type" 	: "audio", 
 			"mode" 			: "open_bible_book_index",
 			"book_num" 		: book_num
@@ -77,9 +77,10 @@ def showAudioBibleIndex(language):
 # List of chapter of a specific book, playable
 def showAudioBibleBookJson(language, book_num):
 
-	json_url = jw_config.const[language]["bible_audio_json"] + "&booknum=" + book_num
-	json = jw_load.loadJsonFromUrl(json_url)
-	lang_code = jw_config.const[language]["lang_code"]
+	json_url 	= jw_config.const[language]["bible_audio_json"] + "&booknum=" + book_num
+	json 		= jw_load.loadJsonFromUrl(json_url)
+	lang_code 	= jw_config.const[language]["lang_code"]
+	book_name 	= json["pubName"]
 
 	for mp3 in json["files"][lang_code]["MP3"]:
 
@@ -88,11 +89,11 @@ def showAudioBibleBookJson(language, book_num):
 			continue;
 
 		url = mp3["file"]["url"]
-		title = mp3["title"]
+		title = book_name + " - " + mp3["title"]
 
 		listItem = xbmcgui.ListItem(label=title)
 		listItem.setInfo(
-			type 		= 'Video', 
+			type 		= 'Music', 
 			infoLabels 	= {'Title': title }
 		)
 
