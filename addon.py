@@ -40,7 +40,9 @@ except:
     pass
 
 
-# Call router
+"""
+Call router
+"""
 if content_type == "video" and mode is None :
 	jw_video.showVideoFilter(language)
 
@@ -75,4 +77,4 @@ if content_type == "executable" and mode is None :
 
 if content_type == "executable" and mode == "open_daily_text" : 
 	date = params["date"][0]
-	jw_exec.showDailyText(date);	
+	jw_exec.showDailyText(language, date);	
