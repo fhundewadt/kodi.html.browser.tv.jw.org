@@ -8,6 +8,7 @@ import jw_config
 import jw_video
 import jw_audio_bible
 import jw_audio_music
+import jw_exec
 
 """
 START
@@ -66,5 +67,12 @@ if content_type == "audio" and mode == "open_music_index"  and start is not None
 	jw_audio_music.showMusicIndex(language, start);
 
 if content_type == "audio" and mode == "open_music_json" : 
-	json_url 	= params["json_url"][0]
+	json_url = params["json_url"][0]
 	jw_audio_music.showMusicJsonUrl(language, json_url);
+
+if content_type == "executable" and mode is None : 
+	jw_exec.showExecIndex(language);
+
+if content_type == "executable" and mode == "open_daily_text" : 
+	date = params["date"][0]
+	jw_exec.showDailyText(date);	

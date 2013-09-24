@@ -15,7 +15,8 @@ const = {
 		"bible_index_audio"	:  "http://www.jw.org/it/pubblicazioni/bibbia/nwt/libri/",
 		"bible_audio_json"  : "http://www.jw.org/apps/I_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=I",
 		'daily_text_Json'	: "http://wol.jw.org/wol/dt/r1/lp-i",
-		"music_index"		: "http://www.jw.org/it/pubblicazioni/musica-cantici/"
+		"music_index"		: "http://www.jw.org/it/pubblicazioni/musica-cantici/",
+		"date_format"		: "%d-%m-%Y",
  	},
 	"English" 	: {
 		"video_path" 		: "http://www.jw.org/en/videos",
@@ -23,7 +24,8 @@ const = {
 		"bible_index_audio"	: "http://www.jw.org/en/publications/bible/nwt/books/" ,
 		"bible_audio_json"  : "http://www.jw.org/apps/E_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=E",
 		'daily_text_Json'	: "http://wol.jw.org/wol/dt/r1/lp-e",
-		"music_index"		: "http://www.jw.org/en/publications/music-songs/"
+		"music_index"		: "http://www.jw.org/en/publications/music-songs/",
+		"date_format"		: "%Y-%m-%d",
 	},
 }
 
