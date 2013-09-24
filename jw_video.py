@@ -66,9 +66,7 @@ def showVideoIndex(language, start, video_filter):
 			thumbnailImage= posters[count]
 		)
 
-		print "JWORG title: " + title
 		json_url = video_json[count]
-		print "JWORG json_url: " + json_url
 		params = {"content_type" : "video", "mode" : "open_json_video", "json_url": json_url} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
 		xbmcplugin.addDirectoryItem(
@@ -91,6 +89,9 @@ def showVideoIndex(language, start, video_filter):
 		pass
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
+	# "Thumbnail" view
+	if jw_config.skin_used == 'skin.confluence': 
+		xbmc.executebuiltin('Container.SetViewMode(500)') 
 
 
 

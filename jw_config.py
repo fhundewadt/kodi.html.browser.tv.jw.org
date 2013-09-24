@@ -1,3 +1,4 @@
+import xbmc
 import xbmcaddon
 import sys
 import urlparse
@@ -5,6 +6,8 @@ import urlparse
 plugin_name 	= sys.argv[0]
 pluginPid   	= int(sys.argv[1])
 plugin_params 	= urlparse.parse_qs((sys.argv[2])[1:])
+skin_used 		= xbmc.getSkinDir()
+
 
 const = {
 	"Italiano" 	: {
