@@ -1,7 +1,7 @@
 0.2.0
 -----
 
-New feature
+Program Features
 + Read daily text
 
 0.1.1
@@ -23,11 +23,11 @@ Supported locale
 + English
 + You can easily switch from one locale to one other from Addon Setting context menu
 
-Audio Feature
+Audio Features
 + Listen streaming of music and songs 
 + Listen streaming of reading of the bible
 
-Video Feature
+Video Features
 + Watch video, not only film, but also from news or from articles
 + Filter videos by categories
 
