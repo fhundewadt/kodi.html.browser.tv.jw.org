@@ -6,6 +6,7 @@ Small enhancements:
 + Issue #3: Use thumbnail view as default for video
 + Issue #4: Add image to video listed when choosing format
 + Issue #5: Add title to bible reading file
++ Issue #6: Changed icon.png
 
 0.1.0
 --------
