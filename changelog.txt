@@ -1,3 +1,9 @@
+0.2.0
+-----
+
+New feature
++ Read daily text
+
 0.1.1
 -----
 
