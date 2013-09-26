@@ -56,7 +56,7 @@ def showDailyText(language, date):
 class DailiyText(xbmcgui.WindowDialog):
 
     def __init__(self):
-        if jw_config.gmulating: xbmcgui.Window.__init__(self)
+        if jw_config.emulating: xbmcgui.Window.__init__(self)
 
     def customInit(self, text):
         
@@ -98,7 +98,7 @@ class DailiyText(xbmcgui.WindowDialog):
         # Grep data
         regexp_data = "'ss'>([^<].*)</p>"
         data_list = re.findall(regexp_data, text)    
-        data = data_list[0]
+        data = data_list[0] + " [" + str(self.getWidth()) + " x " + str(self.getHeight()) + "] "
         return data.encode("utf8")
 
     def getScriptureLine(self, text):
