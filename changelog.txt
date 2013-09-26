@@ -1,3 +1,12 @@
+0.1.1
+-----
+
+Small enhancements:
++ Issue #1: Added icon to music and song list
++ Issue #3: Use thumbnail view as default for video
++ Issue #4: Add image to video listed when choosing format
++ Issue #5: Add title to bible reading file
+
 0.1.0
 --------
 First public release
