@@ -13,10 +13,11 @@ import jw_load
 
 
 # List of bible books
-def showMusicIndex(language, start):
+def showMusicIndex(start):
 	
+	language 		= jw_config.language
 	music_index_url = jw_config.const[language]["music_index"] + "?start=" + start
-	html = jw_load.loadUrl(music_index_url) 
+	html 			= jw_load.loadUrl(music_index_url) 
 	
 	# Grep compilation titles
 	regexp_music_titles = '"pubAdTitleBlock">([^<]+)<'
@@ -78,10 +79,11 @@ def showMusicIndex(language, start):
 
 
 # Track list
-def showMusicJsonUrl(language, json_url):
+def showMusicJsonUrl(json_url):
 
-	json_url = "http://www.jw.org" + json_url
-	json = jw_load.loadJsonFromUrl(json_url)
+	language 	= jw_config.language
+	json_url 	= "http://www.jw.org" + json_url
+	json 		= jw_load.loadJsonFromUrl(json_url)
 
 	language_code = jw_config.const[language]["lang_code"]
 	

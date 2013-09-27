@@ -7,7 +7,9 @@ import xbmcgui
 import xbmcplugin
 
 # List of available executable  services
-def showExecIndex(language):
+def showExecIndex():
+
+    language        = jw_config.language
 
     # 1. Dailiy Text
     now             = datetime.datetime.now()

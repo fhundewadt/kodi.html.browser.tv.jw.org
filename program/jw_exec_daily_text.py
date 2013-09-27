@@ -11,11 +11,12 @@ import jw_load
 import re
 
 # Show daily text 
-def showDailyText(language, date):
+def showDailyText(date):
 
-    json_url = jw_config.const[language]["daily_text_json"] + "/" + date
-    json = jw_load.loadJsonFromUrl(json_url)
-    text = json["items"][0]["content"]
+    language    = jw_config.language
+    json_url    = jw_config.const[language]["daily_text_json"] + "/" + date
+    json        = jw_load.loadJsonFromUrl(json_url)
+    text        = json["items"][0]["content"]
 
     dialog = DailiyText()
     dialog.customInit(text);

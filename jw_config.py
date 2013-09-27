@@ -1,15 +1,27 @@
 import xbmc
 import xbmcaddon
 import xbmcgui
+import xbmcplugin
+
 import sys
 import urlparse
 import os
+
+
+# Translation util
+def t(string_number):
+	plugin       = xbmcaddon.Addon("plugin.video.jworg")
+	return plugin.getLocalizedString(string_number)
+
 
 plugin_name 	= sys.argv[0]
 pluginPid   	= int(sys.argv[1])
 plugin_params 	= urlparse.parse_qs((sys.argv[2])[1:])
 skin_used 		= xbmc.getSkinDir()
 dir_media		= os.path.dirname(__file__) + os.sep + "resources" + os.sep + "media" + os.sep
+language     	= xbmcplugin.getSetting(pluginPid, "language")
+if language == "":
+	language = t(30009)
 
 try: emulating = xbmcgui.Emulating
 except: emulating = False
@@ -34,8 +46,3 @@ const = {
 		"date_format"		: "%Y-%m-%d",
 	},
 }
-
-# Translation util
-def t(string_number):
-	plugin       = xbmcaddon.Addon("plugin.video.jworg")
-	return plugin.getLocalizedString(string_number)

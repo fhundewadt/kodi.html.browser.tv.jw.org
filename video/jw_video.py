@@ -15,10 +15,11 @@ import jw_config
 
 
 # show available video categories
-def showVideoFilter(language):
+def showVideoFilter():
 	
-	url 	= jw_config.const[language]["video_path"];
-	html 	= jw_load.loadUrl(url)
+	language 	= jw_config.language
+	url 		= jw_config.const[language]["video_path"];
+	html 		= jw_load.loadUrl(url)
 
 	regexp_video_filters = '<option data-priority.* value="([^"]+)">([^<]+)</option>'
 	filters = re.findall(regexp_video_filters, html) 
@@ -45,10 +46,11 @@ def showVideoFilter(language):
 
 
 # show available video pages
-def showVideoIndex(language, start, video_filter):
+def showVideoIndex(start, video_filter):
 
-	url = jw_config.const[language]["video_path"] + "/?start=" + str(start) + "&videoFilter=" + video_filter
-	html = jw_load.loadUrl (url)
+	language 	= jw_config.language
+	url 		= jw_config.const[language]["video_path"] + "/?start=" + str(start) + "&videoFilter=" + video_filter
+	html 		= jw_load.loadUrl (url)
 
 	# Grep video titles
 	regexp_video_title = 'data-onpagetitle="([^"]+)"'
@@ -118,10 +120,11 @@ def showVideoIndex(language, start, video_filter):
 
 
 # show available resolutions for a video (ed eventually other related titles, like interviews, etc.)	
-def showVideoJsonUrl(language, json_url, thumb):
+def showVideoJsonUrl(json_url, thumb):
 
-	json_url = "http://www.jw.org" + json_url
-	json = jw_load.loadJsonFromUrl(json_url)
+	language 	= jw_config.language
+	json_url 	= "http://www.jw.org" + json_url
+	json 		= jw_load.loadJsonFromUrl(json_url)
 
 	if json is None :
 		string = jw_config.t(30008) + " "
