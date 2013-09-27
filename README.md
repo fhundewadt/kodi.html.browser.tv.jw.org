@@ -29,7 +29,7 @@ This addon is now part of official repository. Use the addon browser to search j
 ![Audio bible index](_screenshot/05%20-%20audio%20bible%20index.PNG)
 ![Audio bible chapters](_screenshot/06%20-%20audio%20bible%20chapters.PNG)
 ![Musics and sonds](_screenshot/07%20-%20audio%20musics%20and%20songs%20index.PNG)
-![Daily text](https://raw.github.com/realtebo/plugin.video.jworg/dev-0.2/_screenshot/08%20-%20daily%20text.PNG)
+![Daily text](screenshot/08%20-%20daily%20text.PNG)
 
 ### Bug ? Ideas ? Complains ?
 
