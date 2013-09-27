@@ -1,7 +1,7 @@
 plugin.video.jworg for XBMC
 ===========================
 
-A simple plugin to enjoy audio, music, and other contents from official Jehova's Witnesses website (http://www.jw.org). 
+A simple plugin to enjoy audio, music, and other contents from official Jehovah's Witnesses website (http://www.jw.org). 
 
 ### Lanaguage support
 
