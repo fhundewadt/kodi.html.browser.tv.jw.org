@@ -5,12 +5,15 @@
 import xbmcplugin
 
 import jw_config
-import jw_video
-import jw_audio_index
-import jw_audio_bible
-import jw_audio_music
-import jw_exec_index
-import jw_exec_daily_text
+
+from video import jw_video
+
+from audio import jw_audio_index
+from audio import jw_audio_bible
+from audio import jw_audio_music
+
+from program import jw_exec_index
+from program import jw_exec_daily_text
 
 """
 START
