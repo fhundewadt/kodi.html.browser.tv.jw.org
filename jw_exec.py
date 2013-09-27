@@ -43,9 +43,9 @@ def showExecIndex(language):
 def showDailyText(language, date):
 
     json_url = jw_config.const[language]["daily_text_json"] + "/" + date
-    print "JWORG json_url: " + json_url
     json = jw_load.loadJsonFromUrl(json_url)
     text = json["items"][0]["content"]
+    print text.encode("utf8")
 
     dialog = DailiyText()
     dialog.customInit(text);
@@ -68,7 +68,7 @@ class DailiyText(xbmcgui.WindowDialog):
 
         # width is always 1280, height is always 720.
         # getWidth() and getHeight() instead read the REAL screen resolution
-        self.ctrlData= xbmcgui.ControlTextBox(
+        self.ctrlDate= xbmcgui.ControlTextBox(
             border, 0, 
             1280 - border *2, 30, 
             'font24_title', "0xFF0000FF"
@@ -90,50 +90,47 @@ class DailiyText(xbmcgui.WindowDialog):
         self.ctrlBackgound = xbmcgui.ControlImage(0,0, 1280, 720, bg_image)
         
         self.addControl (self.ctrlBackgound)
-        self.addControl (self.ctrlData)
+        self.addControl (self.ctrlDate)
         self.addControl (self.ctrlScripture)
         self.addControl (self.ctrlComment)
 
-        self.ctrlData.setText( self.getFirstLine(text) );
+        self.ctrlDate.setText( self.getDateLine(text) );
         self.ctrlScripture.setText( self.getScriptureLine(text) );
         self.ctrlComment.setText( self.getComment(text) );
 
     def onAction(self, action):
         self.close()
 
-    def getFirstLine(self, text):
+    # Grep today's textual date
+    def getDateLine(self, text):
 
-        # Grep data
-        regexp_data = "'ss'>([^<].*)</p>"
-        data_list = re.findall(regexp_data, text)    
-        data = data_list[0] + " [" + str(self.getWidth()) + " x " + str(self.getHeight()) + "] "
-        return data.encode("utf8")
+        regexp_date = "'ss'>([^<].*)</p>"
+        date_list = re.findall(regexp_date, text)    
+        date = date_list[0] + " [" + str(self.getWidth()) + " x " + str(self.getHeight()) + "] "
+        return date.encode("utf8")
 
+    # Grep holy scripture ref
     def getScriptureLine(self, text):
-
-        # Grep data
-        regexp_level_0 = "'sa'><i>(.*)\(</i>"
-        level_0_list = re.findall(regexp_level_0, text)    
-        if level_0_list == []:
+       
+        regexp_scripture = "'sa'>(.*)</div>"
+        scripture_list = re.findall(regexp_scripture, text)    
+        if scripture_list == []:
             return ""
-        level_0 = level_0_list[0]
 
-        regexp_level_1 = "<a.*<i>(.*)</i></a><i>"
-        level_1_list = re.findall(regexp_level_1, text)    
-        if level_1_list == []:
-            level_1 = ""
-        level_1 = level_1_list[0]
+        scripture = scripture_list[0]
+        scripture = re.sub("<([^>]*)>", "", scripture)    
 
-        return level_0.encode("utf8")  + " - " + level_1.encode("utf8")
+        return scripture.encode("utf8") 
 
+    # Grep comment 
     def getComment(self, text):
 
         regexp_full_comment = "'sb'>(.*)"
         full_comment_list = re.findall(regexp_full_comment, text)
         if full_comment_list == []:
             return ""
-        full_comment = full_comment_list[0]
 
-        full_comment = re.sub("<([^>]*)>", " ", full_comment)
+        full_comment = full_comment_list[0]
+        full_comment = re.sub("<([^>]*)>", "", full_comment)
 
         return  full_comment.encode("utf8")
