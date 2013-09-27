@@ -2,7 +2,7 @@
 -----
 
 Program Features
-+ Read daily text
++ Read daily text [Issue #2]
 
 0.1.1
 -----

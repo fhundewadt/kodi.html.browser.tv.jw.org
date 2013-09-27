@@ -29,7 +29,7 @@ const = {
 		"lang_code"			: "E",
 		"bible_index_audio"	: "http://www.jw.org/en/publications/bible/nwt/books/" ,
 		"bible_audio_json"  : "http://www.jw.org/apps/E_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=E",
-		'daily_text_json'	: "http://wol.jw.org/wol/dt/r6/lp-e",
+		'daily_text_json'	: "http://wol.jw.org/wol/dt/r1/lp-e",
 		"music_index"		: "http://www.jw.org/en/publications/music-songs/",
 		"date_format"		: "%Y-%m-%d",
 	},

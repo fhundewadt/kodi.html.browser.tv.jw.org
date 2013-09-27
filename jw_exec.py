@@ -43,6 +43,7 @@ def showExecIndex(language):
 def showDailyText(language, date):
 
     json_url = jw_config.const[language]["daily_text_json"] + "/" + date
+    print "JWORG json_url: " + json_url
     json = jw_load.loadJsonFromUrl(json_url)
     text = json["items"][0]["content"]
 
@@ -51,6 +52,7 @@ def showDailyText(language, date):
     dialog.doModal();
     del dialog
     xbmc.executebuiltin('Action("back")')
+
 
 # Window showing daily text
 class DailiyText(xbmcgui.WindowDialog):
@@ -62,7 +64,7 @@ class DailiyText(xbmcgui.WindowDialog):
         
         width = self.getWidth()
         height = self.getHeight()
-        border = 50; # px realtive to 1280/720 fixed grid resolution
+        border = 50; # px relative to 1280/720 fixed grid resolution
 
         # width is always 1280, height is always 720.
         # getWidth() and getHeight() instead read the REAL screen resolution
@@ -76,7 +78,7 @@ class DailiyText(xbmcgui.WindowDialog):
             1280 - border *2, 100, 
             'font24_title', "0xFF000000"
         )
-        self.ctrlText= xbmcgui.ControlTextBox(
+        self.ctrlComment= xbmcgui.ControlTextBox(
             border, 150, 
             1280 - border *2, 720 - 150, 
             'font13', "0xFF000000"
@@ -87,14 +89,14 @@ class DailiyText(xbmcgui.WindowDialog):
 
         self.ctrlBackgound = xbmcgui.ControlImage(0,0, 1280, 720, bg_image)
         
-        self.addControl(self.ctrlBackgound)
+        self.addControl (self.ctrlBackgound)
         self.addControl (self.ctrlData)
         self.addControl (self.ctrlScripture)
-        self.addControl (self.ctrlText)
+        self.addControl (self.ctrlComment)
 
         self.ctrlData.setText( self.getFirstLine(text) );
         self.ctrlScripture.setText( self.getScriptureLine(text) );
-        self.ctrlText.setText( self.getComment(text) );
+        self.ctrlComment.setText( self.getComment(text) );
 
     def onAction(self, action):
         self.close()
