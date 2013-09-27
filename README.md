@@ -10,8 +10,10 @@ A simple plugin to enjoy audio, music, and other contents from official Jehovah'
 
 ### Disclaimer
 
-This plugin don't break any copyright, because it's simply a different kind of browser. Contents are simply read 
-and then server to user, like your Firefox, Safari or mobile Browser.
+This plugin don't break any copyright, because it's simply a different kind of browser. 
+Contents are read from web pages, 
+and then served to user, like your Firefox, Safari or mobile Browser.
+Only exception is background image: it cannot be dinamically loaded, so it's cached.
 
 ### Install: 
 
