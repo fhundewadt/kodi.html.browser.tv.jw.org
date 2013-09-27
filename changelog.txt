@@ -4,6 +4,9 @@
 Program Features
 + Read daily text [Issue #2]
 
+Code
++ Issue #7: Separated audio index function from audio bible functions
+
 0.1.1
 -----
 

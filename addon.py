@@ -6,6 +6,7 @@ import xbmcplugin
 
 import jw_config
 import jw_video
+import jw_audio_index
 import jw_audio_bible
 import jw_audio_music
 import jw_exec
@@ -56,7 +57,7 @@ if content_type == "video" and mode == "open_json_video":
 	jw_video.showVideoJsonUrl(language, json_url, thumb)
 
 if content_type == "audio" and mode is None :
-	jw_audio_bible.showAudioTypeIndex()
+	jw_audio_index.showAudioTypeIndex()
 
 if content_type == "audio" and mode == "open_bible_index" :
 	jw_audio_bible.showAudioBibleIndex(language)
