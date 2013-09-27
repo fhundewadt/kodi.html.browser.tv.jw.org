@@ -16,6 +16,9 @@ Code
 + Issue #7: Separated audio index function from audio bible functions
 + Packaged 
 
+Plugin 
++ Added some require field to addon.xml
+
 0.1.0
 --------
 First public release
