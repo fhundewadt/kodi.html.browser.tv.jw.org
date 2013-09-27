@@ -62,24 +62,30 @@ class DailiyText(xbmcgui.WindowDialog):
         
         width = self.getWidth()
         height = self.getHeight()
+        border = 50; # px realtive to 1280/720 fixed grid resolution
 
+        # width is always 1280, height is always 720.
+        # getWidth() and getHeight() instead read the REAL screen resolution
         self.ctrlData= xbmcgui.ControlTextBox(
-            50 ,0, 
-            width - 100, 30, 
+            border, 0, 
+            1280 - border *2, 30, 
             'font24_title', "0xFF0000FF"
         )
         self.ctrlScripture= xbmcgui.ControlTextBox(
-            50 ,40, 
-            width - 100, 100, 
+            border, 40, 
+            1280 - border *2, 100, 
             'font24_title', "0xFF000000"
         )
         self.ctrlText= xbmcgui.ControlTextBox(
-            50,150, 
-            width - 100, height - 150, 
+            border, 150, 
+            1280 - border *2, 720 - 150, 
             'font13', "0xFF000000"
         )
         bg_image = jw_config.dir_media + "blank.png"
-        self.ctrlBackgound = xbmcgui.ControlImage(0,0, width, height, bg_image)
+
+        print "JWORG MEDIA_DIR " + bg_image
+
+        self.ctrlBackgound = xbmcgui.ControlImage(0,0, 1280, 720, bg_image)
         
         self.addControl(self.ctrlBackgound)
         self.addControl (self.ctrlData)
