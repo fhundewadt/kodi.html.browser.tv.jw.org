@@ -76,7 +76,8 @@ def showMusicIndex(start):
 		pass
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
-
+	if jw_config.skin_used == 'skin.confluence': 
+		xbmc.executebuiltin('Container.SetViewMode(500)') 
 
 # Track list
 def showMusicJsonUrl(json_url):
