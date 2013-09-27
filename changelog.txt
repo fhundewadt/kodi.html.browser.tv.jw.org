@@ -14,6 +14,7 @@ Small enhancements:
 
 Code
 + Issue #7: Separated audio index function from audio bible functions
++ Packaged 
 
 0.1.0
 --------
