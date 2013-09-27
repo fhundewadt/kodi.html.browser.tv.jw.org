@@ -4,9 +4,6 @@
 Program Features
 + Read daily text [Issue #2]
 
-Code
-+ Issue #7: Separated audio index function from audio bible functions
-
 Small enhancements:
 + Issue #1: Added icon to music and song list
 + Issue #3: Use thumbnail view as default for video index
@@ -14,6 +11,9 @@ Small enhancements:
 + Issue #4: Add image to video listed when choosing format
 + Issue #5: Add title to bible reading file
 + Issue #6: Changed icon.png
+
+Code
++ Issue #7: Separated audio index function from audio bible functions
 
 0.1.0
 --------
