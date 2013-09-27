@@ -45,7 +45,6 @@ def showDailyText(language, date):
     json_url = jw_config.const[language]["daily_text_json"] + "/" + date
     json = jw_load.loadJsonFromUrl(json_url)
     text = json["items"][0]["content"]
-    print text.encode("utf8")
 
     dialog = DailiyText()
     dialog.customInit(text);
@@ -70,22 +69,20 @@ class DailiyText(xbmcgui.WindowDialog):
         # getWidth() and getHeight() instead read the REAL screen resolution
         self.ctrlDate= xbmcgui.ControlTextBox(
             border, 0, 
-            1280 - border *2, 30, 
-            'font24_title', "0xFF0000FF"
+            1280 - border *2, 60, 
+            'font35_title', "0xFF0000FF"
         )
         self.ctrlScripture= xbmcgui.ControlTextBox(
-            border, 40, 
+            border, 60, 
             1280 - border *2, 100, 
-            'font24_title', "0xFF000000"
+            'font35_title', "0xFF000000"
         )
         self.ctrlComment= xbmcgui.ControlTextBox(
-            border, 150, 
-            1280 - border *2, 720 - 150, 
-            'font13', "0xFF000000"
+            border, 200, 
+            1280 - border *2, 720 - 200, 
+            'font30', "0xFF000000"
         )
         bg_image = jw_config.dir_media + "blank.png"
-
-        print "JWORG MEDIA_DIR " + bg_image
 
         self.ctrlBackgound = xbmcgui.ControlImage(0,0, 1280, 720, bg_image)
         
