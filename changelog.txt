@@ -1,7 +1,10 @@
 0.2.0
 -----
 
-Program Features
+New audio Feature
++ Listen to audio dramas
+
+New program Features
 + Read daily text [Issue #2]
 
 Small enhancements:
