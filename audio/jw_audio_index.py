@@ -36,5 +36,21 @@ def showAudioTypeIndex():
         listitem    = listItem, 
         isFolder    = True 
     )  
+
+    # 2. Bible dramas
+    listItem = xbmcgui.ListItem( jw_config.t(30013) )   
+    params   = {
+        "content_type"  : "audio", 
+        "mode"          : "open_drama_index", 
+        "start"         : 0
+    } 
+    url = jw_config.plugin_name + '?' + urllib.urlencode(params)
+    xbmcplugin.addDirectoryItem(
+        handle      = jw_config.pluginPid, 
+        url         = url, 
+        listitem    = listItem, 
+        isFolder    = True 
+    )  
+    
     
     xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)

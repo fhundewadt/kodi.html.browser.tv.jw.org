@@ -1,46 +1,47 @@
 """
-AUDIO BIBLE RELATED FUNCTION
+AUDIO DRAMAS RELATED FUNCTION
 """
-import xbmc
-import xbmcgui
-import xbmcplugin
-
-import urllib
-import re
 
 import jw_config
 import jw_load
 
+import re
+import urllib
 
-# List of bible books
-def showMusicIndex(start):
+import xbmcgui
+import xbmcplugin
+import xbmc
+
+
+# List of DRAMAS
+def showDramaIndex(start):
 	
 	language 		= jw_config.language
-	music_index_url = jw_config.const[language]["music_index"] + "?start=" + start
+	music_index_url = jw_config.const[language]["dramas_index"] + "?start=" + start
 	html 			= jw_load.loadUrl(music_index_url) 
 	
-	# Grep compilation titles
-	regexp_music_titles = '"pubAdTitleBlock">([^<]+)<'
-	music_titles = re.findall(regexp_music_titles, html)  	
+	# Grep drama titles
+	regexp_dramas_titles = '"pubAdTitleBlock">([^<]+)<'
+	drama_titles = re.findall(regexp_dramas_titles, html)  	
+	
+	# Grep drama json
+	regexp_drama_json = 'class="jsDownload" data-jsonurl="([^"]+MP3[^"]+)".*'
+	drama_json = re.findall(regexp_drama_json, html)
 
-	# Grep music json
-	regexp_music_json = 'class="jsDownload" data-jsonurl="([^"]+MP3[^"]+)".*'
-	music_json = re.findall(regexp_music_json, html)
-
-	# Grep compilation image - [A-Z]+ discards ".prd_md" duplicated images
-	regexp_music_thumb = 'data-img-size-md=["\']([^"\']+[A-Z]+_md\.jpg)["\']'
-	music_thumb = re.findall(regexp_music_thumb, html)
+	# Grep drama  image - [^\'.]+ discards ".prd_md" duplicated images
+	regexp_drama_thumb = 'data-img-size-md=\'(http://assets.jw.org/assets/[^\'.]+_md\.jpg)\''
+	drama_thumb = re.findall(regexp_drama_thumb, html)
 
 	book_num = 0
-	for book in music_titles:
+	for book in drama_titles:
 		listItem = xbmcgui.ListItem(
-			label 			= music_titles[book_num], 
-			thumbnailImage  = music_thumb[book_num]
+			label 			= drama_titles[book_num],
+			thumbnailImage  = drama_thumb[book_num]
 		)	
 		params = {
 			"content_type"  : "audio", 
-			"mode" 			: "open_music_json", 
-			"json_url" 		: music_json[book_num] 
+			"mode" 			: "open_drama_json",
+			"json_url" 		: drama_json[book_num] 
 		}
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)	
 		xbmcplugin.addDirectoryItem(
@@ -62,7 +63,7 @@ def showMusicIndex(start):
 		listItem 	= xbmcgui.ListItem(title)
 		params 		= {
 			"content_type" 	: "audio", 
-			"mode" 			: "open_music_index", 
+			"mode" 			: "open_drama_index", 
 			"start" 		: next_start 
 		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
@@ -79,18 +80,19 @@ def showMusicIndex(start):
 	if jw_config.skin_used == 'skin.confluence': 
 		xbmc.executebuiltin('Container.SetViewMode(500)') 
 
+
 # Track list
-def showMusicJson(json_url):
+def showDramaJson(json_url):
 
-	language 	= jw_config.language
-	json_url 	= "http://www.jw.org" + json_url
-	json 		= jw_load.loadJsonFromUrl(json_url)
-
-	language_code = jw_config.const[language]["lang_code"]
+	language 		= jw_config.language
+	language_code 	= jw_config.const[language]["lang_code"]
+	json_url 		= "http://www.jw.org" + json_url
+	json 			= jw_load.loadJsonFromUrl(json_url)
 	
 	for mp3 in json["files"][language_code]["MP3"]:
 		url 	= mp3["file"]["url"]
 		title 	= mp3["title"]
+		title 	= title.replace("&#039;", "'")
 
 		# Skip 'zip' files
 		if mp3["mimetype"] != "audio/mpeg":

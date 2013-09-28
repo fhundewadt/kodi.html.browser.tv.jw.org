@@ -11,6 +11,7 @@ from video import jw_video
 from audio import jw_audio_index
 from audio import jw_audio_bible
 from audio import jw_audio_music
+from audio import jw_audio_dramas
 
 from program import jw_exec_index
 from program import jw_exec_daily_text
@@ -55,6 +56,8 @@ if content_type == "video" and mode == "open_json_video":
 	thumb 		= params["thumb"][0]
 	jw_video.showVideoJsonUrl(json_url, thumb)
 
+
+
 if content_type == "audio" and mode is None :
 	jw_audio_index.showAudioTypeIndex()
 
@@ -70,7 +73,16 @@ if content_type == "audio" and mode == "open_music_index"  and start is not None
 
 if content_type == "audio" and mode == "open_music_json" : 
 	json_url = params["json_url"][0]
-	jw_audio_music.showMusicJsonUrl(json_url);
+	jw_audio_music.showMusicJson(json_url);
+
+if content_type == "audio" and mode == "open_drama_index"  and start is not None: 
+	jw_audio_dramas.showDramaIndex( start);
+
+if content_type == "audio" and mode == "open_drama_json" : 
+	json_url = params["json_url"][0]
+	jw_audio_dramas.showDramaJson(json_url);
+
+
 
 if content_type == "executable" and mode is None : 
 	jw_exec_index.showExecIndex();

@@ -34,6 +34,7 @@ const = {
 		"bible_audio_json"  : "http://www.jw.org/apps/I_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=I",
 		'daily_text_json'	: "http://wol.jw.org/wol/dt/r6/lp-i",
 		"music_index"		: "http://www.jw.org/it/pubblicazioni/musica-cantici/",
+		"dramas_index"		: "http://www.jw.org/it/pubblicazioni/drammi-biblici-audio/",
 		"date_format"		: "%d-%m-%Y",
  	},
 	"English" 	: {
@@ -43,6 +44,7 @@ const = {
 		"bible_audio_json"  : "http://www.jw.org/apps/E_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=E",
 		'daily_text_json'	: "http://wol.jw.org/wol/dt/r1/lp-e",
 		"music_index"		: "http://www.jw.org/en/publications/music-songs/",
+		"dramas_index"		: "http://www.jw.org/en/publications/audio-bible-dramas/",
 		"date_format"		: "%Y-%m-%d",
 	},
 }
