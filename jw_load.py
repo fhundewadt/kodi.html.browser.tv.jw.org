@@ -12,17 +12,16 @@ def loadUrl (url):
 	return html	
 
 def loadNotCachedJsonFromUrl(url):
-	response = urllib2.urlopen(url)
-	data = json.load(response)
-
-def loadJsonFromUrl (url):
 	data = None
 	try:
-		# data = jw_config.cache.cacheFunction(loadNotCachedJsonFromUrl, url)	
 		response = urllib2.urlopen(url)
 		data = json.load(response)
 	except:
 		pass
+	return data
+
+def loadJsonFromUrl (url):
+	data = jw_config.cache.cacheFunction(loadNotCachedJsonFromUrl, url)	
 	return data
 
 

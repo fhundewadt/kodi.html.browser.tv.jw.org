@@ -20,7 +20,7 @@ Code
 + Packaged 
 
 Plugin 
-+ Added some require field to addon.xml
++ Added some required field to addon.xml
 
 0.1.0
 --------
