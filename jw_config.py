@@ -23,8 +23,20 @@ language     	= xbmcplugin.getSetting(pluginPid, "language")
 if language == "":
 	language = t(30009)
 
-try: emulating = xbmcgui.Emulating
-except: emulating = False
+try: 
+	emulating = xbmcgui.Emulating
+except: 
+	emulating = False
+
+
+
+try:
+	import StorageServer
+except:
+	import storageserverdummy as StorageServer
+	 
+cache = StorageServer.StorageServer(plugin_name, 1)
+
 
 const = {
 	"Italiano" 	: {
