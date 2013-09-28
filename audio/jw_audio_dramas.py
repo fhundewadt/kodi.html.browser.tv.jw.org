@@ -101,7 +101,7 @@ def showDramaJson(json_url):
 		listItem = xbmcgui.ListItem(label=title)
 		listItem.setInfo(
 			type 		= 'Music', 
-			infoLabels  = {'Title': mp3["title"] }
+			infoLabels  = {'Title': title }
 		)
 
 		xbmcplugin.addDirectoryItem(

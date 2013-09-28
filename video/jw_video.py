@@ -142,8 +142,8 @@ def showVideoJsonUrl(json_url, thumb):
 
 		url 	= mp4["file"]["url"]
 		res 	= mp4["label"]
-		title 	= "[" + res + "] - " + mp4["title"]
-		title 	= title.replace("&quot;", '"')
+		mp4_title_cleaned = mp4["title"].replace("&quot;", '"')
+		title 	= "[" + res + "] - " + mp4_title_cleaned
 
 		listItem = xbmcgui.ListItem(
 			label 			= title,
@@ -151,7 +151,7 @@ def showVideoJsonUrl(json_url, thumb):
 		)
 		listItem.setInfo(
 			type 		= 'Video', 
-			infoLabels 	= {'Title': mp4["title"] }
+			infoLabels 	= {'Title': mp4_title_cleaned}
 		)
 		xbmcplugin.addDirectoryItem(
 			handle		= jw_config.pluginPid, 
