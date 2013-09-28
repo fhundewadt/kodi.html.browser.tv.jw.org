@@ -31,7 +31,7 @@ and the use the function "Install from zip file" from system -> setting -> addon
 ![Audio index](/_screenshot/04%20-%20audio%20index.PNG)
 ![Audio bible chapters](_screenshot/06%20-%20audio%20bible%20chapters.PNG)
 ![Musics and sonds](_screenshot/07%20-%20audio%20musics%20and%20songs%20index.PNG)
-![Dramas]()
+![Dramas](_screenshot/09%20-%20audio%20dramas%20index.PNG)
 ![Daily text](_screenshot/08%20-%20daily%20text.PNG)
 
 ### Bug ? Ideas ? Complains ?
