@@ -55,34 +55,3 @@ def showMusicIndex(start):
 	jw_common.setThumbnailView()
 
 
-# Track list
-def showMusicJson(json_url):
-
-	language 	= jw_config.language
-	json_url 	= "http://www.jw.org" + json_url
-	json 		= jw_common.loadJsonFromUrl(json_url)
-
-	language_code = jw_config.const[language]["lang_code"]
-	
-	for mp3 in json["files"][language_code]["MP3"]:
-		url 	= mp3["file"]["url"]
-		title 	= mp3["title"]
-
-		# Skip 'zip' files
-		if mp3["mimetype"] != "audio/mpeg":
-			continue;
-
-		listItem = xbmcgui.ListItem(label=title)
-		listItem.setInfo(
-			type 		= 'Music', 
-			infoLabels  = {'Title': mp3["title"] }
-		)
-
-		xbmcplugin.addDirectoryItem(
-			handle 		= jw_config.pluginPid, 
-			url 		= url, 
-			listitem 	= listItem, 
-			isFolder 	= False
-		)  
-
-	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)

@@ -37,7 +37,7 @@ const = {
 	"Italiano" 	: {
 		"video_path" 				: "http://www.jw.org/it/video",
 		"lang_code"					: "I",
-		"bible_index_audio"			:  "http://www.jw.org/it/pubblicazioni/bibbia/nwt/libri/",
+		"bible_index_audio"			: "http://www.jw.org/it/pubblicazioni/bibbia/nwt/libri/",
 		"bible_audio_json"  		: "http://www.jw.org/apps/I_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=I",
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r6/lp-i",
 		"music_index"				: "http://www.jw.org/it/pubblicazioni/musica-cantici/",

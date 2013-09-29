@@ -8,7 +8,7 @@ import jw_config
 
 from video import jw_video
 
-from audio import jw_audio_index
+from audio import jw_audio
 from audio import jw_audio_bible
 from audio import jw_audio_music
 from audio import jw_audio_drama
@@ -52,7 +52,7 @@ if content_type == "video" :
 
 if content_type == "audio" :
 	if mode is None :
-		jw_audio_index.showAudioTypeIndex()
+		jw_audio.showAudioIndex()
 
 	if mode == "open_bible_index" :
 		jw_audio_bible.showAudioBibleIndex()
@@ -67,7 +67,7 @@ if content_type == "audio" :
 
 	if mode == "open_music_json" : 
 		json_url = params["json_url"][0]
-		jw_audio_music.showMusicJson(json_url);
+		jw_audio.showAudioJson(json_url);
 
 	if mode == "open_drama_index" :
 		start = params["start"][0]
@@ -75,7 +75,7 @@ if content_type == "audio" :
 
 	if mode == "open_drama_json" : 
 		json_url = params["json_url"][0]
-		jw_audio_drama.showDramaJson(json_url);
+		jw_audio.showAudioJson(json_url);
 
 	if mode == "open_dramatic_reading_index": 
 		start = params["start"][0]
@@ -83,7 +83,7 @@ if content_type == "audio" :
 
 	if mode == "open_dramatic_reading_json" : 
 		json_url = params["json_url"][0]
-		jw_audio_dramatic_reading.showDramaticReadingJson(json_url);
+		jw_audio.showAudioJson(json_url);
 
 
 if content_type == "executable" :
