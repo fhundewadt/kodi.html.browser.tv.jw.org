@@ -33,6 +33,7 @@ and the use the function "Install from zip file" from system -> setting -> addon
 ![Musics and sonds](_screenshot/07%20-%20audio%20musics%20and%20songs%20index.PNG)
 ![Dramas](_screenshot/09%20-%20audio%20dramas%20index.PNG)
 ![Daily text](_screenshot/08%20-%20daily%20text.PNG)
+![Settings](/_screenshot/10%20-%20settings.PNG)
 
 ### Bug ? Ideas ? Complains ?
 
