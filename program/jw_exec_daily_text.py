@@ -46,7 +46,7 @@ class DailiyText(xbmcgui.WindowDialog):
         )
         self.ctrlScripture= xbmcgui.ControlTextBox(
             border, 60, 
-            1280 - border *2, 100, 
+            1280 - border *2, 140, # Not down 140 !
             'font35_title', "0xFF000000"
         )
         self.ctrlComment= xbmcgui.ControlTextBox(

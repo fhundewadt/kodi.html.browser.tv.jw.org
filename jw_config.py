@@ -35,7 +35,7 @@ try:
 except:
 	import storageserverdummy as StorageServer
 	 
-cache = StorageServer.StorageServer(plugin_name, 1)
+cache = StorageServer.StorageServer(plugin_name, 2)  # 2 hour cache
 
 
 const = {
