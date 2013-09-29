@@ -15,7 +15,7 @@ import xbmcgui
 def showDramaticReadingIndex(start):
 	
 	language 			= jw_config.language
-	reading_index_url 	= jw_config.const[language]["dramatic_reading_index"] + "?start=" + start
+	reading_index_url 	= jw_config.const[language]["dramatic_reading_index"] + "?start=" + start  + "&sortBy=" + jw_config.audio_sorting
 	html 				= jw_common.loadUrl(reading_index_url) 
 	
 	# Grep reading titles

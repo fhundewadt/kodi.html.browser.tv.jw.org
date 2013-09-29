@@ -16,7 +16,7 @@ import xbmcplugin
 def showDramaIndex(start):
 	
 	language 		= jw_config.language
-	drama_index_url = jw_config.const[language]["dramas_index"] + "?start=" + start
+	drama_index_url = jw_config.const[language]["dramas_index"] + "?start=" + start + "&sortBy=" + jw_config.audio_sorting
 	html 			= jw_common.loadUrl(drama_index_url) 
 	
 	# Grep drama titles

@@ -8,6 +8,9 @@ New audio Feature
 New program Features
 + Read daily text [Issue #2]
 
+New settings
++ You can choose different sorting options for audio (musics, dramas and dramatic readings) and video file
+
 Small enhancements:
 + Issue #1: Added icon to music and song list
 + Issue #3: Use thumbnail view as default for video index

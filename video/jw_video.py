@@ -17,7 +17,7 @@ import jw_config
 def showVideoFilter():
 	
 	language 	= jw_config.language
-	url 		= jw_config.const[language]["video_path"];
+	url 		= jw_config.const[language]["video_path"] 
 	html 		= jw_common.loadUrl(url)
 
 	regexp_video_filters = '<option data-priority.* value="([^"]+)">([^<]+)</option>'
@@ -48,7 +48,7 @@ def showVideoFilter():
 def showVideoIndex(start, video_filter):
 
 	language 	= jw_config.language
-	url 		= jw_config.const[language]["video_path"] + "/?start=" + str(start) + "&videoFilter=" + video_filter
+	url 		= jw_config.const[language]["video_path"] + "/?start=" + str(start) + "&videoFilter=" + video_filter  + "&sortBy=" + jw_config.video_sorting
 	html 		= jw_common.loadUrl (url)
 
 	# Grep video titles

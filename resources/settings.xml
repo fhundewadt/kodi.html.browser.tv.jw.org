@@ -4,4 +4,10 @@
   <category label="30005">
     <setting id="language" type="labelenum" label="30002" lvalues="30003|30004"  />
   </category>
+
+  <category label="30019">
+  	<setting id="video_sorting" type="enum" label="30020" lvalues="30016|30017" default="0" />
+  	<setting id="audio_sorting" type="enum" label="30015" lvalues="30016|30017|30018" default="2" />
+  </category>
+
 </settings>

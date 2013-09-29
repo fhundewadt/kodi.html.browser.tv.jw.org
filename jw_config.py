@@ -6,6 +6,9 @@ import sys
 import urlparse
 import os
 
+import jw_common
+
+
 plugin_name 	= sys.argv[0]
 pluginPid   	= int(sys.argv[1])
 plugin_params 	= urlparse.parse_qs((sys.argv[2])[1:])
@@ -13,21 +16,21 @@ skin_used 		= xbmc.getSkinDir()
 dir_media		= os.path.dirname(__file__) + os.sep + "resources" + os.sep + "media" + os.sep
 language     	= xbmcplugin.getSetting(pluginPid, "language")
 if language == "":
-	language = t(30009)
+	language = jw_common.t(30009)
 
 try: 
 	emulating = xbmcgui.Emulating
 except: 
 	emulating = False
 
-
-
 try:
 	import StorageServer
 except:
 	import storageserverdummy as StorageServer
 	 
-cache = StorageServer.StorageServer(plugin_name, 2)  # 2 hour cache
+cache 			= StorageServer.StorageServer(plugin_name, 2)  # 2 hour cache
+audio_sorting 	= str(int(xbmcplugin.getSetting(pluginPid, "audio_sorting")) + 1)
+video_sorting 	= str(int(xbmcplugin.getSetting(pluginPid, "video_sorting")) + 1)
 
 
 const = {
@@ -54,3 +57,6 @@ const = {
 		"date_format"				: "%Y-%m-%d",
 	},
 }
+
+
+
