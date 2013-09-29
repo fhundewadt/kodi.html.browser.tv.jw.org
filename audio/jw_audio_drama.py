@@ -10,7 +10,6 @@ import urllib
 
 import xbmcgui
 import xbmcplugin
-import xbmc
 
 
 # List of dramas
@@ -55,8 +54,7 @@ def showDramaIndex(start):
 	jw_common.setNextPageLink(html, "open_drama_index", "audio")
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
-	if jw_config.skin_used == 'skin.confluence': 
-		xbmc.executebuiltin('Container.SetViewMode(500)') 
+	jw_common.setThumbnailView()
 
 
 # Track list

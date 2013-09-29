@@ -5,6 +5,7 @@ import json
 
 import jw_config
 
+import xbmc
 import xbmcgui
 import xbmcplugin
 import xbmcaddon
@@ -24,6 +25,9 @@ def cleanUpText(text):
 	return text
 
 
+"""
+VISUAL HELPER
+"""
 # Grep "NEXT" link and add to current directory
 # param_name and param_value is used to pass addition param when adding directory item
 def setNextPageLink(html, mode, type, param_name = None, param_value = None):
@@ -54,6 +58,10 @@ def setNextPageLink(html, mode, type, param_name = None, param_value = None):
 		listitem	= listItem, 
 		isFolder	= True 
 	)  
+
+def setThumbnailView() :
+	if jw_config.skin_used == 'skin.confluence': 
+		xbmc.executebuiltin('Container.SetViewMode(500)') 
 
 """
 REMOTE CONTENT LOAD 

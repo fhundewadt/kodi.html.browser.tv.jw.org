@@ -9,7 +9,6 @@ import urllib
 
 import xbmcplugin
 import xbmcgui
-import xbmc
 
 
 # List of reading
@@ -54,8 +53,7 @@ def showDramaticReadingIndex(start):
 	jw_common.setNextPageLink(html, "open_dramatic_reading_index", "audio")
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
-	if jw_config.skin_used == 'skin.confluence': 
-		xbmc.executebuiltin('Container.SetViewMode(500)') 
+	jw_common.setThumbnailView()
 
 
 # Track list

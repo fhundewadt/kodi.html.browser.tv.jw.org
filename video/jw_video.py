@@ -3,7 +3,6 @@
 VIDEO RELATED FUNCTIONS
 """
 
-import xbmc
 import xbmcplugin
 import xbmcgui
 
@@ -91,9 +90,7 @@ def showVideoIndex(start, video_filter):
 	jw_common.setNextPageLink(html, "open_video_index", "video", "video_filter", video_filter)
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
-	# "Thumbnail" view 
-	if jw_config.skin_used == 'skin.confluence': 
-		xbmc.executebuiltin('Container.SetViewMode(500)') 
+	jw_common.setThumbnailView()
 
 
 # show available resolutions for a video (ed eventually other related titles, like interviews, etc.)	
