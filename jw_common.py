@@ -61,5 +61,9 @@ def loadJsonFromUrl (url):
 	return data
 
 
-
-
+def cleanUpText(text):
+	text = text.replace("&amp;","&")
+	text = text.replace("&#039;", "'")
+	text = text.replace("&quot;", '"')
+	text = text.replace("&nbsp;", ' ')
+	return text

@@ -26,7 +26,7 @@ def showVideoFilter():
 
 	# Output video filter list
 	for video_filter in filters:
-		title = video_filter[1].replace("&amp;","&")
+		title = jw_common.cleanUpText( video_filter[1] ) 
 		listItem = xbmcgui.ListItem( title )	
 		params = {
 			"content_type"  : "video", 
@@ -117,10 +117,10 @@ def showVideoJsonUrl(json_url, thumb):
  	
 	for mp4 in json["files"][language_code]["MP4"]:
 
-		url 	= mp4["file"]["url"]
-		res 	= mp4["label"]
-		mp4_title_cleaned = mp4["title"].replace("&quot;", '"')
-		title 	= "[" + res + "] - " + mp4_title_cleaned
+		url 				= mp4["file"]["url"]
+		res 				= mp4["label"]
+		mp4_title_cleaned 	= jw_common.cleanUpText (mp4["title"])
+		title 				= "[" + res + "] - " + mp4_title_cleaned
 
 		listItem = xbmcgui.ListItem(
 			label 			= title,

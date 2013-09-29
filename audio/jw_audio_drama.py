@@ -70,7 +70,7 @@ def showDramaJson(json_url):
 	for mp3 in json["files"][language_code]["MP3"]:
 		url 	= mp3["file"]["url"]
 		title 	= mp3["title"]
-		title 	= title.replace("&#039;", "'")
+		title 	= jw_common.cleanUpText(title)
 
 		# Skip 'zip' files
 		if mp3["mimetype"] != "audio/mpeg":

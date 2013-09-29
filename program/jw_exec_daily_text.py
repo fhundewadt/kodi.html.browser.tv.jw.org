@@ -17,6 +17,7 @@ def showDailyText(date):
     json_url    = jw_config.const[language]["daily_text_json"] + "/" + date
     json        = jw_common.loadJsonFromUrl(json_url)
     text        = json["items"][0]["content"]
+    text        = jw_common.cleanUpText(text)
 
     dialog = DailiyText()
     dialog.customInit(text);
