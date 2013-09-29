@@ -23,7 +23,7 @@ Small enhancements:
 Code
 + Issue #7: Separated audio index function from audio bible functions
 + Packaged 
-+ Issue #10: Added 2-hour cache for html/json request to jw.org
++ Issue #10: Added 24-hour cache for html/json request to jw.org; remember: you can empty cache to force redownload from Addon settings
 
 Plugin 
 + Added some required field to addon.xml
