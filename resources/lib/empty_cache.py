@@ -9,7 +9,6 @@ try:
 except:
  	import storageserverdummy as StorageServer
 
-print sys.argv
 cache = StorageServer.StorageServer("plugin://plugin.video.jworg/", 24) 
 cache.delete("%");
 

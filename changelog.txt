@@ -3,13 +3,14 @@
 
 New audio Feature
 + Listen to audio dramas
-+ Listen to dramatica bible reading
++ Listen to dramatic bible reading
 
 New program Features
 + Read daily text [Issue #2]
 
 New settings
 + You can choose different sorting options for audio (musics, dramas and dramatic readings) and video file
++ You can empty the cache, if you want, to force redownload of multimedia file indexes 
 
 Small enhancements:
 + Issue #1: Added icon to music and song list
