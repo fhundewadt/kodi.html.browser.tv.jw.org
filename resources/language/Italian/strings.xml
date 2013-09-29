@@ -19,4 +19,8 @@
     <string id="30018">Ordine alfabetico</string>
     <string id="30019">Ordinamento</string>
     <string id="30020">Video</string>
+    <string id="30021">Cache</string>
+    <string id="30022">Svuota cache (forza aggiornamento elenchi)</string>
+    <string id="30023">Svuotamento cache</string>
+    <string id="30024">Eseguito con successo</string>
 </strings>

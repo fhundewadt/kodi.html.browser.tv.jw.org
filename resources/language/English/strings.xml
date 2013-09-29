@@ -19,4 +19,8 @@
     <string id="30018">By title</string>
     <string id="30019">Sorting</string>
     <string id="30020">Video</string>
+    <string id="30021">Cache</string>
+    <string id="30022">Empty cache (force lists update)</string>
+    <string id="30023">Emptying cache</string>
+    <string id="30024">Successfully done</string>
 </strings>

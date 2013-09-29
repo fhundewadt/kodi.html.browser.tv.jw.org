@@ -9,7 +9,7 @@ import os
 import jw_common
 
 
-plugin_name 	= sys.argv[0]
+plugin_name 	= sys.argv[0]   # plugin://plugin.video.jworg/
 pluginPid   	= int(sys.argv[1])
 plugin_params 	= urlparse.parse_qs((sys.argv[2])[1:])
 skin_used 		= xbmc.getSkinDir()
