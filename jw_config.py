@@ -1,15 +1,10 @@
 import xbmc
-import xbmcaddon
 import xbmcgui
 import xbmcplugin
 
 import sys
 import urlparse
 import os
-
-
-
-
 
 plugin_name 	= sys.argv[0]
 pluginPid   	= int(sys.argv[1])

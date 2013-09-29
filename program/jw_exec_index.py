@@ -2,6 +2,7 @@ import datetime
 import urllib
 
 import jw_config
+import jw_common
 
 import xbmcgui
 import xbmcplugin
