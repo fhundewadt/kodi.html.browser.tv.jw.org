@@ -26,10 +26,10 @@
             A simple browser for jw.org media content
         </summary>
         <description lang="it">
-            Direttamente in streaming da www.jw.org, è possibile:[CR]- guardare edificanti video[CR]- ascoltare cantici, melodie del regno, la lettura della Bibbia e i drammi audio[CR]- leggere la scrittura del giorno
+            Direttamente in streaming da www.jw.org, è possibile:[CR]- guardare edificanti video[CR]- ascoltare cantici, melodie del regno, la lettura della Bibbia, i drammi audio ed i brani biblici recitati[CR]- leggere la scrittura del giorno
         </description>
         <description lang="en">
-            Directly streaming from www.jw.org, you can:[CR]- watch videos[CR]- listen songs, kingdom melodies, bible reading and audio dramas[CR]- Read the daily text
+            Directly streaming from www.jw.org, you can:[CR]- watch videos[CR]- listen songs, kingdom melodies, bible reading, audio dramas and dramatic bible readings[CR]- Read the daily text
         </description>
     </extension>
 </addon>
