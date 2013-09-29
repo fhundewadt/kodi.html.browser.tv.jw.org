@@ -3,6 +3,7 @@
 
 New audio Feature
 + Listen to audio dramas
++ Listen to dramatica bible reading
 
 New program Features
 + Read daily text [Issue #2]

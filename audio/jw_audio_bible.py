@@ -8,7 +8,7 @@ import urllib
 import re
 
 import jw_config
-import jw_load
+import jw_common
 
 	
 # List of bible books
@@ -16,7 +16,7 @@ def showAudioBibleIndex():
 	
 	language 		= jw_config.language
 	bible_index_url = jw_config.const[language]["bible_index_audio"]
-	html 			= jw_load.loadUrl(bible_index_url) 
+	html 			= jw_common.loadUrl(bible_index_url) 
 	
 	# Grep book names
 	regexp_book_names = '<a>([^<]+)</a>'
@@ -46,7 +46,7 @@ def showAudioBibleBookJson(book_num):
 
 	language 	= jw_config.language
 	json_url 	= jw_config.const[language]["bible_audio_json"] + "&booknum=" + book_num
-	json 		= jw_load.loadJsonFromUrl(json_url)
+	json 		= jw_common.loadJsonFromUrl(json_url)
 	lang_code 	= jw_config.const[language]["lang_code"]
 	book_name 	= json["pubName"]
 

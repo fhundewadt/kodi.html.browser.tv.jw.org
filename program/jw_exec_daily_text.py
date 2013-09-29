@@ -1,5 +1,5 @@
 """
-EXECUTABLE RELATED FUNCTION
+EXECUTABLE RELATED FUNCTIONS
 """
 import xbmc
 import xbmcgui
@@ -7,7 +7,7 @@ import xbmcplugin
 
 import os
 import jw_config
-import jw_load
+import jw_common
 import re
 
 # Show daily text 
@@ -15,7 +15,7 @@ def showDailyText(date):
 
     language    = jw_config.language
     json_url    = jw_config.const[language]["daily_text_json"] + "/" + date
-    json        = jw_load.loadJsonFromUrl(json_url)
+    json        = jw_common.loadJsonFromUrl(json_url)
     text        = json["items"][0]["content"]
 
     dialog = DailiyText()

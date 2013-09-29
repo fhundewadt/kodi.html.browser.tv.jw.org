@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 """
-VIDEO RELATED FUNCTION
+VIDEO RELATED FUNCTIONS
 """
 
 import xbmc
@@ -10,7 +10,7 @@ import xbmcgui
 import re
 import urllib
 
-import jw_load
+import jw_common
 import jw_config
 
 
@@ -19,7 +19,7 @@ def showVideoFilter():
 	
 	language 	= jw_config.language
 	url 		= jw_config.const[language]["video_path"];
-	html 		= jw_load.loadUrl(url)
+	html 		= jw_common.loadUrl(url)
 
 	regexp_video_filters = '<option data-priority.* value="([^"]+)">([^<]+)</option>'
 	filters = re.findall(regexp_video_filters, html) 
@@ -30,7 +30,7 @@ def showVideoFilter():
 		listItem = xbmcgui.ListItem( title )	
 		params = {
 			"content_type"  : "video", 
-			"mode" 			: "open_video_page", 
+			"mode" 			: "open_video_index", 
 			"start" 		: 0, 
 			"video_filter"  : video_filter[0]
 		} 
@@ -50,7 +50,7 @@ def showVideoIndex(start, video_filter):
 
 	language 	= jw_config.language
 	url 		= jw_config.const[language]["video_path"] + "/?start=" + str(start) + "&videoFilter=" + video_filter
-	html 		= jw_load.loadUrl (url)
+	html 		= jw_common.loadUrl (url)
 
 	# Grep video titles
 	regexp_video_title = 'data-onpagetitle="([^"]+)"'
@@ -63,10 +63,6 @@ def showVideoIndex(start, video_filter):
 	# Grep url of json wich contain data on different version of the video [240,360, etc..]
 	regexp_video_json = '.*[^"] data-jsonurl="([^"]+)".*'
 	video_json = re.findall(regexp_video_json, html)
-
-	# Grep video pages "NEXT" link
-	regexp_video_next_page = '<a class="iconNext.*start=([0-9]+).*title="([^""]+)"'
-	next_link = re.findall(regexp_video_next_page, html)
 
 	count = 0
 	# Output video list 
@@ -92,26 +88,7 @@ def showVideoIndex(start, video_filter):
 		)  
 		count = count + 1
 
-	# Output next page link
-	try: 
-		next_start 	=  next_link[0][0]
-		title 		= jw_config.t(30001);
-		listItem 	= xbmcgui.ListItem(title)
-		params 		= {
-			"content_type" : "video", 
-			"mode": "open_video_page", 
-			"start" : next_start, 
-			"video_filter" : video_filter
-		} 
-		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
-		xbmcplugin.addDirectoryItem(
-			handle 		= jw_config.pluginPid, 
-			url 		= url, 
-			listitem 	= listItem, 
-			isFolder 	= True 
-		)  
-	except:
-		pass
+	jw_common.setNextPageLink(html, "open_video_index", "video", "video_filter", video_filter)
 
 	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
 	# "Thumbnail" view 
@@ -124,7 +101,7 @@ def showVideoJsonUrl(json_url, thumb):
 
 	language 	= jw_config.language
 	json_url 	= "http://www.jw.org" + json_url
-	json 		= jw_load.loadJsonFromUrl(json_url)
+	json 		= jw_common.loadJsonFromUrl(json_url)
 
 	if json is None :
 		string = jw_config.t(30008) + " "
