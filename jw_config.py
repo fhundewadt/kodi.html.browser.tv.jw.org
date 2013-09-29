@@ -8,10 +8,7 @@ import urlparse
 import os
 
 
-# Translation util
-def t(string_number):
-	plugin       = xbmcaddon.Addon("plugin.video.jworg")
-	return plugin.getLocalizedString(string_number)
+
 
 
 plugin_name 	= sys.argv[0]

@@ -7,6 +7,22 @@ import jw_config
 
 import xbmcgui
 import xbmcplugin
+import xbmcaddon
+
+
+# Translation util
+def t(string_number):
+	plugin = xbmcaddon.Addon("plugin.video.jworg")
+	return plugin.getLocalizedString(string_number)
+
+
+def cleanUpText(text):
+	text = text.replace("&amp;","&")
+	text = text.replace("&#039;", "'")
+	text = text.replace("&quot;", '"')
+	text = text.replace("&nbsp;", ' ')
+	return text
+
 
 # Grep "NEXT" link and add to current directory
 # param_name and param_value is used to pass addition param when adding directory item
@@ -19,13 +35,14 @@ def setNextPageLink(html, mode, type, param_name = None, param_value = None):
 		return 
 
 	next_start  = next_link[0][0]
-	title 		= jw_config.t(30001);	
+	title 		= t(30001);	
 	listItem 	= xbmcgui.ListItem(title)
 	params 		= {
 		"content_type" 	: type, 
 		"mode" 			: mode, 
 		"start" 		: next_start 
 	} 
+	# Video browser needs "video_filter" param
 	if param_name is not None :
 		params[param_name] = param_value
 
@@ -38,6 +55,9 @@ def setNextPageLink(html, mode, type, param_name = None, param_value = None):
 		isFolder	= True 
 	)  
 
+"""
+REMOTE CONTENT LOAD 
+"""
 def loadNotCachedUrl(url):
 	response = urllib2.urlopen (url)
 	html = response.read()
@@ -60,10 +80,3 @@ def loadJsonFromUrl (url):
 	data = jw_config.cache.cacheFunction(loadNotCachedJsonFromUrl, url)	
 	return data
 
-
-def cleanUpText(text):
-	text = text.replace("&amp;","&")
-	text = text.replace("&#039;", "'")
-	text = text.replace("&quot;", '"')
-	text = text.replace("&nbsp;", ' ')
-	return text

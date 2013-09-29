@@ -15,7 +15,7 @@ def showExecIndex():
     now             = datetime.datetime.now()
     date_for_json   = str(now.year) + "/" + str(now.month) + "/" + str(now.day)
     date_format     = jw_config.const[language]["date_format"]
-    title           = jw_config.t(30012)  + " - " + now.strftime(date_format)
+    title           = jw_common.t(30012)  + " - " + now.strftime(date_format)
     listItem        = xbmcgui.ListItem( title )
     params          = {
         "content_type"  : "executable", 

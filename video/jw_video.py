@@ -104,7 +104,7 @@ def showVideoJsonUrl(json_url, thumb):
 	json 		= jw_common.loadJsonFromUrl(json_url)
 
 	if json is None :
-		string = jw_config.t(30008) + " "
+		string = jw_common.t(30008) + " "
 		xbmcgui.Dialog().ok("jworg browser", string)
 		return
 
