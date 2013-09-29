@@ -28,7 +28,7 @@ try:
 except:
 	import storageserverdummy as StorageServer
 	 
-cache 			= StorageServer.StorageServer(plugin_name, 2)  # 2 hour cache
+cache 			= StorageServer.StorageServer(plugin_name, 24)  # 2 hour cache
 audio_sorting 	= str(int(xbmcplugin.getSetting(pluginPid, "audio_sorting")) + 1)
 video_sorting 	= str(int(xbmcplugin.getSetting(pluginPid, "video_sorting")) + 1)
 
