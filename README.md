@@ -28,7 +28,6 @@ and the use the function "Install from zip file" from system -> setting -> addon
 ![Cover](/_screenshot/01%20-%20cover.PNG)
 ![Video Filter](_screenshot/02 - video filter.PNG)
 ![Video index](_screenshot/03 - video index.PNG)
-![Audio index](/_screenshot/04%20-%20audio%20index.PNG)
 ![Audio bible chapters](_screenshot/06%20-%20audio%20bible%20chapters.PNG)
 ![Musics and sonds](_screenshot/07%20-%20audio%20musics%20and%20songs%20index.PNG)
 ![Dramas](_screenshot/09%20-%20audio%20dramas%20index.PNG)
