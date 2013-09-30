@@ -46,7 +46,7 @@ def showMagazineFilterIndex(pub_filter = None):
 
         items = []
 
-        for year in [" ", "2012", "2013"]: 
+        for year in [" ", "2014", "2013", "2012"]: 
             title = year
             if title == " " :
                 title = jw_common.t(30031)
