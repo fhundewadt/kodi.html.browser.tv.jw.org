@@ -10,7 +10,7 @@ New program Features
 + Read daily text [Issue #2]
 
 New settings
-+ You can choose different sorting options for audio (musics, dramas and dramatic readings) and video file
++ You can choose different sorting options for audio (musics, dramas and dramatic readings) and video file (thanks to elfo78)
 + You can empty the cache, if you want, to force redownload of multimedia file indexes 
 
 Small enhancements:
