@@ -19,8 +19,10 @@ Only exception is background image: it cannot be dinamically loaded, so it's cac
 
 This addon is now part of official repository. Use the addon browser to search jw.org browser directly from your 
   xbmc installation menu
-*Latest version* on addon repository is 0.1.0. The v0.2.0 is actually on realease candidate state. 
-To install rc3, download the zip from [release page](https://github.com/realtebo/plugin.video.jworg/releases), 
+* *Latest version* on addon repository is 0.1.0. 
+* The v0.2.0 is actually on development status, so probably not 100% working, also, could be some new feature 
+will be developed before another release candidate is out. To install latest dev version, download 
+the [master zip file](https://github.com/realtebo/plugin.video.jworg/archive/master.zip) 
 and the use the function "Install from zip file" from system -> setting -> addon
 
 ### Screenshot
