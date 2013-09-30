@@ -91,7 +91,11 @@ if content_type == "audio" :
 		except : pub_filter = None
 		try: year_filter = params["year_filter"][0]
 		except : year_filter = None
-		jw_audio_magazine.showMagazineIndex(pub_filter, year_filter);
+
+		if year_filter is None :
+			jw_audio_magazine.showMagazineFilterIndex(pub_filter);
+		else :
+			jw_audio_magazine.showMagazineFilteredIndex(pub_filter, year_filter);
 
 if content_type == "executable" :
 	if mode is None : 
