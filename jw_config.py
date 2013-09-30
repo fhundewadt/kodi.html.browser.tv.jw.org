@@ -44,6 +44,7 @@ const = {
 		"dramas_index"				: "http://www.jw.org/it/pubblicazioni/drammi-biblici-audio/",
 		"dramatic_reading_index"	: "http://www.jw.org/it/pubblicazioni/brani-biblici-recitati/",
 		"date_format"				: "%d-%m-%Y",
+		"magazine_index"			: "http://www.jw.org/it/pubblicazioni/riviste/",
  	},
 	"English" 	: {
 		"video_path" 				: "http://www.jw.org/en/videos",
@@ -55,6 +56,7 @@ const = {
 		"dramas_index"				: "http://www.jw.org/en/publications/audio-bible-dramas/",
 		"dramatic_reading_index"	: "http://www.jw.org/en/publications/dramatic-bible-readings/",
 		"date_format"				: "%Y-%m-%d",
+		"magazine_index"			: "http://www.jw.org/en/publications/magazines/",
 	},
 }
 

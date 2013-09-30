@@ -13,6 +13,7 @@ from audio import jw_audio_bible
 from audio import jw_audio_music
 from audio import jw_audio_drama
 from audio import jw_audio_dramatic_reading
+from audio import jw_audio_magazine
 
 from program import jw_exec_index
 from program import jw_exec_daily_text
@@ -85,6 +86,12 @@ if content_type == "audio" :
 		json_url = params["json_url"][0]
 		jw_audio.showAudioJson(json_url);
 
+	if mode == "open_magazine_index" :
+		try: pub_filter = params["pub_filter"][0]
+		except : pub_filter = None
+		try: year_filter = params["year_filter"][0]
+		except : year_filter = None
+		jw_audio_magazine.showMagazineIndex(pub_filter, year_filter);
 
 if content_type == "executable" :
 	if mode is None : 
