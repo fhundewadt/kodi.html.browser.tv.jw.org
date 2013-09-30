@@ -87,7 +87,7 @@ def showMagazineFilteredIndex(pub_filter = None, year_filter = None):
 
     language        = jw_config.language
     magazine_url    = jw_config.const[language]["magazine_index"] + "?pubFilter=" + pub_filter .strip() + "&yearFilter=" + year_filter.strip()
-    html            = jw_common.loadNotCachedUrl(magazine_url) 
+    html            = jw_common.loadUrl(magazine_url) 
 
     # Grep issue date and publication title
     regexp_issue = "<span class='issueDate'>([^<]+)</span> (<span class='cvrTtl'>([^<]+)</span>)?"

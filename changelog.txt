@@ -2,6 +2,7 @@
 -----
 
 New audio Feature
++ Listen to magazine readings (even in simplified english !)
 + Listen to audio dramas
 + Listen to dramatic bible reading
 

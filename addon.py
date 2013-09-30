@@ -97,6 +97,10 @@ if content_type == "audio" :
 		else :
 			jw_audio_magazine.showMagazineFilteredIndex(pub_filter, year_filter);
 
+	if mode == "open_magazine_json" :
+		json_url = params["json_url"][0]
+		jw_audio.showAudioJson(json_url);		
+
 if content_type == "executable" :
 	if mode is None : 
 		jw_exec_index.showExecIndex();
