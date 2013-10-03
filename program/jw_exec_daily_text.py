@@ -1,5 +1,5 @@
 """
-EXECUTABLE RELATED FUNCTIONS
+DAILY_TEXT RELATED FUNCTIONS
 """
 import xbmc
 import xbmcgui
