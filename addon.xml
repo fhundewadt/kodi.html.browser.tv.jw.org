@@ -14,7 +14,7 @@
     <extension point="xbmc.addon.metadata">
         <language />
         <platform>all</platform>
-        <website>https://github.com/realtebo/plugin.video.jworg</website>
+        <website>http://realtebo.github.io/plugin.video.jworg/</website>
         <source>https://github.com/realtebo/plugin.video.jworg</source>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
         <email></email>
