@@ -45,6 +45,7 @@ const = {
 		"dramatic_reading_index"	: "http://www.jw.org/it/pubblicazioni/brani-biblici-recitati/",
 		"date_format"				: "%d-%m-%Y",
 		"magazine_index"			: "http://www.jw.org/it/pubblicazioni/riviste/",
+		"news_index"				: "http://www.jw.org/it/news/",
  	},
 	"English" 	: {
 		"video_path" 				: "http://www.jw.org/en/videos",
@@ -57,6 +58,7 @@ const = {
 		"dramatic_reading_index"	: "http://www.jw.org/en/publications/dramatic-bible-readings/",
 		"date_format"				: "%Y-%m-%d",
 		"magazine_index"			: "http://www.jw.org/en/publications/magazines/",
+		"news_index"				: "http://www.jw.org/en/news/                                  ",
 	},
 }
 

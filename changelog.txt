@@ -1,3 +1,9 @@
+0.3.0-dev
+---------
+
+Working on
++ Read news from newsroom area of jw.org
+
 0.2.0
 -----
 
