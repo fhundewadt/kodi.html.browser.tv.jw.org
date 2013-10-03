@@ -1,3 +1,5 @@
-<h2>Visit the above link to get more info</H2>
+<h2>Visit the 
 
-<H2><a href="http://realtebo.github.io/plugin.video.jworg"> http://realtebo.github.io/plugin.video.jworg/</a></h2>
+<a href="http://realtebo.github.io/plugin.video.jworg">project website/</a>
+
+to get more info</H2>
