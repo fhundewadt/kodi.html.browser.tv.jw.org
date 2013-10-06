@@ -19,22 +19,25 @@ def showNewsIndex():
 	url 		= jw_config.const[language]["news_index"] 
 	html 		= jw_common.loadUrl(url)
 
-	regexp_title = '<h3><a href="([^"]+)">([^<]+)</a></h3>'
+	regexp_title = '<h3><a href="([^"]+)"( title="[^"]+")?>([^<]+)</a></h3>'
 	news_found = re.findall(regexp_title, html)
 
-	regexp_images = "data-img-size-sm='([^']+)'"
+	# This is to try to filter out cases of double image linked
+	regexp_images = "data-img-type='(lsr|sqs|lss)' .*data-img-size-(lg|md|sm)='([^']+)'"
 	images = re.findall(regexp_images, html)
 
 	count = 0
 	for news in news_found:
-		# Discard lateral news because is always OLD
-		if  count == ( len(news_found)  - 1 )  :
-			continue 
+		print "JWORG COUNTING: " + str(count)
 
-		title = jw_common.cleanUpText( news[1] ) 
+		# Discard lateral news because is always OLD
+		#if  count == ( len(news_found)  - 1 )  :
+		#	continue 
+
+		title = jw_common.cleanUpText( news[2] ) 
 		listItem = xbmcgui.ListItem( 
 			label  			= title,
-			thumbnailImage 	= images[count]
+			thumbnailImage 	= images[count][2]
 		)	
 		params = {
 			"content_type"  : "executable", 
@@ -101,7 +104,6 @@ class News(xbmcgui.WindowDialog):
 			1280, 90, 
 			bg_image
 		)
-		
 		self.ctrlTitle= xbmcgui.ControlTextBox(
 			border, 0, 
 			1280 - border *2, 90, 
