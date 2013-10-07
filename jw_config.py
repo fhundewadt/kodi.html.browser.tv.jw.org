@@ -45,6 +45,7 @@ const = {
 		"dramatic_reading_index"	: "http://www.jw.org/it/pubblicazioni/brani-biblici-recitati/",
 		"date_format"				: "%d-%m-%Y",
 		"magazine_index"			: "http://www.jw.org/it/pubblicazioni/riviste/",
+		'has_simplified_edition'	: False,
  	},
 	"English" 	: {
 		"video_path" 				: "http://www.jw.org/en/videos",
@@ -57,7 +58,21 @@ const = {
 		"dramatic_reading_index"	: "http://www.jw.org/en/publications/dramatic-bible-readings/",
 		"date_format"				: "%Y-%m-%d",
 		"magazine_index"			: "http://www.jw.org/en/publications/magazines/",
+		'has_simplified_edition'	: True,
 	},
+	"Polski" 	: {
+		"video_path" 				: "http://www.jw.org/pl/filmy/",
+		"lang_code"					: "P",
+		"bible_index_audio"			: "http://www.jw.org/pl/publikacje/biblia/nwt/ksi%C4%99gi-biblijne/" , 
+		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=P&txtCMSLang=P",
+		'daily_text_json'			: "http://wol.jw.org/wol/dt/r12/lp-p",
+		"music_index"				: "http://www.jw.org/pl/publikacje/muzyka-pie%C5%9Bni/",
+		"dramas_index"				: "http://www.jw.org/pl/publikacje/s%C5%82uchowiska-biblijne/",
+		"dramatic_reading_index"	: "http://www.jw.org/pl/publikacje/adaptacje-d%C5%BAwi%C4%99kowe-biblii/",
+		"date_format"				: "%d-%m-%Y",
+		"magazine_index"			: "http://www.jw.org/pl/publikacje/czasopisma/",
+		'has_simplified_edition'	: False,
+	},	
 }
 
 
