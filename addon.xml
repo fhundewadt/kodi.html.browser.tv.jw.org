@@ -17,9 +17,9 @@
         <summary lang="it">Un semplice browser per i contenuti di jw.org</summary>
         <description lang="it">Direttamente in streaming da www.jw.org, è possibile:[CR]- guardare edificanti video[CR]- ascoltare la lettura delle riviste, cantici e melodie del regno, la lettura della Bibbia, i drammi audio ed i brani biblici recitati[CR]- leggere la scrittura del giorno</description>
         <summary lang="pl">Prosta przeglądarka treści medialnych serwisu jw.org</summary>
-        <description lang="pl">Przeglądaj internetową bibliotekę multimedialną serwisu www.jw.org.[CR] - Oglądaj filmy[CR] - Słuchaj melodii, słuchowisk, adaptacji dźwiękowych Biblii, czytaj Biblie[CR] - Przeczytaj słowo na dziś</description>
+
         <language />
-        <platform>
+        <platform />
         <website>http://realtebo.github.io/plugin.video.jworg/</website>
         <source>https://github.com/realtebo/plugin.video.jworg</source>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
