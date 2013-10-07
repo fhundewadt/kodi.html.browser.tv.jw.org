@@ -7,6 +7,9 @@ New language:
 Code
 + Changed detection of simplified edition of watchtower study edition 
 
+Working on
++ Read news from newsroom area of jw.org
+
 0.2.0
 -----
 

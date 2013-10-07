@@ -46,6 +46,7 @@ const = {
 		"date_format"				: "%d-%m-%Y",
 		"magazine_index"			: "http://www.jw.org/it/pubblicazioni/riviste/",
 		'has_simplified_edition'	: False,
+		"news_index"				: "http://www.jw.org/it/news/",
  	},
 	"English" 	: {
 		"video_path" 				: "http://www.jw.org/en/videos",
@@ -59,6 +60,7 @@ const = {
 		"date_format"				: "%Y-%m-%d",
 		"magazine_index"			: "http://www.jw.org/en/publications/magazines/",
 		'has_simplified_edition'	: True,
+		"news_index"				: "http://www.jw.org/en/news/",
 	},
 	"Polski" 	: {
 		"video_path" 				: "http://www.jw.org/pl/filmy/",
@@ -72,6 +74,7 @@ const = {
 		"date_format"				: "%d-%m-%Y",
 		"magazine_index"			: "http://www.jw.org/pl/publikacje/czasopisma/",
 		'has_simplified_edition'	: False,
+		"news_index"				: "http://www.jw.org/pl/wiadomo%C5%9Bci/"
 	},	
 }
 
