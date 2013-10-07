@@ -76,7 +76,7 @@ def loadUrl (url):
 	return html	
 
 def loadNotCachedJsonFromUrl(url):
-	data = None
+	data = ""
 	try:
 		response = urllib2.urlopen(url)
 		data = json.load(response)

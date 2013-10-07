@@ -11,6 +11,7 @@ New language:
 Code
 + Changed detection of simplified edition of watchtower study edition 
 + Removed unused strings to translate
++ Enforced resistence to json loading errors
 
 0.2.0
 -----
