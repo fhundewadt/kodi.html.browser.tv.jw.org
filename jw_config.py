@@ -17,6 +17,9 @@ dir_media		= os.path.dirname(__file__) + os.sep + "resources" + os.sep + "media"
 language     	= xbmcplugin.getSetting(pluginPid, "language")
 if language == "":
 	language = jw_common.t(30009)
+	
+print const.keys()
+print xbmc.getLanguage();
 
 try: 
 	emulating = xbmcgui.Emulating
