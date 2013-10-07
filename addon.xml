@@ -12,12 +12,10 @@
         <provides>audio video executable</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary lang="en">A simple browser for jw.org media content</summary>
-        <description lang="en">Directly streaming from www.jw.org, you can:[CR]- watch videos[CR]- listen magazine readings, songs and kingdom melodies, bible reading, audio dramas and dramatic bible readings[CR]- Read the daily text</description>
-        <summary lang="it">Un semplice browser per i contenuti di jw.org</summary>
-        <description lang="it">Direttamente in streaming da www.jw.org, è possibile:[CR]- guardare edificanti video[CR]- ascoltare la lettura delle riviste, cantici e melodie del regno, la lettura della Bibbia, i drammi audio ed i brani biblici recitati[CR]- leggere la scrittura del giorno</description>
-        <summary lang="pl">Un semplice browser per i contenuti di jw.org</summary>
-        <description lang="pl">Direttamente in streaming da www.jw.org, è possibile:[CR]- guardare edificanti video[CR]- ascoltare la lettura delle riviste, cantici e melodie del regno, la lettura della Bibbia, i drammi audio ed i brani biblici recitati[CR]- leggere la scrittura del giorno</description>
+        <summary lang="en">&#10;            A simple browser for jw.org media content&#10;        </summary>
+        <summary lang="it">&#10;            Un semplice browser per i contenuti di jw.org&#10;        </summary>
+        <description lang="en">&#10;            Directly streaming from www.jw.org, you can:[CR]- watch videos[CR]- listen magazine readings, songs and kingdom melodies, bible reading, audio dramas and dramatic bible readings[CR]- Read the daily text&#10;        </description>
+        <description lang="it">&#10;            Direttamente in streaming da www.jw.org, è possibile:[CR]- guardare edificanti video[CR]- ascoltare la lettura delle riviste, cantici e melodie del regno, la lettura della Bibbia, i drammi audio ed i brani biblici recitati[CR]- leggere la scrittura del giorno&#10;        </description>
         <language />
         <platform>
         <website>http://realtebo.github.io/plugin.video.jworg/</website>
