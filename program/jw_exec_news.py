@@ -56,9 +56,6 @@ def showNewsPage(url):
 	url 	= "http://www.jw.org" + url
 	html 	= jw_common.loadUrl(url)
 
-	print html
-	# <div class='jsIncludeVideo' id='702013115-1-video' data-mid='702013115' data-jsonurl='/apps/TRGCHlZRQVNYVrXF?docid=702013115&output=json&fileformat=mp4&alllangs=1&track=1&langwritten=I&txtCMSLang=I'>
-
 	new = News()
 	new.customInit(html);
 	new.doModal();
@@ -116,8 +113,6 @@ class News(xbmcgui.WindowDialog):
 		
 
 	def onAction(self, action):
-		# print action.getButtonCode()
-		# print action.getId()
 		(x,y) =  self.ctrlText.getPosition()
 
 		if action == ACTION_MOVE_UP:

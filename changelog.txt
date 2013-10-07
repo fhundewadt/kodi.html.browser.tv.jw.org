@@ -1,18 +1,27 @@
-0.3.0-dev
----------
+0.2.1
+-----
 
-Working on
+New program feature:
 + Read news from newsroom area of jw.org
+
+New language:
++ Dutch ("Nederlands")
++ Polish ("Polski")
+
+Code
++ Changed detection of simplified edition of watchtower study edition 
++ Removed unused strings to translate
++ Enforced resistence to json loading errors
 
 0.2.0
 -----
 
-New audio Feature
+New audio feature
 + Listen to magazine readings (even in simplified english !), with list filtering options as jw.org. Due to jw.org inconsistency, only magazine since January 2012 are supported
 + Listen to audio dramas
 + Listen to dramatic bible reading
 
-New program Features
+New program features
 + Read daily text [Issue #2]
 
 New settings

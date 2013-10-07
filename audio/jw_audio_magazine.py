@@ -8,8 +8,6 @@ import re
 import xbmcgui
 import xbmcplugin
 
-print sys.argv
-
 def showMagazineFilterIndex(pub_filter = None):
 
     if pub_filter is None:
@@ -34,13 +32,17 @@ def showMagazineFilterIndex(pub_filter = None):
                 "mode"  : "open_magazine_index", 	
                 "pub_filter" : "w"  ,
                 "year_filter" : "",
-            },
-            {   "title" : jw_common.t(30030),  
+            }
+        ]
+
+        # Supporto for english, and perhaps future others, simpliefied study edition of watchtower
+        language = jw_config.language
+        if jw_config.const[language]["has_simplified_edition"] == True :
+            items.append ({   "title" : jw_common.t(30030),  
                 "mode"  : "open_magazine_index",    
                 "pub_filter" : "ws" ,
                 "year_filter" : "",
-            },
-        ]
+            })
 
     if pub_filter is not None :
 
