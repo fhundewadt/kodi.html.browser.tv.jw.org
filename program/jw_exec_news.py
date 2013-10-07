@@ -28,11 +28,6 @@ def showNewsIndex():
 
 	count = 0
 	for news in news_found:
-		print "JWORG COUNTING: " + str(count)
-
-		# Discard lateral news because is always OLD
-		#if  count == ( len(news_found)  - 1 )  :
-		#	continue 
 
 		title = jw_common.cleanUpText( news[2] ) 
 		listItem = xbmcgui.ListItem( 
@@ -58,15 +53,11 @@ def showNewsIndex():
 
 def showNewsPage(url):
 
-	url = "http://www.jw.org" + url
-	print "#################### JWORG #################"
-	print url 
-	print "#################### JWORG #################"
-	html 		= jw_common.loadUrl(url)
+	url 	= "http://www.jw.org" + url
+	html 	= jw_common.loadUrl(url)
 
-	print "******************** JWORG *****************"
 	print html
-	print "******************** JWORG *****************"
+	# <div class='jsIncludeVideo' id='702013115-1-video' data-mid='702013115' data-jsonurl='/apps/TRGCHlZRQVNYVrXF?docid=702013115&output=json&fileformat=mp4&alllangs=1&track=1&langwritten=I&txtCMSLang=I'>
 
 	new = News()
 	new.customInit(html);
@@ -114,7 +105,6 @@ class News(xbmcgui.WindowDialog):
             1280 - border *2, 3000, 
             'font30', "0xFF000000"
         )
-
 		
 		self.addControl (self.ctrlBackgound)
 		self.addControl (self.ctrlText)
@@ -129,7 +119,6 @@ class News(xbmcgui.WindowDialog):
 		# print action.getButtonCode()
 		# print action.getId()
 		(x,y) =  self.ctrlText.getPosition()
-		print (x,y)
 
 		if action == ACTION_MOVE_UP:
 			if y > 0:
