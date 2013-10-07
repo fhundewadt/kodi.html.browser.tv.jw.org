@@ -28,7 +28,6 @@ def showNewsIndex():
 
 	count = 0
 	for news in news_found:
-		print "JWORG COUNTING: " + str(count)
 
 		# Discard lateral news because is always OLD
 		#if  count == ( len(news_found)  - 1 )  :
@@ -59,14 +58,7 @@ def showNewsIndex():
 def showNewsPage(url):
 
 	url = "http://www.jw.org" + url
-	print "#################### JWORG #################"
-	print url 
-	print "#################### JWORG #################"
 	html 		= jw_common.loadUrl(url)
-
-	print "******************** JWORG *****************"
-	print html
-	print "******************** JWORG *****************"
 
 	new = News()
 	new.customInit(html);
@@ -126,10 +118,7 @@ class News(xbmcgui.WindowDialog):
 		
 
 	def onAction(self, action):
-		# print action.getButtonCode()
-		# print action.getId()
 		(x,y) =  self.ctrlText.getPosition()
-		print (x,y)
 
 		if action == ACTION_MOVE_UP:
 			if y > 0:

@@ -122,10 +122,7 @@ language		= xbmcplugin.getSetting(pluginPid, "language")
 
 if language == "":
 	actual_locale = xbmc.getLanguage()
-	#print "Locale detected " + actual_locale
 	if actual_locale in locale_2_lang :
 		language = locale_2_lang[actual_locale]
 	else :
 		language = "English"
-
-	#print "Language setted " + language

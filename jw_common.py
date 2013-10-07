@@ -72,7 +72,11 @@ def loadNotCachedUrl(url):
 	return html		
 
 def loadUrl (url):
-	html = jw_config.cache.cacheFunction(loadNotCachedUrl, url)
+	html = ""
+	try :
+		html = jw_config.cache.cacheFunction(loadNotCachedUrl, url)
+	except:
+		pass 
 	return html	
 
 def loadNotCachedJsonFromUrl(url):

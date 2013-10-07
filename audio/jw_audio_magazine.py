@@ -8,8 +8,6 @@ import re
 import xbmcgui
 import xbmcplugin
 
-print sys.argv
-
 def showMagazineFilterIndex(pub_filter = None):
 
     if pub_filter is None:

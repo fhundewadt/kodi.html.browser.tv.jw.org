@@ -4,7 +4,6 @@
     <string id="30002">Language of multimedia file</string>
     <string id="30005">General</string>
     <string id="30007">Choose a video</string>
-    <string id="30008">Unable to load stream list</string>
     <string id="30010">Books of the Bible</string>
     <string id="30011">Music and songs</string>
     <string id="30012">Daily text</string>
@@ -28,5 +27,6 @@
     <string id="30030">The Watchtower (Simplified Edition)</string>
     <string id="30031">Latest</string>
     <string id="30032">Newsroom</string>
+    <string id="30033">Unable to load remote content</string>
 
 </strings>

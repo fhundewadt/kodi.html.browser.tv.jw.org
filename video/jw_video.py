@@ -63,6 +63,11 @@ def showVideoIndex(start, video_filter):
 	regexp_video_json = '.*[^"] data-jsonurl="([^"]+)".*'
 	video_json = re.findall(regexp_video_json, html)
 
+	if video_json is None or json == [] :
+		string = jw_common.t(30033) + " "
+		xbmcgui.Dialog().ok("jworg browser", string)
+		return
+
 	count = 0
 	# Output video list 
 	for title in videos:
@@ -102,7 +107,7 @@ def showVideoJsonUrl(json_url, thumb):
 
 	# json equals to [] when a cached json was empty
 	if json is None or json == [] :
-		string = jw_common.t(30008) + " "
+		string = jw_common.t(30033) + " "
 		xbmcgui.Dialog().ok("jworg browser", string)
 		return
 
