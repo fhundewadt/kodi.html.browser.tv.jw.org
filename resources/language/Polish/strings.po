@@ -26,7 +26,7 @@ msgstr "Ogólne"
 
 msgctxt "#30009"
 msgid "English"
-msgstr "angielski"
+msgstr "Polski"
 
 msgctxt "#30018"
 msgid "By title"
