@@ -2,8 +2,6 @@
 <strings>
     <string id="30001">Avanti >></string>
     <string id="30002">Lingua dei file multimediali</string>
-    <string id="30003">Italiano</string>
-    <string id="30004">English</string>
     <string id="30005">Generale</string>
     <string id="30007">Scegli un video</string>
     <string id="30008">Impossibile scaricare la lista dei file</string>
@@ -27,8 +25,7 @@
     <string id="30027">Svegliatevi</string>
     <string id="30028">La torre di guardia</string>
     <string id="30029">La torre di guardia (ed. per lo studio)</string>
-    <string id="30030">-</string>
+    <string id="30030">La torre di guardia (ed. semplificata)</string>
     <string id="30031">Ultimi numeri</string>
     <string id="30032">Sala stampa</string>
-    <string id="30033">Polski</string>
 </strings>
