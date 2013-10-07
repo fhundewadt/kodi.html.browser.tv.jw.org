@@ -8,33 +8,11 @@ import os
 
 import jw_common
 
-
-plugin_name 	= sys.argv[0]   # plugin://plugin.video.jworg/
-pluginPid   	= int(sys.argv[1])
-plugin_params 	= urlparse.parse_qs((sys.argv[2])[1:])
-skin_used 		= xbmc.getSkinDir()
-dir_media		= os.path.dirname(__file__) + os.sep + "resources" + os.sep + "media" + os.sep
-language     	= xbmcplugin.getSetting(pluginPid, "language")
-if language == "":
-	language = jw_common.t(30009)
-	
-print const.keys()
-print xbmc.getLanguage();
-
-try: 
-	emulating = xbmcgui.Emulating
-except: 
-	emulating = False
-
-try:
-	import StorageServer
-except:
-	from resources.lib import storageserverdummy as StorageServer
-	 
-cache 			= StorageServer.StorageServer(plugin_name, 24)  # 2 hour cache
-audio_sorting 	= str(int(xbmcplugin.getSetting(pluginPid, "audio_sorting")) + 1)
-video_sorting 	= str(int(xbmcplugin.getSetting(pluginPid, "video_sorting")) + 1)
-
+# key is english name, value is the name of the locale IN the locale
+locale_2_lang = {
+	"Italian" : "Italiano",
+	"Polish"  : "Polski",
+}
 
 const = {
 	"Italiano" 	: {
@@ -82,4 +60,36 @@ const = {
 }
 
 
+plugin_name 	= sys.argv[0]   # plugin://plugin.video.jworg/
+pluginPid   	= int(sys.argv[1])
+plugin_params 	= urlparse.parse_qs((sys.argv[2])[1:])
+skin_used 		= xbmc.getSkinDir()
+dir_media		= os.path.dirname(__file__) + os.sep + "resources" + os.sep + "media" + os.sep
 
+try: 
+	emulating = xbmcgui.Emulating
+except: 
+	emulating = False
+
+try:
+	import StorageServer
+except:
+	from resources.lib import storageserverdummy as StorageServer
+	 
+cache 			= StorageServer.StorageServer(plugin_name, 24)  # 2 hour cache
+audio_sorting 	= str(int(xbmcplugin.getSetting(pluginPid, "audio_sorting")) + 1)
+video_sorting 	= str(int(xbmcplugin.getSetting(pluginPid, "video_sorting")) + 1)
+
+# if language is set, it used a localized language name, like "Italiano" or "Polski"
+language		= xbmcplugin.getSetting(pluginPid, "language")
+
+# if not set, language will be read from system, where it uses english language name
+# if it's one of supported language, I got localized name to adhere to addon language setting 
+# availables values ( Italiano, English, Polski, ... )
+
+if language == "":
+	actual_locale = xbmc.getLanguage()
+	if actual_locale in locale_2_lang :
+		language = locale_2_lang[actual_locale]
+	else :
+		language = "English"
