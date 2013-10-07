@@ -10,52 +10,85 @@ import jw_common
 
 # key is english name, value is the name of the locale IN the locale
 locale_2_lang = {
-	"Italian" : "Italiano",
-	"Polish"  : "Polski",
+	"Italian"	: "Italiano",
+	"Polish"	: "Polski",
+	"Dutch"		: "Nederlands"
 }
 
 const = {
 	"Italiano" 	: {
-		"video_path" 				: "http://www.jw.org/it/video",
 		"lang_code"					: "I",
+
+		"video_path" 				: "http://www.jw.org/it/video",
+		
 		"bible_index_audio"			: "http://www.jw.org/it/pubblicazioni/bibbia/nwt/libri/",
 		"bible_audio_json"  		: "http://www.jw.org/apps/I_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=I",
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r6/lp-i",
+		
 		"music_index"				: "http://www.jw.org/it/pubblicazioni/musica-cantici/",
 		"dramas_index"				: "http://www.jw.org/it/pubblicazioni/drammi-biblici-audio/",
 		"dramatic_reading_index"	: "http://www.jw.org/it/pubblicazioni/brani-biblici-recitati/",
-		"date_format"				: "%d-%m-%Y",
+		
 		"magazine_index"			: "http://www.jw.org/it/pubblicazioni/riviste/",
 		'has_simplified_edition'	: False,
+
+		'daily_text_json'			: "http://wol.jw.org/wol/dt/r6/lp-i",
+		"date_format"				: "%d/%m/%Y",
 		"news_index"				: "http://www.jw.org/it/news/",
+
  	},
 	"English" 	: {
-		"video_path" 				: "http://www.jw.org/en/videos",
 		"lang_code"					: "E",
+		"video_path" 				: "http://www.jw.org/en/videos",
+		
 		"bible_index_audio"			: "http://www.jw.org/en/publications/bible/nwt/books/" ,
 		"bible_audio_json"  		: "http://www.jw.org/apps/E_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=E",
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r1/lp-e",
+		
 		"music_index"				: "http://www.jw.org/en/publications/music-songs/",
 		"dramas_index"				: "http://www.jw.org/en/publications/audio-bible-dramas/",
 		"dramatic_reading_index"	: "http://www.jw.org/en/publications/dramatic-bible-readings/",
-		"date_format"				: "%Y-%m-%d",
+
 		"magazine_index"			: "http://www.jw.org/en/publications/magazines/",
 		'has_simplified_edition'	: True,
+
+		'daily_text_json'			: "http://wol.jw.org/wol/dt/r1/lp-e",
+		"date_format"				: "%Y-%m-%d",
 		"news_index"				: "http://www.jw.org/en/news/",
 	},
 	"Polski" 	: {
-		"video_path" 				: "http://www.jw.org/pl/filmy/",
 		"lang_code"					: "P",
+		"video_path" 				: "http://www.jw.org/pl/filmy/",
+		
 		"bible_index_audio"			: "http://www.jw.org/pl/publikacje/biblia/nwt/ksi%C4%99gi-biblijne/" , 
 		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=P&txtCMSLang=P",
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r12/lp-p",
+		
 		"music_index"				: "http://www.jw.org/pl/publikacje/muzyka-pie%C5%9Bni/",
 		"dramas_index"				: "http://www.jw.org/pl/publikacje/s%C5%82uchowiska-biblijne/",
 		"dramatic_reading_index"	: "http://www.jw.org/pl/publikacje/adaptacje-d%C5%BAwi%C4%99kowe-biblii/",
-		"date_format"				: "%d-%m-%Y",
+		
 		"magazine_index"			: "http://www.jw.org/pl/publikacje/czasopisma/",
 		'has_simplified_edition'	: False,
+
+		'daily_text_json'			: "http://wol.jw.org/wol/dt/r12/lp-p",
+		"date_format"				: "%d-%m-%Y",
 		"news_index"				: "http://www.jw.org/pl/wiadomo%C5%9Bci/"
+	},	
+	"Nederlands" : {
+		"lang_code"					: "O",
+		"video_path" 				: "http://www.jw.org/nl/videos/",
+
+		"bible_index_audio"			: "http://www.jw.org/nl/publicaties/bijbel/nwt/boeken/" , 
+		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=O&txtCMSLang=O", #last 2 are letters 'o' not zero
+		
+		"music_index"				: "http://www.jw.org/nl/publicaties/muziek-liederen/",
+		"dramas_index"				: "http://www.jw.org/nl/publicaties/audio-bijbel-dramas/",
+		"dramatic_reading_index"	: "http://www.jw.org/nl/publicaties/bijbelse-hoorspelen/",
+		
+		"magazine_index"			: "http://www.jw.org/nl/publicaties/tijdschriften/",
+		'has_simplified_edition'	: False,
+
+		'daily_text_json'			: "http://wol.jw.org/wol/dt/r18/lp-o",
+		"date_format"				: "%d-%m-%Y",
+		"news_index"				: "http://www.jw.org/nl/nieuws/"
 	},	
 }
 
@@ -89,7 +122,10 @@ language		= xbmcplugin.getSetting(pluginPid, "language")
 
 if language == "":
 	actual_locale = xbmc.getLanguage()
+	#print "Locale detected " + actual_locale
 	if actual_locale in locale_2_lang :
 		language = locale_2_lang[actual_locale]
 	else :
 		language = "English"
+
+	#print "Language setted " + language
