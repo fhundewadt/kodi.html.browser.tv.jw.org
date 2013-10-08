@@ -22,7 +22,6 @@ locale_2_lang = {
 const = {
 	"Italiano" 	: {
 		"lang_code"					: "I",
-
 		"video_path" 				: "http://www.jw.org/it/video",
 		
 		"bible_index_audio"			: "http://www.jw.org/it/pubblicazioni/bibbia/nwt/libri/",
