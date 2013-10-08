@@ -35,7 +35,7 @@ def showMagazineFilterIndex(pub_filter = None):
             }
         ]
 
-        # Supporto for english, and perhaps future others, simpliefied study edition of watchtower
+        # Support for simpliefied study edition of watchtower [english, spanish, ...]
         language = jw_config.language
         if jw_config.const[language]["has_simplified_edition"] == True :
             items.append ({   "title" : jw_common.t(30030),  

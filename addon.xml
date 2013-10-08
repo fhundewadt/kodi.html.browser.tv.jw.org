@@ -20,7 +20,9 @@
         <description lang="pl">Przeglądaj internetową bibliotekę multimedialną serwisu www.jw.org.[CR] - Oglądaj filmy[CR] - Słuchaj melodii, słuchowisk, adaptacji dźwiękowych Biblii, czytaj Biblie[CR] - Przeczytaj słowo na dziś i nowości </description>
         <summary lang="nl">Een simpele browser voor JW.org media-inhoud</summary>
         <description lang="nl">Directe streaming van www.jw.org, je kan:[CR]- Video`s bekijken[CR]- naar tijdschriftlezingen, Liedjes en volksliederen, Bijbellezingen, audio drama`s en dramatische Bijbellezingen luisteren[CR]- lees het dagelijkse citaat uit de bijbel en nieuws</description>
-        <language />
+        <summary lang="es">Un navegador simple para jw.org contenido de medios</summary>
+        <description lang="es">Directamente fluye de www.jw.org, puede: [CR] - ver vídeos [CR] - escuchar lecturas de revistas, canciones y melodías reino, lectura de la Biblia, los dramas de audio y lecturas bíblicas dramáticas [CR] - Lee el texto diario y noticias</description>
+        <language>it en pl nl es</language>
         <platform />
         <website>http://realtebo.github.io/plugin.video.jworg/</website>
         <source>https://github.com/realtebo/plugin.video.jworg</source>

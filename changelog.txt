@@ -2,16 +2,22 @@
 -----
 
 New program feature:
-+ Read news from newsroom area of jw.org
++ Read news from newsroom area of jw.org [not yet ready and not fully tested]
+
+Audio changes:
++ Changed order in index, to reflect jw.org item order (magazines now is after bible)
 
 New language:
 + Dutch ("Nederlands")
 + Polish ("Polski")
++ Spanish ("Español")
 
 Code
 + Changed detection of simplified edition of watchtower study edition 
 + Removed unused strings to translate
 + Enforced resistence to json loading errors
++ Enforced UTF-8 support
++ Enforced resistence to magazine page when missing cover images
 
 0.2.0
 -----

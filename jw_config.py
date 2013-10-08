@@ -1,3 +1,5 @@
+# -*- coding: UTF-8 -*-
+
 import xbmc
 import xbmcgui
 import xbmcplugin
@@ -12,7 +14,8 @@ import jw_common
 locale_2_lang = {
 	"Italian"	: "Italiano",
 	"Polish"	: "Polski",
-	"Dutch"		: "Nederlands"
+	"Dutch"		: "Nederlands",
+	"Spanish"	: "Español",
 }
 
 const = {
@@ -24,13 +27,13 @@ const = {
 		"bible_index_audio"			: "http://www.jw.org/it/pubblicazioni/bibbia/nwt/libri/",
 		"bible_audio_json"  		: "http://www.jw.org/apps/I_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=I",
 		
+		"magazine_index"			: "http://www.jw.org/it/pubblicazioni/riviste/",
+		'has_simplified_edition'	: False,
+
 		"music_index"				: "http://www.jw.org/it/pubblicazioni/musica-cantici/",
 		"dramas_index"				: "http://www.jw.org/it/pubblicazioni/drammi-biblici-audio/",
 		"dramatic_reading_index"	: "http://www.jw.org/it/pubblicazioni/brani-biblici-recitati/",
 		
-		"magazine_index"			: "http://www.jw.org/it/pubblicazioni/riviste/",
-		'has_simplified_edition'	: False,
-
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r6/lp-i",
 		"date_format"				: "%d/%m/%Y",
 		"news_index"				: "http://www.jw.org/it/news/",
@@ -43,12 +46,12 @@ const = {
 		"bible_index_audio"			: "http://www.jw.org/en/publications/bible/nwt/books/" ,
 		"bible_audio_json"  		: "http://www.jw.org/apps/E_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=E",
 		
+		"magazine_index"			: "http://www.jw.org/en/publications/magazines/",
+		'has_simplified_edition'	: True,
+
 		"music_index"				: "http://www.jw.org/en/publications/music-songs/",
 		"dramas_index"				: "http://www.jw.org/en/publications/audio-bible-dramas/",
 		"dramatic_reading_index"	: "http://www.jw.org/en/publications/dramatic-bible-readings/",
-
-		"magazine_index"			: "http://www.jw.org/en/publications/magazines/",
-		'has_simplified_edition'	: True,
 
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r1/lp-e",
 		"date_format"				: "%Y-%m-%d",
@@ -61,13 +64,13 @@ const = {
 		"bible_index_audio"			: "http://www.jw.org/pl/publikacje/biblia/nwt/ksi%C4%99gi-biblijne/" , 
 		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=P&txtCMSLang=P",
 		
+		"magazine_index"			: "http://www.jw.org/pl/publikacje/czasopisma/",
+		'has_simplified_edition'	: False,
+
 		"music_index"				: "http://www.jw.org/pl/publikacje/muzyka-pie%C5%9Bni/",
 		"dramas_index"				: "http://www.jw.org/pl/publikacje/s%C5%82uchowiska-biblijne/",
 		"dramatic_reading_index"	: "http://www.jw.org/pl/publikacje/adaptacje-d%C5%BAwi%C4%99kowe-biblii/",
 		
-		"magazine_index"			: "http://www.jw.org/pl/publikacje/czasopisma/",
-		'has_simplified_edition'	: False,
-
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r12/lp-p",
 		"date_format"				: "%d-%m-%Y",
 		"news_index"				: "http://www.jw.org/pl/wiadomo%C5%9Bci/"
@@ -79,16 +82,34 @@ const = {
 		"bible_index_audio"			: "http://www.jw.org/nl/publicaties/bijbel/nwt/boeken/" , 
 		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=O&txtCMSLang=O", #last 2 are letters 'o' not zero
 		
+		"magazine_index"			: "http://www.jw.org/nl/publicaties/tijdschriften/",
+		'has_simplified_edition'	: False,
+
 		"music_index"				: "http://www.jw.org/nl/publicaties/muziek-liederen/",
 		"dramas_index"				: "http://www.jw.org/nl/publicaties/audio-bijbel-dramas/",
 		"dramatic_reading_index"	: "http://www.jw.org/nl/publicaties/bijbelse-hoorspelen/",
 		
-		"magazine_index"			: "http://www.jw.org/nl/publicaties/tijdschriften/",
-		'has_simplified_edition'	: False,
-
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r18/lp-o",
 		"date_format"				: "%d-%m-%Y",
 		"news_index"				: "http://www.jw.org/nl/nieuws/"
+	},	
+	"Español" : {
+		"lang_code"					: "S",
+		"video_path" 				: "http://www.jw.org/es/videos/",
+
+		"bible_index_audio"			: "http://www.jw.org/es/publicaciones/biblia/nwt/libros/" , 
+		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=S&txtCMSLang=S",
+
+		"magazine_index"			: "http://www.jw.org/es/publicaciones/revistas/",
+		'has_simplified_edition'	: True,
+
+		"music_index"				: "http://www.jw.org/es/publicaciones/m%C3%BAsica-c%C3%A1nticos/",
+		"dramas_index"				: "http://www.jw.org/es/publicaciones/audio-representaciones-dram%C3%A1ticas/",
+		"dramatic_reading_index"	: "http://www.jw.org/es/publicaciones/lecturas-b%C3%ADblicas-dramatizadas/",
+		
+		'daily_text_json'			: "http://wol.jw.org/wol/dt/r4/lp-s",
+		"date_format"				: "%d-%m-%Y",
+		"news_index"				: "http://www.jw.org/es/noticias/"
 	},	
 }
 
