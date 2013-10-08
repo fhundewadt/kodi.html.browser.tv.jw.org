@@ -103,6 +103,22 @@ def showMagazineFilteredIndex(pub_filter = None, year_filter = None):
     regexp_cover = "data-img-size-md='(http://assets.jw.org/assets/[^.]+md\.jpg)'"
     cover = re.findall(regexp_cover, html)
 
+    # publication dates where
+    # pub_dates[0] = publication (w,wp, ws, g)
+    # pub_dates[1] = issue date (201301, 2013015, etc.. different by publication type)
+    regexp_pub_date = '"toc-([wgps]+)([0-9]+)"'
+    pub_dates = re.findall(regexp_pub_date, html)
+
+    cover_available = {}
+
+    # I create a dict of "pub_date : cover_url"
+    # So i can test if a pub_date really has a cover_url
+    for cover_url in cover:
+        regexp_cover_date = "([wsgp]+)_[A-Z]+_([0-9]+).md.jpg"
+        dates = re.findall(regexp_cover_date, cover_url)
+        the_key = dates[0][0] + "-" + dates[0][1]
+        cover_available[the_key] = cover_url
+
     count = 0
     for issue in issues:
 
@@ -110,9 +126,19 @@ def showMagazineFilteredIndex(pub_filter = None, year_filter = None):
         if issue[2].strip() != "":
             title = title + " - " + issue[2]
 
+        # somethings like "wp-20131201" or "g-201401"
+        pub_date = pub_dates[count][0] + "-" + pub_dates[count][1]
+        # placeholder to use if the cover is missing
+        cover_url = "http://assets.jw.org/themes/content-theme/images/thumbProduct_placeholder.jpg"
+        try :
+            cover_url = cover_available[pub_date]
+        except:
+            # this exception happens when there is no cover, but only placeholder
+            pass
+
         listItem    = xbmcgui.ListItem( 
             label           = title,
-            thumbnailImage  = cover[count]
+            thumbnailImage  = cover_url
         )     
 
         params      = {
