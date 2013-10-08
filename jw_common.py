@@ -22,6 +22,7 @@ def cleanUpText(text):
 	text = text.replace("&#039;", "'")
 	text = text.replace("&quot;", '"')
 	text = text.replace("&nbsp;", ' ')
+	text = text.strip()
 	return text
 
 

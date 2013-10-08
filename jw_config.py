@@ -16,6 +16,7 @@ locale_2_lang = {
 	"Polish"	: "Polski",
 	"Dutch"		: "Nederlands",
 	"Spanish"	: "Español",
+	"German"	: "Deutsch",
 }
 
 const = {
@@ -111,6 +112,24 @@ const = {
 		"date_format"				: "%d-%m-%Y",
 		"news_index"				: "http://www.jw.org/es/noticias/"
 	},	
+	"Deutsch" : {
+		"lang_code"					: "X",
+		"video_path" 				: "http://www.jw.org/de/videos/",
+
+		"bible_index_audio"			: "http://www.jw.org/de/publikationen/bibel/nwt/bibelbuecher/" , 
+		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=X&txtCMSLang=X",
+
+		"magazine_index"			: "http://www.jw.org/de/publikationen/zeitschriften/",
+		'has_simplified_edition'	: False,
+
+		"music_index"				: "http://www.jw.org/de/publikationen/musik-lieder/",
+		"dramas_index"				: "http://www.jw.org/de/publikationen/biblische-hoerspiele/",
+		"dramatic_reading_index"	: "http://www.jw.org/de/publikationen/dramatische-bibellesungen/",
+		
+		'daily_text_json'			: "http://wol.jw.org/wol/dt/r10/lp-x",
+		"date_format"				: "%d-%m-%Y",
+		"news_index"				: "http://www.jw.org/de/aktuelle-meldungen/"
+	},		
 }
 
 

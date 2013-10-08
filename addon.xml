@@ -23,6 +23,9 @@
         <summary lang="es">Un navegador simple para jw.org contenido de medios</summary>
         <description lang="es">Directamente fluye de www.jw.org, puede: [CR] - ver vídeos [CR] - escuchar lecturas de revistas, canciones y melodías reino, lectura de la Biblia, los dramas de audio y lecturas bíblicas dramáticas [CR] - Lee el texto diario y noticias</description>
         <language>it en pl nl es</language>
+        <summary lang="de">Ein einfacher Browser für jw.org Medieninhalte</summary>
+        <description lang="de">Mit direktes Streaming von www.jw.org, ist folgendes möglich:[CR]- Videos anschauen[CR]- Magazine, Lieder und Melodien aus dem Königreich, Bibellesungen, Audio Dramen und dramatische Bibellesungen[CR]- den Täglichen Text lesen </description>
+        <language>it en pl nl es</language>
         <platform />
         <website>http://realtebo.github.io/plugin.video.jworg/</website>
         <source>https://github.com/realtebo/plugin.video.jworg</source>
