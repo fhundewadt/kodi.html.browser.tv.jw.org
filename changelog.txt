@@ -2,12 +2,12 @@
 -----
 
 New program feature:
-+ Read news from newsroom area of jw.org [not yet ready and not fully tested]
++ Read news from newsroom area of jw.org [Experimental ! not yet ready and not fully tested]
 
 Small enhancements:
 + Changed order in index, to reflect jw.org item order (magazines now is after bible)
 
-New language:
+New language (not 100% translated) in some cases:
 + Dutch ("Nederlands")
 + Polish ("Polski")
 + Spanish ("Español")
@@ -21,6 +21,7 @@ Code
 + Enforced UTF-8 support
 + Enforced resistence to magazine page when missing cover images
 + Enforced drama title scraping
++ Switched to .po for mainstream (English) language and italian
 
 0.2.0
 -----
