@@ -20,6 +20,7 @@ msgctxt "#30001"
 msgid "Next page >>"
 msgstr ""
 
+# Used as section title in addon setting window
 msgctxt "#30002"
 msgid "Language of multimedia file"
 msgstr ""
