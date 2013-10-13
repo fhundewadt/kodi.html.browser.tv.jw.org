@@ -37,12 +37,17 @@ def showMagazineFilterIndex(pub_filter = None):
 
         # Support for simpliefied study edition of watchtower [english, spanish, ...]
         language = jw_config.language
+        print "JWORG content language: " + language
+        print jw_config.const[language]["has_simplified_edition"]
         if jw_config.const[language]["has_simplified_edition"] == True :
+            print "JWORG Content language has simpliefied edition "
             items.append ({   "title" : jw_common.t(30030),  
                 "mode"  : "open_magazine_index",    
                 "pub_filter" : "ws" ,
                 "year_filter" : "",
             })
+
+        print items
 
     if pub_filter is not None :
 

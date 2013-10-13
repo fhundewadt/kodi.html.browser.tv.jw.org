@@ -114,7 +114,7 @@ msgstr "La torre di guardia (ed. per lo studio)"
 
 msgctxt "#30030"
 msgid "The Watchtower (Simplified Edition)"
-msgstr "-"
+msgstr "La torre di guardia (ed. semplificata)"
 
 msgctxt "#30031"
 msgid "Latest"

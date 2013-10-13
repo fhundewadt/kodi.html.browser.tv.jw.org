@@ -7,7 +7,7 @@ New program feature:
 Small enhancements:
 + Changed order in index, to reflect jw.org item order (magazines now is after bible)
 
-New language (not 100% translated) in some cases:
+New language supported (not 100% translated in some cases):
 + Dutch ("Nederlands")
 + Polish ("Polski")
 + Spanish ("Español")

@@ -12,11 +12,12 @@ import jw_common
 
 # key is english name, value is the name of the locale IN the locale
 locale_2_lang = {
-	"Italian"	: "Italiano",
-	"Polish"	: "Polski",
-	"Dutch"		: "Nederlands",
-	"Spanish"	: "Español",
-	"German"	: "Deutsch",
+	"Italian"		: "Italiano",
+	"Polish"		: "Polski",
+	"Dutch"			: "Nederlands",
+	"Spanish"		: "Español",
+	"German"		: "Deutsch",
+	"Portuguese" 	: "Português",
 }
 
 const = {
