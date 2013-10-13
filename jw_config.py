@@ -129,6 +129,24 @@ const = {
 		"date_format"				: "%d-%m-%Y",
 		"news_index"				: "http://www.jw.org/de/aktuelle-meldungen/"
 	},		
+	"Português" : {
+		"lang_code"					: "T",
+		"video_path" 				: "http://www.jw.org/pt/videos/",
+
+		"bible_index_audio"			: "http://www.jw.org/pt/publicacoes/biblia/nwt/livros/" , 
+		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=X&txtCMSLang=X",
+
+		"magazine_index"			: "http://www.jw.org/de/publikationen/zeitschriften/",
+		'has_simplified_edition'	: False,
+
+		"music_index"				: "http://www.jw.org/de/publikationen/musik-lieder/",
+		"dramas_index"				: "http://www.jw.org/de/publikationen/biblische-hoerspiele/",
+		"dramatic_reading_index"	: "http://www.jw.org/de/publikationen/dramatische-bibellesungen/",
+		
+		'daily_text_json'			: "http://wol.jw.org/wol/dt/r10/lp-x",
+		"date_format"				: "%d-%m-%Y",
+		"news_index"				: "http://www.jw.org/de/aktuelle-meldungen/"
+	},		
 }
 
 

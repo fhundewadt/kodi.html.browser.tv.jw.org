@@ -12,6 +12,7 @@ New language:
 + Polish ("Polski")
 + Spanish ("Español")
 + German ("Deutsch")
++ Portuguese ("Português")
 
 Code
 + Changed detection of simplified edition of watchtower study edition 

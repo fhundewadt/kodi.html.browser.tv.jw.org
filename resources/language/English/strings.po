@@ -9,117 +9,127 @@ msgstr ""
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: XBMC Translation Team\n"
-"Language-Team: German (http://www.transifex.com/projects/p/xbmc-addons/language/de/)\n"
+"Language-Team: English (http://www.transifex.com/projects/p/xbmc-addons/language/en/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
+"Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgctxt "#30001"
 msgid "Next page >>"
-msgstr "Nächste Seite>>"
+msgstr ""
 
 msgctxt "#30002"
 msgid "Language of multimedia file"
-msgstr "Sprache der Multimediadatei"
+msgstr ""
+
+#empty strings from id 30003 to 30004
 
 msgctxt "#30005"
 msgid "General"
-msgstr "Allgemein"
+msgstr ""
+
+#empty string with id 30006
 
 msgctxt "#30007"
 msgid "Choose a video"
-msgstr "Wähle ein Video"
+msgstr ""
+
+#empty strings from id 30008 to 30009
 
 msgctxt "#30010"
 msgid "Books of the Bible"
-msgstr "Bücher der Bibel"
+msgstr ""
 
 msgctxt "#30011"
 msgid "Music and songs"
-msgstr "Musik und Lieder"
+msgstr ""
 
 msgctxt "#30012"
 msgid "Daily text"
-msgstr "Täglicher Text"
+msgstr ""
 
 msgctxt "#30013"
 msgid "Bible dramas"
-msgstr "Bibeldramen"
+msgstr ""
 
 msgctxt "#30014"
 msgid "Dramatic bible reading"
-msgstr "Dramatische Bibellesen"
+msgstr ""
 
 msgctxt "#30015"
 msgid "Musics, dramas, and dramatic readings"
-msgstr "Musik, Dramen und dramatische Lesungen"
+msgstr ""
 
 msgctxt "#30016"
 msgid "Newest first"
-msgstr "Neuerster zuerst"
+msgstr ""
 
 msgctxt "#30017"
 msgid "Oldest first"
-msgstr "Ältester zuerst"
+msgstr ""
 
 msgctxt "#30018"
 msgid "By title"
-msgstr "Nach Titel"
+msgstr ""
 
 msgctxt "#30019"
 msgid "Sorting"
-msgstr "Sortierung"
+msgstr ""
 
 msgctxt "#30020"
 msgid "Videos"
-msgstr "Videos"
+msgstr ""
 
 msgctxt "#30021"
 msgid "Cache"
-msgstr "Cache"
+msgstr ""
 
 msgctxt "#30022"
 msgid "Empty cache (force lists update)"
-msgstr "Cache löschen (Listenupdate wird durchgeführt)"
+msgstr ""
 
 msgctxt "#30023"
 msgid "Emptying cache"
-msgstr "Cache löschen"
+msgstr ""
 
 msgctxt "#30024"
 msgid "Successfully done"
-msgstr "Erfolgreich durchgeführt"
+msgstr ""
 
 msgctxt "#30025"
 msgid "Magazines"
-msgstr "Magazine"
+msgstr ""
 
 msgctxt "#30026"
 msgid "All magazines"
-msgstr "Alle Magazine"
+msgstr ""
 
 msgctxt "#30027"
 msgid "Awake!"
-msgstr "Aufwachen!"
+msgstr ""
 
 msgctxt "#30028"
 msgid "The Watchtower"
-msgstr "Der Wachturm"
+msgstr ""
 
 msgctxt "#30029"
 msgid "The Watchtower (Study Edition)"
-msgstr "Der Wachturm (Studentenfassung)"
+msgstr ""
 
 msgctxt "#30030"
 msgid "The Watchtower (Simplified Edition)"
-msgstr "Der Wachturm (vereinfachte Fassung)"
+msgstr ""
 
 msgctxt "#30031"
 msgid "Latest"
-msgstr "Neuste"
+msgstr ""
 
 msgctxt "#30032"
 msgid "Newsroom"
-msgstr "Nachrichtenraum"
+msgstr ""
+
+msgctxt "#30033"
+msgid "Unable to load remote content"
+msgstr ""
