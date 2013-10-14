@@ -30,7 +30,7 @@ def cleanUpText(text):
 VISUAL HELPER
 """
 # Grep "NEXT" link and add to current directory
-# param_name and param_value is used to pass addition param when adding directory item
+# param_name and param_value is used to pass one additional param when adding directory item
 def setNextPageLink(html, mode, type, param_name = None, param_value = None):
 
 	regexp_video_next_page = '<a class="iconNext.*start=([0-9]+).*title="([^""]+)"'

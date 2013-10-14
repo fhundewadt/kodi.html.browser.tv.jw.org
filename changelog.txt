@@ -1,3 +1,10 @@
+0.3.0
+-----
+
+New program feature:
++ Read the news from the "Newsroom" of jw.org
++ Read the spiritual program for actual week
+
 0.2.1
 -----
 

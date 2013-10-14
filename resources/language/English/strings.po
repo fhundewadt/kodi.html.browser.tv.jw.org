@@ -159,3 +159,15 @@ msgstr ""
 msgctxt "#30033"
 msgid "Unable to load remote content"
 msgstr ""
+
+msgctxt "#30034"
+msgid "Week program"
+msgstr ""
+
+# To find this string, click on "Publications", then click on "Online Library"
+# then click on Daily Text (top menu, third item)
+# After the daily text you find the right string, please stop at "school"
+# Camelize to your personal preference
+msgctxt "#30035"
+msgid "Theocratic Ministry School"
+msgstr ""

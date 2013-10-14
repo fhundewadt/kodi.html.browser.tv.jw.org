@@ -127,3 +127,11 @@ msgstr "Sala stampa"
 msgctxt "#30033"
 msgid "Unable to load remote content"
 msgstr "Impossibile caricare i contenuti dal sito"
+
+msgctxt "#30034"
+msgid "Week program"
+msgstr "Programma della settimana"
+
+msgctxt "#30035"
+msgid "Theocratic Ministry School"
+msgstr "Scuola di Ministero Teocratico"
