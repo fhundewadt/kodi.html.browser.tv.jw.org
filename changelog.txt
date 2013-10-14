@@ -1,9 +1,6 @@
 0.2.1
 -----
 
-New program feature:
-+ Read news from newsroom area of jw.org [Experimental ! not yet ready and not fully tested]
-
 Small enhancements:
 + Changed order in index, to reflect jw.org item order (magazines now is after bible)
 

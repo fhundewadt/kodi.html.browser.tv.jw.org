@@ -31,6 +31,7 @@ def showExecIndex():
         isFolder    = True 
     )  
 
+    """
     # 2. News
     title           = jw_common.t(30032)  
     listItem        = xbmcgui.ListItem( title )
@@ -45,4 +46,6 @@ def showExecIndex():
         listitem    = listItem, 
         isFolder    = True
     )  
+    """
+    
     xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
