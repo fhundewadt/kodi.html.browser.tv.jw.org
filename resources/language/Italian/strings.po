@@ -135,3 +135,7 @@ msgstr "Programma della settimana"
 msgctxt "#30035"
 msgid "Theocratic Ministry School"
 msgstr "Scuola di Ministero Teocratico"
+
+msgctxt "#30036"
+msgid "What’s New on JW.ORG?"
+msgstr "Cosa c’è di nuovo su JW.ORG?"
