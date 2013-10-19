@@ -49,7 +49,7 @@ msgid "Bible dramas"
 msgstr "Bijbeldrama`s"
 
 msgctxt "#30014"
-msgid "Dramatic bible reading"
+msgid "Dramatic bible readings"
 msgstr "Dramatische Bijbellezingen"
 
 msgctxt "#30015"
