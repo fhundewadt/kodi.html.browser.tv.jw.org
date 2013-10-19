@@ -132,10 +132,9 @@ class News(xbmcgui.WindowDialog):
 
 	# Grep news title
 	def getTitle(self, text):
-
-		regexp_header = "<header><h1>(.*)</h1>"
+		regexp_header = "<header><h1([^>]*)>(.*)</h1>"
 		headers = re.findall(regexp_header, text)
-		return headers[0]
+		return headers[0][1]
 
 	def getText(self, text):
 		regexp_pars = '<p id="p[0-9]+" class="p[0-9]+">([^<]+)</p>'
