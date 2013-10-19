@@ -177,3 +177,9 @@ msgstr ""
 msgctxt "#30037"
 msgid "Activities"
 msgstr ""
+
+# Showed after the body text of a news 
+msgctxt "#30038"
+msgid "End of the article"
+msgstr ""
+

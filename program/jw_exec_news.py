@@ -69,6 +69,8 @@ def showNewsPage(url):
 #get actioncodes from https://github.com/xbmc/xbmc/blob/master/xbmc/guilib/Key.h
 ACTION_MOVE_UP 		= 3
 ACTION_MOVE_DOWN 	= 4
+ACTION_PAGE_UP 		= 5
+ACTION_PAGE_DOWN 	= 6
 
 class News(xbmcgui.WindowDialog):
 
@@ -128,6 +130,19 @@ class News(xbmcgui.WindowDialog):
 			self.ctrlText.setPosition(x,y)
 			return
 
+		if action == ACTION_PAGE_UP:
+			if y > 0:
+				return
+			y = y + 500;
+			self.ctrlText.setPosition(x,y)
+			return
+
+		if action == ACTION_PAGE_DOWN:
+			(x,y) =  self.ctrlText.getPosition()
+			y = y - 500;
+			self.ctrlText.setPosition(x,y)
+			return
+
 		self.close()
 
 	# Grep news title
@@ -142,4 +157,5 @@ class News(xbmcgui.WindowDialog):
 		out = ""
 		for par in pars:
 			out = out + "\n\n" + par
+		out = out + "\n\n[COLOR=FF0000FF][I]" + jw_common.t(30038).encode("utf8") + "[/I][/COLOR]"
 		return out

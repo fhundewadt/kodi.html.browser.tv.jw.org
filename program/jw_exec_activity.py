@@ -170,6 +170,8 @@ def showArticle(url):
 #get actioncodes from https://github.com/xbmc/xbmc/blob/master/xbmc/guilib/Key.h
 ACTION_MOVE_UP 		= 3
 ACTION_MOVE_DOWN 	= 4
+ACTION_PAGE_UP 		= 5
+ACTION_PAGE_DOWN 	= 6
 
 class Activity(xbmcgui.WindowDialog):
 
@@ -229,6 +231,19 @@ class Activity(xbmcgui.WindowDialog):
 			self.ctrlText.setPosition(x,y)
 			return
 
+		if action == ACTION_PAGE_UP:
+			if y > 0:
+				return
+			y = y + 500;
+			self.ctrlText.setPosition(x,y)
+			return
+
+		if action == ACTION_PAGE_DOWN:
+			(x,y) =  self.ctrlText.getPosition()
+			y = y - 500;
+			self.ctrlText.setPosition(x,y)
+			return
+
 		self.close()
 
 	# Grep news title
@@ -252,5 +267,7 @@ class Activity(xbmcgui.WindowDialog):
 		for par in pars:
 			text = par[0] + "[B]"+par[1]+"[/B]"
 			out = out + "\n\n" + jw_common.removeHtml(text)
+		out = out + "\n\n[COLOR=FF0000FF][I]" + jw_common.t(30038).encode("utf8") + "[/I][/COLOR]"
+
 		return out
 		
