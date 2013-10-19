@@ -25,6 +25,9 @@ def cleanUpText(text):
 	text = text.strip()
 	return text
 
+def removeHtml(text):
+	clean = re.sub("<([^>]*)>", "", text)
+	return clean
 
 """
 VISUAL HELPER

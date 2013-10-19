@@ -64,7 +64,7 @@ def showNewsPage(url):
 
 
 
-# Window showing daily text
+# Window showing news text
 
 #get actioncodes from https://github.com/xbmc/xbmc/blob/master/xbmc/guilib/Key.h
 ACTION_MOVE_UP 		= 3

@@ -172,9 +172,8 @@ msgctxt "#30035"
 msgid "Theocratic Ministry School"
 msgstr ""
 
-# To find this string, from homepage click on white on green link 
-# "See What's New"; the right string is the bold header (title) of the page
-# It's a question in every language i've seen
-msgctxt "#30036"
-msgid "What’s New on JW.ORG?"
+# To find this string, from homepage click on "About us" (last main link)
+# This string is the second link on the left bar 
+msgctxt "#30037"
+msgid "Activities"
 msgstr ""

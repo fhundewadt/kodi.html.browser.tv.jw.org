@@ -92,7 +92,7 @@ class DailiyText(xbmcgui.WindowDialog):
             return ""
 
         scripture = scripture_list[0]
-        scripture = re.sub("<([^>]*)>", "", scripture)    
+        scripture = jw_common.removeHtml(scripture)    
 
         return scripture.encode("utf8") 
 
@@ -105,6 +105,6 @@ class DailiyText(xbmcgui.WindowDialog):
             return ""
 
         full_comment = full_comment_list[0]
-        full_comment = re.sub("<([^>]*)>", "", full_comment)
+        full_comment = jw_common.removeHtml(full_comment)
 
         return  full_comment.encode("utf8")

@@ -38,7 +38,7 @@ const = {
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r6/lp-i",
 		"date_format"				: "%d/%m/%Y",
 		"news_index"				: "http://www.jw.org/it/news/",
-
+		"activity_index"			: "http://www.jw.org/it/testimoni-di-geova/attivit%C3%A0/",
  	},
 	"English" 	: {
 		"lang_code"					: "E",
@@ -57,6 +57,7 @@ const = {
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r1/lp-e",
 		"date_format"				: "%Y-%m-%d",
 		"news_index"				: "http://www.jw.org/en/news/",
+		"activity_index"			: "http://www.jw.org/en/jehovahs-witnesses/activities/",
 	},
 	"Polski" 	: {
 		"lang_code"					: "P",
@@ -74,7 +75,8 @@ const = {
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r12/lp-p",
 		"date_format"				: "%d-%m-%Y",
-		"news_index"				: "http://www.jw.org/pl/wiadomo%C5%9Bci/"
+		"news_index"				: "http://www.jw.org/pl/wiadomo%C5%9Bci/",
+		"activity_index"			: "http://www.jw.org/pl/%C5%9Bwiadkowie-jehowy/dzia%C5%82alno%C5%9B%C4%87/",
 	},	
 	"Nederlands" : {
 		"lang_code"					: "O",
@@ -92,7 +94,8 @@ const = {
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r18/lp-o",
 		"date_format"				: "%d-%m-%Y",
-		"news_index"				: "http://www.jw.org/nl/nieuws/"
+		"news_index"				: "http://www.jw.org/nl/nieuws/",
+		"activity_index"			: "http://www.jw.org/nl/jehovahs-getuigen/activiteiten/",
 	},	
 	"Español" : {
 		"lang_code"					: "S",
@@ -110,7 +113,8 @@ const = {
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r4/lp-s",
 		"date_format"				: "%d-%m-%Y",
-		"news_index"				: "http://www.jw.org/es/noticias/"
+		"news_index"				: "http://www.jw.org/es/noticias/",
+		"activity_index"			: "http://www.jw.org/es/testigos-de-jehov%C3%A1/qui%C3%A9nes-somos-y-qu%C3%A9-hacemos/",
 	},	
 	"Deutsch" : {
 		"lang_code"					: "X",
@@ -128,7 +132,8 @@ const = {
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r10/lp-x",
 		"date_format"				: "%d-%m-%Y",
-		"news_index"				: "http://www.jw.org/de/aktuelle-meldungen/"
+		"news_index"				: "http://www.jw.org/de/aktuelle-meldungen/",
+		"activity_index"			: "http://www.jw.org/de/jehovas-zeugen/aktivitaeten/",
 	},		
 	"Português" : {
 		"lang_code"					: "T",
@@ -146,7 +151,8 @@ const = {
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r5/lp-t",
 		"date_format"				: "%d-%m-%Y",
-		"news_index"				: "http://www.jw.org/pt/noticias/"
+		"news_index"				: "http://www.jw.org/pt/noticias/",
+		"activity_index"			: "http://www.jw.org/pt/testemunhas-de-jeova/atividades/",
 	},		
 }
 
