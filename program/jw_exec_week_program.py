@@ -39,7 +39,7 @@ class WeekProgram(xbmcgui.WindowDialog):
 
     def customInit(self, text):
         
-        border = 50; # px relative to 1280/720 fixed grid resolution
+        border = 30; # px relative to 1280/720 fixed grid resolution
 
         # width is always 1280, height is always 720.
         # getWidth() and getHeight() instead read the REAL screen resolution
