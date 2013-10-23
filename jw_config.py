@@ -18,6 +18,7 @@ locale_2_lang = {
 	"Spanish"		: "Español",
 	"German"		: "Deutsch",
 	"Portuguese" 	: "Português",
+	"Afrikaans"		: "Afrikaans",
 }
 
 const = {
@@ -154,6 +155,25 @@ const = {
 		"news_index"				: "http://www.jw.org/pt/noticias/",
 		"activity_index"			: "http://www.jw.org/pt/testemunhas-de-jeova/atividades/",
 	},		
+	"Afrikaans" : {
+		"lang_code"					: "AF",
+		"video_path" 				: "http://www.jw.org/af/videos/",
+
+		"bible_index_audio"			: False , 
+		"bible_audio_json"  		: False ,
+
+		"magazine_index"			: False,
+		'has_simplified_edition'	: False,
+
+		"music_index"				: "http://www.jw.org/af/publikasies/musiek-liedere/",
+		"dramas_index"				: "http://www.jw.org/af/publikasies/bybelse-klankdramas/",
+		"dramatic_reading_index"	: "http://www.jw.org/af/publikasies/gedramatiseerde-bybelvoorlesings/",
+		
+		'daily_text_json'			: "http://wol.jw.org/wol/dt/r52/lp-af",
+		"date_format"				: "%Y-%m-%d",
+		"news_index"				: "http://www.jw.org/af/nuus/",
+		"activity_index"			: "http://www.jw.org/af/jehovah-se-getuies/bedrywighede/",
+	},
 }
 
 

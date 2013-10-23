@@ -4,7 +4,10 @@
 New program features:
 + Read the news from the "Newsroom" of jw.org
 + Read the spiritual food program for actual week
-+ *** Working on ** About us -> Activities section of jw.org
++ Read the news from about us -> activities section of jw.org 
+
+New languages supported
++ Afrikaans ("Afrikaans")
 
 Languages:
 + Updated to lastest translations available from transifex
@@ -12,6 +15,7 @@ Languages:
 
 Code:
 + Improved reusability
++ Added support for locales without some audio (like bible and magazine readings for Afrikaans)
 
 0.2.1
 -----

@@ -10,14 +10,34 @@ import jw_common
 def showAudioIndex():
     
     items = [
-        {"title" : jw_common.t(30010),  "mode"  : "open_bible_index",            "start" : None },
-        {"title" : jw_common.t(30025),  "mode"  : "open_magazine_index",         "start" : None },
-        {"title" : jw_common.t(30011),  "mode"  : "open_music_index",            "start" : 0 },
-        {"title" : jw_common.t(30013),  "mode"  : "open_drama_index",            "start" : 0 },
-        {"title" : jw_common.t(30014),  "mode"  : "open_dramatic_reading_index", "start" : 0 },
+        {"title" : jw_common.t(30010),
+            "mode"  : "open_bible_index",
+            "enable" :  jw_config.const[jw_config.language]["bible_index_audio"],
+            "start" : None },
+        {"title" : jw_common.t(30025),
+            "mode"  : "open_magazine_index",
+            "enable" : jw_config.const[jw_config.language]["magazine_index"],
+            "start" : None },
+        {"title" : jw_common.t(30011),
+            "mode"  : "open_music_index",
+            "enable" : True,
+            "start" : 0 },
+        {"title" : jw_common.t(30013),
+            "mode"  : "open_drama_index",
+            "enable" : True,
+            "start" : 0 },
+        {"title" : jw_common.t(30014),
+            "mode"  : "open_dramatic_reading_index",   
+            "enable" : True,
+            "start" : 0 },
     ]
 
     for item in items:
+
+        # Case Afrikaans: has no bible audio !
+        if item["enable"] == False :
+            continue;
+
         listItem    = xbmcgui.ListItem( item["title"] )     
         params      = {
             "content_type"  : "audio", 
