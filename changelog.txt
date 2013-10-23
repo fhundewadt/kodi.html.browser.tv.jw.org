@@ -9,7 +9,7 @@ New program features:
 New languages supported
 + Afrikaans ("Afrikaans")
 
-Languages:
+Language Files:
 + Updated to lastest translations available from transifex
 + Added comments to .po english file for better translations
 
