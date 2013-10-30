@@ -7,11 +7,12 @@ New program features:
 + Read the news from about us -> activities section of jw.org 
 
 New languages supported
-+ Afrikaans ("Afrikaans")
++ Afrikaans ("Afrikaans") - This locale has no audio files for bible and for magazines
++ Greek ("Ελληνική") - This locale has no audio files for bible
 
 Language Files:
 + Updated to lastest translations available from transifex
-+ Added comments to .po english file for better translations
++ Added comments to .po english file for better translations (now are visible in transifex in all languages)
 
 Code:
 + Improved reusability
