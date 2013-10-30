@@ -42,8 +42,8 @@ const = {
 		
 		'wol'						: "r6/lp-i",
 		"date_format"				: "%d/%m/%Y",
-		"news_index"				: "http://www.jw.org/it/news/",
-		"activity_index"			: "http://www.jw.org/it/testimoni-di-geova/attivit%C3%A0/",
+		"news_index"				: "news/",
+		"activity_index"			: "testimoni-di-geova/attivit%C3%A0/",
  	},
 	"English" 	: {
 		"lang_code"					: "E",
@@ -60,8 +60,8 @@ const = {
 
 		'wol'						: "r1/lp-e",
 		"date_format"				: "%Y-%m-%d",
-		"news_index"				: "http://www.jw.org/en/news/",
-		"activity_index"			: "http://www.jw.org/en/jehovahs-witnesses/activities/",
+		"news_index"				: "news/",
+		"activity_index"			: "jehovahs-witnesses/activities/",
 	},
 	"Polski" 	: {
 		"lang_code"					: "P",
@@ -78,8 +78,8 @@ const = {
 		
 		'wol'						: "r12/lp-p",
 		"date_format"				: "%d-%m-%Y",
-		"news_index"				: "http://www.jw.org/pl/wiadomo%C5%9Bci/",
-		"activity_index"			: "http://www.jw.org/pl/%C5%9Bwiadkowie-jehowy/dzia%C5%82alno%C5%9B%C4%87/",
+		"news_index"				: "wiadomo%C5%9Bci/",
+		"activity_index"			: "%C5%9Bwiadkowie-jehowy/dzia%C5%82alno%C5%9B%C4%87/",
 	},	
 	"Nederlands" : {
 		"lang_code"					: "O",
@@ -96,8 +96,8 @@ const = {
 		
 		'wol'						: "r18/lp-o",
 		"date_format"				: "%d-%m-%Y",
-		"news_index"				: "http://www.jw.org/nl/nieuws/",
-		"activity_index"			: "http://www.jw.org/nl/jehovahs-getuigen/activiteiten/",
+		"news_index"				: "nieuws/",
+		"activity_index"			: "jehovahs-getuigen/activiteiten/",
 	},	
 	"Español" : {
 		"lang_code"					: "S",
@@ -114,8 +114,8 @@ const = {
 		
 		'wol'						: "r4/lp-s",
 		"date_format"				: "%d-%m-%Y",
-		"news_index"				: "http://www.jw.org/es/noticias/",
-		"activity_index"			: "http://www.jw.org/es/testigos-de-jehov%C3%A1/qui%C3%A9nes-somos-y-qu%C3%A9-hacemos/",
+		"news_index"				: "noticias/",
+		"activity_index"			: "testigos-de-jehov%C3%A1/qui%C3%A9nes-somos-y-qu%C3%A9-hacemos/",
 	},	
 	"Deutsch" : {
 		"lang_code"					: "X",
@@ -132,8 +132,8 @@ const = {
 		
 		'wol'						: "r10/lp-x",
 		"date_format"				: "%d-%m-%Y",
-		"news_index"				: "http://www.jw.org/de/aktuelle-meldungen/",
-		"activity_index"			: "http://www.jw.org/de/jehovas-zeugen/aktivitaeten/",
+		"news_index"				: "aktuelle-meldungen/",
+		"activity_index"			: "jehovas-zeugen/aktivitaeten/",
 	},		
 	"Português" : {
 		"lang_code"					: "T",
@@ -150,8 +150,8 @@ const = {
 		
 		'wol'						: "r5/lp-t",
 		"date_format"				: "%d-%m-%Y",
-		"news_index"				: "http://www.jw.org/pt/noticias/",
-		"activity_index"			: "http://www.jw.org/pt/testemunhas-de-jeova/atividades/",
+		"news_index"				: "noticias/",
+		"activity_index"			: "testemunhas-de-jeova/atividades/",
 	},		
 	"Afrikaans" : {
 		"lang_code"					: "AF",
@@ -168,8 +168,8 @@ const = {
 		
 		'wol'						: "r52/lp-af",
 		"date_format"				: "%Y-%m-%d",
-		"news_index"				: "http://www.jw.org/af/nuus/",
-		"activity_index"			: "http://www.jw.org/af/jehovah-se-getuies/bedrywighede/",
+		"news_index"				: "nuus/",
+		"activity_index"			: "jehovah-se-getuies/bedrywighede/",
 	},
 	"Ελληνική" : {
 		"lang_code"					: "G",
@@ -186,8 +186,8 @@ const = {
 		
 		'wol'						: "r11/lp-g",
 		"date_format"				: "%Y-%m-%d",
-		"news_index"				: "http://www.jw.org/el/%CE%B5%CE%B9%CE%B4%CE%AE%CF%83%CE%B5%CE%B9%CF%82/",
-		"activity_index"			: "http://www.jw.org/el/%CE%BC%CE%AC%CF%81%CF%84%CF%85%CF%81%CE%B5%CF%82-%CF%84%CE%BF%CF%85-%CE%B9%CE%B5%CF%87%CF%89%CE%B2%CE%AC/%CE%B4%CF%81%CE%B1%CF%83%CF%84%CE%B7%CF%81%CE%B9%CF%8C%CF%84%CE%B7%CF%84%CE%B5%CF%82/",
+		"news_index"				: "%CE%B5%CE%B9%CE%B4%CE%AE%CF%83%CE%B5%CE%B9%CF%82/",
+		"activity_index"			: "%CE%BC%CE%AC%CF%81%CF%84%CF%85%CF%81%CE%B5%CF%82-%CF%84%CE%BF%CF%85-%CE%B9%CE%B5%CF%87%CF%89%CE%B2%CE%AC/%CE%B4%CF%81%CE%B1%CF%83%CF%84%CE%B7%CF%81%CE%B9%CF%8C%CF%84%CE%B7%CF%84%CE%B5%CF%82/",
 	},
 }
 

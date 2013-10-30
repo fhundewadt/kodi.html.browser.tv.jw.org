@@ -16,7 +16,10 @@ import xbmcplugin
 def showNewsIndex():
 
 	language    = jw_config.language
-	url 		= jw_config.const[language]["news_index"] 
+
+	url 		= jw_common.getUrl(language)
+	url 		= url + jw_config.const[language]["news_index"] 
+	
 	html 		= jw_common.loadUrl(url)
 
 	regexp_title = '<h3><a href="([^"]+)"( title="[^"]+")?>([^<]+)</a></h3>'

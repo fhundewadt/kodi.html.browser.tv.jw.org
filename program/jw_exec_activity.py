@@ -15,7 +15,10 @@ import urllib
 def showActivityIndex():
 
 	language    = jw_config.language
-	url 		= jw_config.const[language]["activity_index"]
+
+	url 		= jw_common.getUrl(language)
+	url 		= url + jw_config.const[language]["activity_index"]
+
 	html 		= jw_common.loadUrl(url)
 
 	# see_all[n][0] = section index relative url
