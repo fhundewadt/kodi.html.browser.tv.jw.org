@@ -14,7 +14,10 @@ import re
 def showWeekProgram(date):
 
     language    = jw_config.language
-    json_url    = jw_config.const[language]["daily_text_json"] + "/" + date
+
+    json_url    = jw_config.wol_url 
+    json_url    = json_url + "dt/" 
+    json_url    = json_url + jw_config.const[language]["wol"] + "/" + date
 
     json  = jw_common.loadJsonFromUrl(json_url)
     text  = "[COLOR=FF0000FF][B]" + jw_common.t(30035) + "[/B][/COLOR]\n"

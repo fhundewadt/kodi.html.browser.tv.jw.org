@@ -24,6 +24,7 @@ locale_2_lang = {
 
 main_url = "http://www.jw.org/"
 app_url ="http://www.jw.org/apps/"
+wol_url = "http://wol.jw.org/wol/"
 
 const = {
 	"Italiano" 	: {
@@ -39,7 +40,7 @@ const = {
 		"dramas_index"				: "pubblicazioni/drammi-biblici-audio/",
 		"dramatic_reading_index"	: "pubblicazioni/brani-biblici-recitati/",
 		
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r6/lp-i",
+		'wol'						: "r6/lp-i",
 		"date_format"				: "%d/%m/%Y",
 		"news_index"				: "http://www.jw.org/it/news/",
 		"activity_index"			: "http://www.jw.org/it/testimoni-di-geova/attivit%C3%A0/",
@@ -57,7 +58,7 @@ const = {
 		"dramas_index"				: "publications/audio-bible-dramas/",
 		"dramatic_reading_index"	: "publications/dramatic-bible-readings/",
 
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r1/lp-e",
+		'wol'						: "r1/lp-e",
 		"date_format"				: "%Y-%m-%d",
 		"news_index"				: "http://www.jw.org/en/news/",
 		"activity_index"			: "http://www.jw.org/en/jehovahs-witnesses/activities/",
@@ -75,7 +76,7 @@ const = {
 		"dramas_index"				: "publikacje/s%C5%82uchowiska-biblijne/",
 		"dramatic_reading_index"	: "publikacje/adaptacje-d%C5%BAwi%C4%99kowe-biblii/",
 		
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r12/lp-p",
+		'wol'						: "r12/lp-p",
 		"date_format"				: "%d-%m-%Y",
 		"news_index"				: "http://www.jw.org/pl/wiadomo%C5%9Bci/",
 		"activity_index"			: "http://www.jw.org/pl/%C5%9Bwiadkowie-jehowy/dzia%C5%82alno%C5%9B%C4%87/",
@@ -93,7 +94,7 @@ const = {
 		"dramas_index"				: "publicaties/audio-bijbel-dramas/",
 		"dramatic_reading_index"	: "publicaties/bijbelse-hoorspelen/",
 		
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r18/lp-o",
+		'wol'						: "r18/lp-o",
 		"date_format"				: "%d-%m-%Y",
 		"news_index"				: "http://www.jw.org/nl/nieuws/",
 		"activity_index"			: "http://www.jw.org/nl/jehovahs-getuigen/activiteiten/",
@@ -111,7 +112,7 @@ const = {
 		"dramas_index"				: "publicaciones/audio-representaciones-dram%C3%A1ticas/",
 		"dramatic_reading_index"	: "publicaciones/lecturas-b%C3%ADblicas-dramatizadas/",
 		
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r4/lp-s",
+		'wol'						: "r4/lp-s",
 		"date_format"				: "%d-%m-%Y",
 		"news_index"				: "http://www.jw.org/es/noticias/",
 		"activity_index"			: "http://www.jw.org/es/testigos-de-jehov%C3%A1/qui%C3%A9nes-somos-y-qu%C3%A9-hacemos/",
@@ -129,7 +130,7 @@ const = {
 		"dramas_index"				: "publikationen/biblische-hoerspiele/",
 		"dramatic_reading_index"	: "publikationen/dramatische-bibellesungen/",
 		
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r10/lp-x",
+		'wol'						: "r10/lp-x",
 		"date_format"				: "%d-%m-%Y",
 		"news_index"				: "http://www.jw.org/de/aktuelle-meldungen/",
 		"activity_index"			: "http://www.jw.org/de/jehovas-zeugen/aktivitaeten/",
@@ -147,7 +148,7 @@ const = {
 		"dramas_index"				: "publicacoes/dramas-biblicos-em-audio/",
 		"dramatic_reading_index"	: "publicacoes/leituras-biblicas-dramatizadas/",
 		
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r5/lp-t",
+		'wol'						: "r5/lp-t",
 		"date_format"				: "%d-%m-%Y",
 		"news_index"				: "http://www.jw.org/pt/noticias/",
 		"activity_index"			: "http://www.jw.org/pt/testemunhas-de-jeova/atividades/",
@@ -165,7 +166,7 @@ const = {
 		"dramas_index"				: "publikasies/bybelse-klankdramas/",
 		"dramatic_reading_index"	: "publikasies/gedramatiseerde-bybelvoorlesings/",
 		
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r52/lp-af",
+		'wol'						: "r52/lp-af",
 		"date_format"				: "%Y-%m-%d",
 		"news_index"				: "http://www.jw.org/af/nuus/",
 		"activity_index"			: "http://www.jw.org/af/jehovah-se-getuies/bedrywighede/",
@@ -183,7 +184,7 @@ const = {
 		"dramas_index"				: "%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CE%B7%CF%87%CE%B7%CF%84%CE%B9%CE%BA%CE%AC-%CE%B2%CE%B9%CE%B2%CE%BB%CE%B9%CE%BA%CE%AC-%CE%B4%CF%81%CE%AC%CE%BC%CE%B1%CF%84%CE%B1/",
 		"dramatic_reading_index"	: "%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CE%B4%CF%81%CE%B1%CE%BC%CE%B1%CF%84%CE%BF%CF%80%CE%BF%CE%B9%CE%B7%CE%BC%CE%AD%CE%BD%CE%B5%CF%82-%CE%B1%CE%BD%CE%B1%CE%B3%CE%BD%CF%8E%CF%83%CE%B5%CE%B9%CF%82-%CE%B1%CE%B3%CE%AF%CE%B1-%CE%B3%CF%81%CE%B1%CF%86%CE%AE/",
 		
-		'daily_text_json'			: "http://wol.jw.org/wol/dt/r11/lp-g",
+		'wol'						: "r11/lp-g",
 		"date_format"				: "%Y-%m-%d",
 		"news_index"				: "http://www.jw.org/el/%CE%B5%CE%B9%CE%B4%CE%AE%CF%83%CE%B5%CE%B9%CF%82/",
 		"activity_index"			: "http://www.jw.org/el/%CE%BC%CE%AC%CF%81%CF%84%CF%85%CF%81%CE%B5%CF%82-%CF%84%CE%BF%CF%85-%CE%B9%CE%B5%CF%87%CF%89%CE%B2%CE%AC/%CE%B4%CF%81%CE%B1%CF%83%CF%84%CE%B7%CF%81%CE%B9%CF%8C%CF%84%CE%B7%CF%84%CE%B5%CF%82/",
