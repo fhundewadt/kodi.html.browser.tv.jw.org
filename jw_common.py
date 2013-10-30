@@ -57,7 +57,7 @@ def setNextPageLink(html, mode, type, param_name = None, param_value = None):
 	url = jw_config.plugin_name + '?' + urllib.urlencode(params)
 
 	xbmcplugin.addDirectoryItem(
-		handle		= jw_config.pluginPid, 
+		handle		= jw_config.plugin_pid, 
 		url			= url, 
 		listitem	= listItem, 
 		isFolder	= True 

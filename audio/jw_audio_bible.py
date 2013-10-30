@@ -41,13 +41,13 @@ def showAudioBibleIndex():
 		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)	
 		xbmcplugin.addDirectoryItem(
-			handle		= jw_config.pluginPid, 
+			handle		= jw_config.plugin_pid, 
 			url			= url, 
 			listitem	= listItem, 
 			isFolder	= True 
 		)  
 
-	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
+	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
 
 
 # List of chapter of a specific book, playable
@@ -91,10 +91,10 @@ def showAudioBibleBookJson(book_num):
 		)
 
 		xbmcplugin.addDirectoryItem(
-			handle		= jw_config.pluginPid, 
+			handle		= jw_config.plugin_pid, 
 			url			= url, 
 			listitem	= listItem, 
 			isFolder	= False 
 		)  
 
-	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
+	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)

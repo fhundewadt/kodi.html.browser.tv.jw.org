@@ -36,13 +36,13 @@ def showVideoFilter():
 		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
 		xbmcplugin.addDirectoryItem(
-			handle		= jw_config.pluginPid, 
+			handle		= jw_config.plugin_pid, 
 			url			= url, 
 			listitem	= listItem, 
 			isFolder	= True 
 		)  
 	
-	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
+	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
 
 
 # show available video pages
@@ -86,7 +86,7 @@ def showVideoIndex(start, video_filter):
 		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
 		xbmcplugin.addDirectoryItem(
-			handle=jw_config.pluginPid, 
+			handle=jw_config.plugin_pid, 
 			url=url, 
 			listitem=listItem, 
 			isFolder=True 
@@ -95,7 +95,7 @@ def showVideoIndex(start, video_filter):
 
 	jw_common.setNextPageLink(html, "open_video_index", "video", "video_filter", video_filter)
 
-	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
+	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
 	jw_common.setThumbnailView()
 
 
@@ -137,14 +137,14 @@ def showVideoJsonUrl(json_url, thumb):
 		listItem.setProperty("IsPlayable","true")
 
 		xbmcplugin.addDirectoryItem(
-			handle		= jw_config.pluginPid, 
+			handle		= jw_config.plugin_pid, 
 			url			= url, 
 			listitem	= listItem, 
 			isFolder	= False 
 		)  
 		
 		
-		# xbmcplugin.setResolvedUrl( handle=jw_config.pluginPid, succeeded=True, listitem=listItem)
+		# xbmcplugin.setResolvedUrl( handle=jw_config.plugin_pid, succeeded=True, listitem=listItem)
 
-	xbmcplugin.endOfDirectory(handle=jw_config.pluginPid)
+	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
 

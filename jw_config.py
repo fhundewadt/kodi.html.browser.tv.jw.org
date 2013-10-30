@@ -193,7 +193,7 @@ const = {
 
 
 plugin_name 	= sys.argv[0]   # plugin://plugin.video.jworg/
-pluginPid   	= int(sys.argv[1])
+plugin_pid   	= int(sys.argv[1])
 plugin_params 	= urlparse.parse_qs((sys.argv[2])[1:])
 skin_used 		= xbmc.getSkinDir()
 dir_media		= os.path.dirname(__file__) + os.sep + "resources" + os.sep + "media" + os.sep
@@ -209,11 +209,11 @@ except:
 	from resources.lib import storageserverdummy as StorageServer
 	 
 cache 			= StorageServer.StorageServer(plugin_name, 24)  # 2 hour cache
-audio_sorting 	= str(int(xbmcplugin.getSetting(pluginPid, "audio_sorting")) + 1)
-video_sorting 	= str(int(xbmcplugin.getSetting(pluginPid, "video_sorting")) + 1)
+audio_sorting 	= str(int(xbmcplugin.getSetting(plugin_pid, "audio_sorting")) + 1)
+video_sorting 	= str(int(xbmcplugin.getSetting(plugin_pid, "video_sorting")) + 1)
 
 # if language is set, it used a localized language name, like "Italiano" or "Polski"
-language		= xbmcplugin.getSetting(pluginPid, "language")
+language		= xbmcplugin.getSetting(plugin_pid, "language")
 
 # AUTODETECT LANGUAGE IF MISSING
 # if not set, language will be read from system, where it uses english language name
