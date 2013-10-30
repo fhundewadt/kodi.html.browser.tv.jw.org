@@ -17,6 +17,7 @@ Language Files:
 Code:
 + Improved reusability
 + Added support for locales without some audio (like bible and magazine readings for Afrikaans)
++ Simplified configuration for jw.org language support
 
 0.2.1
 -----

@@ -15,7 +15,7 @@ import jw_common
 def showAudioBibleIndex():
 	
 	language 		= jw_config.language
-	bible_index_url = jw_config.const[language]["bible_index_audio"]
+	bible_index_url = jw_common.getUrl(language) + jw_config.const[language]["bible_index_audio"]
 	html 			= jw_common.loadUrl(bible_index_url) 
 	
 	# Grep book names
@@ -53,10 +53,21 @@ def showAudioBibleIndex():
 # List of chapter of a specific book, playable
 def showAudioBibleBookJson(book_num):
 
-	language 	= jw_config.language
-	json_url 	= jw_config.const[language]["bible_audio_json"] + "&booknum=" + book_num
+	lang_code 	= jw_config.const[jw_config.language]["lang_code"] 
+
+	json_url 	= jw_config.app_url 
+	json_url 	= json_url + lang_code 
+	json_url 	= json_url + "_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten="
+	json_url 	= json_url + lang_code 
+	json_url 	= json_url + "&txtCMSLang="
+	json_url 	= json_url + lang_code 
+	json_url 	= json_url + "&booknum=" 
+	json_url 	= json_url + book_num
+
+	print "JWORG json_url "+ json_url
+
 	json 		= jw_common.loadJsonFromUrl(json_url)
-	lang_code 	= jw_config.const[language]["lang_code"]
+	lang_code 	= lang_code
 	book_name 	= json["pubName"]
 	cover_url   = json["pubImage"]["url"]
 

@@ -96,3 +96,9 @@ def loadJsonFromUrl (url):
 	data = jw_config.cache.cacheFunction(loadNotCachedJsonFromUrl, url)	
 	return data
 
+"""
+URL HELPER
+"""
+def getUrl(language):
+	return jw_config.main_url + jw_config.const[language]["url_lang_code"]  + "/" 
+

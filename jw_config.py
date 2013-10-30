@@ -22,13 +22,16 @@ locale_2_lang = {
 	"Greek"			: "Ελληνική",
 }
 
+main_url = "http://www.jw.org/"
+app_url ="http://www.jw.org/apps/"
+
 const = {
 	"Italiano" 	: {
 		"lang_code"					: "I",
-		"video_path" 				: "http://www.jw.org/it/video",
+		"url_lang_code"				: "it",
+		"video_path" 				: "video",
 		
-		"bible_index_audio"			: "http://www.jw.org/it/pubblicazioni/bibbia/nwt/libri/",
-		"bible_audio_json"  		: "http://www.jw.org/apps/I_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=I",
+		"bible_index_audio"			: "pubblicazioni/bibbia/nwt/libri/",
 		
 		"magazine_index"			: "http://www.jw.org/it/pubblicazioni/riviste/",
 		'has_simplified_edition'	: False,
@@ -44,10 +47,10 @@ const = {
  	},
 	"English" 	: {
 		"lang_code"					: "E",
-		"video_path" 				: "http://www.jw.org/en/videos",
+		"url_lang_code"				: "en",
+		"video_path" 				: "videos",
 		
-		"bible_index_audio"			: "http://www.jw.org/en/publications/bible/nwt/books/" ,
-		"bible_audio_json"  		: "http://www.jw.org/apps/E_TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=E",
+		"bible_index_audio"			: "publications/bible/nwt/books/" ,
 		
 		"magazine_index"			: "http://www.jw.org/en/publications/magazines/",
 		'has_simplified_edition'	: True,
@@ -63,10 +66,10 @@ const = {
 	},
 	"Polski" 	: {
 		"lang_code"					: "P",
-		"video_path" 				: "http://www.jw.org/pl/filmy/",
+		"url_lang_code"				: "pl",
+		"video_path" 				: "filmy",
 		
-		"bible_index_audio"			: "http://www.jw.org/pl/publikacje/biblia/nwt/ksi%C4%99gi-biblijne/" , 
-		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=P&txtCMSLang=P",
+		"bible_index_audio"			: "publikacje/biblia/nwt/ksi%C4%99gi-biblijne/" , 
 		
 		"magazine_index"			: "http://www.jw.org/pl/publikacje/czasopisma/",
 		'has_simplified_edition'	: False,
@@ -82,10 +85,10 @@ const = {
 	},	
 	"Nederlands" : {
 		"lang_code"					: "O",
-		"video_path" 				: "http://www.jw.org/nl/videos/",
+		"url_lang_code"				: "nl",
+		"video_path" 				: "videos",
 
-		"bible_index_audio"			: "http://www.jw.org/nl/publicaties/bijbel/nwt/boeken/" , 
-		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=O&txtCMSLang=O", #last 2 are letters 'o' not zero
+		"bible_index_audio"			: "publicaties/bijbel/nwt/boeken/" , 
 		
 		"magazine_index"			: "http://www.jw.org/nl/publicaties/tijdschriften/",
 		'has_simplified_edition'	: False,
@@ -101,10 +104,10 @@ const = {
 	},	
 	"Español" : {
 		"lang_code"					: "S",
-		"video_path" 				: "http://www.jw.org/es/videos/",
+		"url_lang_code"				: "es",
+		"video_path" 				: "videos",
 
-		"bible_index_audio"			: "http://www.jw.org/es/publicaciones/biblia/nwt/libros/" , 
-		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=S&txtCMSLang=S",
+		"bible_index_audio"			: "publicaciones/biblia/nwt/libros/" , 
 
 		"magazine_index"			: "http://www.jw.org/es/publicaciones/revistas/",
 		'has_simplified_edition'	: True,
@@ -120,10 +123,10 @@ const = {
 	},	
 	"Deutsch" : {
 		"lang_code"					: "X",
-		"video_path" 				: "http://www.jw.org/de/videos/",
+		"url_lang_code"				: "de",
+		"video_path" 				: "videos",
 
-		"bible_index_audio"			: "http://www.jw.org/de/publikationen/bibel/nwt/bibelbuecher/" , 
-		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=X&txtCMSLang=X",
+		"bible_index_audio"			: "publikationen/bibel/nwt/bibelbuecher/" , 
 
 		"magazine_index"			: "http://www.jw.org/de/publikationen/zeitschriften/",
 		'has_simplified_edition'	: False,
@@ -139,11 +142,10 @@ const = {
 	},		
 	"Português" : {
 		"lang_code"					: "T",
-		"video_path" 				: "http://www.jw.org/pt/videos/",
+		"url_lang_code"				: "pt",
+		"video_path" 				: "videos",
 
-		"bible_index_audio"			: "http://www.jw.org/pt/publicacoes/biblia/nwt/livros/" , 
-		"bible_audio_json"  		: "http://www.jw.org/apps/TRGCHlZRQVNYVrXF?output=json&pub=bi12&fileformat=MP3&alllangs=0&langwritten=T&txtCMSLang=T",
-
+		"bible_index_audio"			: "publicacoes/biblia/nwt/livros/" , 
 
 		"magazine_index"			: "http://www.jw.org/pt/publicacoes/revistas/",
 		'has_simplified_edition'	: True,
@@ -159,10 +161,10 @@ const = {
 	},		
 	"Afrikaans" : {
 		"lang_code"					: "AF",
-		"video_path" 				: "http://www.jw.org/af/videos/",
+		"url_lang_code"				: "af",
+		"video_path" 				: "videos",
 
-		"bible_index_audio"			: False , 
-		"bible_audio_json"  		: False ,
+		"bible_index_audio"			: False, 
 
 		"magazine_index"			: False,
 		'has_simplified_edition'	: False,
@@ -178,10 +180,10 @@ const = {
 	},
 	"Ελληνική" : {
 		"lang_code"					: "G",
-		"video_path" 				: "http://www.jw.org/el/%CE%B2%CE%AF%CE%BD%CF%84%CE%B5%CE%BF/",
+		"url_lang_code"				: "el",
+		"video_path" 				: "%CE%B2%CE%AF%CE%BD%CF%84%CE%B5%CE%BF",
 
 		"bible_index_audio"			: False,
-		"bible_audio_json"  		: False,
 
 		"magazine_index"			: "http://www.jw.org/el/%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CF%80%CE%B5%CF%81%CE%B9%CE%BF%CE%B4%CE%B9%CE%BA%CE%AC/",
 		'has_simplified_edition'	: False,
