@@ -35,9 +35,9 @@ const = {
 		"magazine_index"			: "pubblicazioni/riviste/",
 		'has_simplified_edition'	: False,
 
-		"music_index"				: "http://www.jw.org/it/pubblicazioni/musica-cantici/",
-		"dramas_index"				: "http://www.jw.org/it/pubblicazioni/drammi-biblici-audio/",
-		"dramatic_reading_index"	: "http://www.jw.org/it/pubblicazioni/brani-biblici-recitati/",
+		"music_index"				: "pubblicazioni/musica-cantici/",
+		"dramas_index"				: "pubblicazioni/drammi-biblici-audio/",
+		"dramatic_reading_index"	: "pubblicazioni/brani-biblici-recitati/",
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r6/lp-i",
 		"date_format"				: "%d/%m/%Y",
@@ -53,9 +53,9 @@ const = {
 		"magazine_index"			: "publications/magazines/",
 		'has_simplified_edition'	: True,
 
-		"music_index"				: "http://www.jw.org/en/publications/music-songs/",
-		"dramas_index"				: "http://www.jw.org/en/publications/audio-bible-dramas/",
-		"dramatic_reading_index"	: "http://www.jw.org/en/publications/dramatic-bible-readings/",
+		"music_index"				: "publications/music-songs/",
+		"dramas_index"				: "publications/audio-bible-dramas/",
+		"dramatic_reading_index"	: "publications/dramatic-bible-readings/",
 
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r1/lp-e",
 		"date_format"				: "%Y-%m-%d",
@@ -71,9 +71,9 @@ const = {
 		"magazine_index"			: "publikacje/czasopisma/",
 		'has_simplified_edition'	: False,
 
-		"music_index"				: "http://www.jw.org/pl/publikacje/muzyka-pie%C5%9Bni/",
-		"dramas_index"				: "http://www.jw.org/pl/publikacje/s%C5%82uchowiska-biblijne/",
-		"dramatic_reading_index"	: "http://www.jw.org/pl/publikacje/adaptacje-d%C5%BAwi%C4%99kowe-biblii/",
+		"music_index"				: "publikacje/muzyka-pie%C5%9Bni/",
+		"dramas_index"				: "publikacje/s%C5%82uchowiska-biblijne/",
+		"dramatic_reading_index"	: "publikacje/adaptacje-d%C5%BAwi%C4%99kowe-biblii/",
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r12/lp-p",
 		"date_format"				: "%d-%m-%Y",
@@ -89,9 +89,9 @@ const = {
 		"magazine_index"			: "publicaties/tijdschriften/",
 		'has_simplified_edition'	: False,
 
-		"music_index"				: "http://www.jw.org/nl/publicaties/muziek-liederen/",
-		"dramas_index"				: "http://www.jw.org/nl/publicaties/audio-bijbel-dramas/",
-		"dramatic_reading_index"	: "http://www.jw.org/nl/publicaties/bijbelse-hoorspelen/",
+		"music_index"				: "publicaties/muziek-liederen/",
+		"dramas_index"				: "publicaties/audio-bijbel-dramas/",
+		"dramatic_reading_index"	: "publicaties/bijbelse-hoorspelen/",
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r18/lp-o",
 		"date_format"				: "%d-%m-%Y",
@@ -107,9 +107,9 @@ const = {
 		"magazine_index"			: "publicaciones/revistas/",
 		'has_simplified_edition'	: True,
 
-		"music_index"				: "http://www.jw.org/es/publicaciones/m%C3%BAsica-c%C3%A1nticos/",
-		"dramas_index"				: "http://www.jw.org/es/publicaciones/audio-representaciones-dram%C3%A1ticas/",
-		"dramatic_reading_index"	: "http://www.jw.org/es/publicaciones/lecturas-b%C3%ADblicas-dramatizadas/",
+		"music_index"				: "publicaciones/m%C3%BAsica-c%C3%A1nticos/",
+		"dramas_index"				: "publicaciones/audio-representaciones-dram%C3%A1ticas/",
+		"dramatic_reading_index"	: "publicaciones/lecturas-b%C3%ADblicas-dramatizadas/",
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r4/lp-s",
 		"date_format"				: "%d-%m-%Y",
@@ -125,9 +125,9 @@ const = {
 		"magazine_index"			: "publikationen/zeitschriften/",
 		'has_simplified_edition'	: False,
 
-		"music_index"				: "http://www.jw.org/de/publikationen/musik-lieder/",
-		"dramas_index"				: "http://www.jw.org/de/publikationen/biblische-hoerspiele/",
-		"dramatic_reading_index"	: "http://www.jw.org/de/publikationen/dramatische-bibellesungen/",
+		"music_index"				: "publikationen/musik-lieder/",
+		"dramas_index"				: "publikationen/biblische-hoerspiele/",
+		"dramatic_reading_index"	: "publikationen/dramatische-bibellesungen/",
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r10/lp-x",
 		"date_format"				: "%d-%m-%Y",
@@ -143,9 +143,9 @@ const = {
 		"magazine_index"			: "publicacoes/revistas/",
 		'has_simplified_edition'	: True,
 
-		"music_index"				: "http://www.jw.org/pt/publicacoes/musica-canticos/",
-		"dramas_index"				: "http://www.jw.org/pt/publicacoes/dramas-biblicos-em-audio/",
-		"dramatic_reading_index"	: "http://www.jw.org/pt/publicacoes/leituras-biblicas-dramatizadas/",
+		"music_index"				: "publicacoes/musica-canticos/",
+		"dramas_index"				: "publicacoes/dramas-biblicos-em-audio/",
+		"dramatic_reading_index"	: "publicacoes/leituras-biblicas-dramatizadas/",
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r5/lp-t",
 		"date_format"				: "%d-%m-%Y",
@@ -161,9 +161,9 @@ const = {
 		"magazine_index"			: False,
 		'has_simplified_edition'	: False,
 
-		"music_index"				: "http://www.jw.org/af/publikasies/musiek-liedere/",
-		"dramas_index"				: "http://www.jw.org/af/publikasies/bybelse-klankdramas/",
-		"dramatic_reading_index"	: "http://www.jw.org/af/publikasies/gedramatiseerde-bybelvoorlesings/",
+		"music_index"				: "publikasies/musiek-liedere/",
+		"dramas_index"				: "publikasies/bybelse-klankdramas/",
+		"dramatic_reading_index"	: "publikasies/gedramatiseerde-bybelvoorlesings/",
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r52/lp-af",
 		"date_format"				: "%Y-%m-%d",
@@ -179,9 +179,9 @@ const = {
 		"magazine_index"			: "%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CF%80%CE%B5%CF%81%CE%B9%CE%BF%CE%B4%CE%B9%CE%BA%CE%AC/",
 		'has_simplified_edition'	: False,
 
-		"music_index"				: "http://www.jw.org/el/%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CE%BC%CE%BF%CF%85%CF%83%CE%B9%CE%BA%CE%AE-%CF%8D%CE%BC%CE%BD%CE%BF%CE%B9/",
-		"dramas_index"				: "http://www.jw.org/el/%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CE%B7%CF%87%CE%B7%CF%84%CE%B9%CE%BA%CE%AC-%CE%B2%CE%B9%CE%B2%CE%BB%CE%B9%CE%BA%CE%AC-%CE%B4%CF%81%CE%AC%CE%BC%CE%B1%CF%84%CE%B1/",
-		"dramatic_reading_index"	: "http://www.jw.org/el/%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CE%B4%CF%81%CE%B1%CE%BC%CE%B1%CF%84%CE%BF%CF%80%CE%BF%CE%B9%CE%B7%CE%BC%CE%AD%CE%BD%CE%B5%CF%82-%CE%B1%CE%BD%CE%B1%CE%B3%CE%BD%CF%8E%CF%83%CE%B5%CE%B9%CF%82-%CE%B1%CE%B3%CE%AF%CE%B1-%CE%B3%CF%81%CE%B1%CF%86%CE%AE/",
+		"music_index"				: "%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CE%BC%CE%BF%CF%85%CF%83%CE%B9%CE%BA%CE%AE-%CF%8D%CE%BC%CE%BD%CE%BF%CE%B9/",
+		"dramas_index"				: "%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CE%B7%CF%87%CE%B7%CF%84%CE%B9%CE%BA%CE%AC-%CE%B2%CE%B9%CE%B2%CE%BB%CE%B9%CE%BA%CE%AC-%CE%B4%CF%81%CE%AC%CE%BC%CE%B1%CF%84%CE%B1/",
+		"dramatic_reading_index"	: "%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CE%B4%CF%81%CE%B1%CE%BC%CE%B1%CF%84%CE%BF%CF%80%CE%BF%CE%B9%CE%B7%CE%BC%CE%AD%CE%BD%CE%B5%CF%82-%CE%B1%CE%BD%CE%B1%CE%B3%CE%BD%CF%8E%CF%83%CE%B5%CE%B9%CF%82-%CE%B1%CE%B3%CE%AF%CE%B1-%CE%B3%CF%81%CE%B1%CF%86%CE%AE/",
 		
 		'daily_text_json'			: "http://wol.jw.org/wol/dt/r11/lp-g",
 		"date_format"				: "%Y-%m-%d",

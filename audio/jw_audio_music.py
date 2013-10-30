@@ -14,7 +14,11 @@ import jw_common
 def showMusicIndex(start):
 	
 	language 		= jw_config.language
-	music_index_url = jw_config.const[language]["music_index"] + "?start=" + start + "&sortBy=" + jw_config.audio_sorting
+
+	music_index_url = jw_common.getUrl(language)
+	music_index_url = music_index_url + jw_config.const[language]["music_index"]
+	music_index_url = music_index_url + "?start=" + start + "&sortBy=" + jw_config.audio_sorting
+	
 	html 			= jw_common.loadUrl(music_index_url) 
 	
 	# Grep compilation titles
