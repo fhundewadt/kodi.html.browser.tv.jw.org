@@ -88,7 +88,11 @@ def showMagazineFilterIndex(pub_filter = None):
 def showMagazineFilteredIndex(pub_filter = None, year_filter = None):
 
     language        = jw_config.language
-    magazine_url    = jw_config.const[language]["magazine_index"] + "?pubFilter=" + pub_filter .strip() + "&yearFilter=" + year_filter.strip()
+
+    magazine_url    = jw_common.getUrl(language) 
+    magazine_url    = magazine_url + jw_config.const[language]["magazine_index"] 
+    magazine_url    = magazine_url + "?pubFilter=" + pub_filter .strip() + "&yearFilter=" + year_filter.strip()
+    
     html            = jw_common.loadUrl(magazine_url) 
 
     # Grep issue date and publication title

@@ -32,8 +32,7 @@ const = {
 		"video_path" 				: "video",
 		
 		"bible_index_audio"			: "pubblicazioni/bibbia/nwt/libri/",
-		
-		"magazine_index"			: "http://www.jw.org/it/pubblicazioni/riviste/",
+		"magazine_index"			: "pubblicazioni/riviste/",
 		'has_simplified_edition'	: False,
 
 		"music_index"				: "http://www.jw.org/it/pubblicazioni/musica-cantici/",
@@ -51,8 +50,7 @@ const = {
 		"video_path" 				: "videos",
 		
 		"bible_index_audio"			: "publications/bible/nwt/books/" ,
-		
-		"magazine_index"			: "http://www.jw.org/en/publications/magazines/",
+		"magazine_index"			: "publications/magazines/",
 		'has_simplified_edition'	: True,
 
 		"music_index"				: "http://www.jw.org/en/publications/music-songs/",
@@ -70,8 +68,7 @@ const = {
 		"video_path" 				: "filmy",
 		
 		"bible_index_audio"			: "publikacje/biblia/nwt/ksi%C4%99gi-biblijne/" , 
-		
-		"magazine_index"			: "http://www.jw.org/pl/publikacje/czasopisma/",
+		"magazine_index"			: "publikacje/czasopisma/",
 		'has_simplified_edition'	: False,
 
 		"music_index"				: "http://www.jw.org/pl/publikacje/muzyka-pie%C5%9Bni/",
@@ -89,8 +86,7 @@ const = {
 		"video_path" 				: "videos",
 
 		"bible_index_audio"			: "publicaties/bijbel/nwt/boeken/" , 
-		
-		"magazine_index"			: "http://www.jw.org/nl/publicaties/tijdschriften/",
+		"magazine_index"			: "publicaties/tijdschriften/",
 		'has_simplified_edition'	: False,
 
 		"music_index"				: "http://www.jw.org/nl/publicaties/muziek-liederen/",
@@ -108,8 +104,7 @@ const = {
 		"video_path" 				: "videos",
 
 		"bible_index_audio"			: "publicaciones/biblia/nwt/libros/" , 
-
-		"magazine_index"			: "http://www.jw.org/es/publicaciones/revistas/",
+		"magazine_index"			: "publicaciones/revistas/",
 		'has_simplified_edition'	: True,
 
 		"music_index"				: "http://www.jw.org/es/publicaciones/m%C3%BAsica-c%C3%A1nticos/",
@@ -127,8 +122,7 @@ const = {
 		"video_path" 				: "videos",
 
 		"bible_index_audio"			: "publikationen/bibel/nwt/bibelbuecher/" , 
-
-		"magazine_index"			: "http://www.jw.org/de/publikationen/zeitschriften/",
+		"magazine_index"			: "publikationen/zeitschriften/",
 		'has_simplified_edition'	: False,
 
 		"music_index"				: "http://www.jw.org/de/publikationen/musik-lieder/",
@@ -146,8 +140,7 @@ const = {
 		"video_path" 				: "videos",
 
 		"bible_index_audio"			: "publicacoes/biblia/nwt/livros/" , 
-
-		"magazine_index"			: "http://www.jw.org/pt/publicacoes/revistas/",
+		"magazine_index"			: "publicacoes/revistas/",
 		'has_simplified_edition'	: True,
 
 		"music_index"				: "http://www.jw.org/pt/publicacoes/musica-canticos/",
@@ -165,7 +158,6 @@ const = {
 		"video_path" 				: "videos",
 
 		"bible_index_audio"			: False, 
-
 		"magazine_index"			: False,
 		'has_simplified_edition'	: False,
 
@@ -184,8 +176,7 @@ const = {
 		"video_path" 				: "%CE%B2%CE%AF%CE%BD%CF%84%CE%B5%CE%BF",
 
 		"bible_index_audio"			: False,
-
-		"magazine_index"			: "http://www.jw.org/el/%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CF%80%CE%B5%CF%81%CE%B9%CE%BF%CE%B4%CE%B9%CE%BA%CE%AC/",
+		"magazine_index"			: "%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CF%80%CE%B5%CF%81%CE%B9%CE%BF%CE%B4%CE%B9%CE%BA%CE%AC/",
 		'has_simplified_edition'	: False,
 
 		"music_index"				: "http://www.jw.org/el/%CE%B5%CE%BA%CE%B4%CF%8C%CF%83%CE%B5%CE%B9%CF%82/%CE%BC%CE%BF%CF%85%CF%83%CE%B9%CE%BA%CE%AE-%CF%8D%CE%BC%CE%BD%CE%BF%CE%B9/",
