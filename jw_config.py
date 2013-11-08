@@ -11,6 +11,8 @@ import os
 import jw_common
 
 # key is english name, value is the name of the locale IN the locale
+# used for first run if no language setted; it takes XBMC language setting
+# and convert into "our" locale settings
 locale_2_lang = {
 	"Italian"				: "Italiano",
 	"Polish"				: "Polski",
@@ -226,5 +228,4 @@ if language == "":
 	if actual_locale in locale_2_lang :
 		language = locale_2_lang[actual_locale]
 	else :
-		print "JWORG xmbc locale not supported: " + actual_locale
 		language = "English"
