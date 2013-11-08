@@ -88,6 +88,10 @@ msgctxt "#30031"
 msgid "Latest"
 msgstr "Recentes"
 
+msgctxt "#30032"
+msgid "Newsroom"
+msgstr "Imprensa"
+
 msgctxt "#30033"
 msgid "Unable to load remote content"
 msgstr "Não consegui carregar o conteúdo remoto"
