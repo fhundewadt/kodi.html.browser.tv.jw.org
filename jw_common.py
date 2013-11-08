@@ -83,17 +83,34 @@ def loadUrl (url):
 		pass 
 	return html	
 
-def loadNotCachedJsonFromUrl(url):
+def loadNotCachedJsonFromUrl(url, ajax):
 	data = ""
 	try:
-		response = urllib2.urlopen(url)
-		data = json.load(response)
-	except:
+		if ajax == True :
+			request = urllib2.Request(url, headers=
+			{
+				"Accept" 			: "application/json, text/javascript,",
+				"Host"				: "wol.jw.org",
+				"X-Requested-With"	: "XMLHttpRequest",
+			})
+		else :
+			request = urllib2.Request(url)
+
+		response = urllib2.urlopen(request).read()
+		data = json.loads(response)
+
+	except urllib2.HTTPError, e:
+		print "JWORG http error"
+		print e.code
+		print e.read()
 		pass
+
+	# other exception give exceptions
+
 	return data
 
-def loadJsonFromUrl (url):
-	data = jw_config.cache.cacheFunction(loadNotCachedJsonFromUrl, url)	
+def loadJsonFromUrl (url, ajax):
+	data = jw_config.cache.cacheFunction(loadNotCachedJsonFromUrl, url, ajax)	
 	return data
 
 """

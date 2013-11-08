@@ -19,8 +19,8 @@ def showDailyText(date):
     json_url    = json_url + "dt/" 
     json_url    = json_url + jw_config.const[language]["wol"] + "/" + date
 
-    json        = jw_common.loadJsonFromUrl(json_url)
-    
+    json        = jw_common.loadJsonFromUrl(url = json_url, ajax = True)
+
     text        = json["items"][0]["content"]
     text        = jw_common.cleanUpText(text)
 

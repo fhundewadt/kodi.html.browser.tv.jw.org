@@ -19,7 +19,8 @@ def showWeekProgram(date):
     json_url    = json_url + "dt/" 
     json_url    = json_url + jw_config.const[language]["wol"] + "/" + date
 
-    json  = jw_common.loadJsonFromUrl(json_url)
+    json  = jw_common.loadJsonFromUrl(url = json_url, ajax = True)
+
     text  = "[COLOR=FF0000FF][B]" + jw_common.t(30035) + "[/B][/COLOR]\n"
     text  = text + json["items"][1]["content"] # there is a trailing \n in the item text
     text  = text + "[COLOR=FF0000FF][B]" + jw_common.t(30028) + "[/B][/COLOR]"
@@ -71,7 +72,6 @@ class WeekProgram(xbmcgui.WindowDialog):
 
     # Grep today's textual date
     def getProgram(self, text):
-        print text
         text =  re.sub("<b>", "[B]", text)
         text =  re.sub("</b>", "[/B]", text)
         clean = jw_common.removeHtml(text)

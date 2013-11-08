@@ -104,7 +104,7 @@ def showVideoJsonUrl(json_url, thumb):
 
 	language 	= jw_config.language
 	json_url 	= "http://www.jw.org" + json_url
-	json 		= jw_common.loadJsonFromUrl(json_url)
+	json 		= jw_common.loadJsonFromUrl(url = json_url,  ajax = False)
 
 	# json equals to [] when a cached json was empty
 	if json is None or json == [] :

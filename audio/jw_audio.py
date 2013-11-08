@@ -58,12 +58,14 @@ def showAudioIndex():
 
 
 # Track list
+# Used by magazine, musics, dramas, and dramatic bible reading
+# Not used by bible
 def showAudioJson(json_url):
 
     language        = jw_config.language
     language_code   = jw_config.const[language]["lang_code"]
     json_url        = "http://www.jw.org" + json_url
-    json            = jw_common.loadJsonFromUrl(json_url)
+    json            = jw_common.loadJsonFromUrl(url = json_url, ajax = False)
     cover_image     = json["pubImage"]["url"]
     
     for mp3 in json["files"][language_code]["MP3"]:

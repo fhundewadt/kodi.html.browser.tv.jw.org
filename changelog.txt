@@ -18,6 +18,7 @@ Code:
 + Improved reusability
 + Added support for locales without some audio (like bible and magazine readings for Afrikaans)
 + Simplified configuration for jw.org language support
++ Changed json loading to handle ajax-like requests (Close Issue #15)
 
 0.2.1
 -----

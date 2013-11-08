@@ -64,9 +64,7 @@ def showAudioBibleBookJson(book_num):
 	json_url 	= json_url + "&booknum=" 
 	json_url 	= json_url + book_num
 
-	print "JWORG json_url "+ json_url
-
-	json 		= jw_common.loadJsonFromUrl(json_url)
+	json 		= jw_common.loadJsonFromUrl(url = json_url, ajax = False)
 	lang_code 	= lang_code
 	book_name 	= json["pubName"]
 	cover_url   = json["pubImage"]["url"]
