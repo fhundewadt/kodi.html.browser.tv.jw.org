@@ -34,32 +34,32 @@ msgstr ""
 
 #empty strings from id 30006 to 30009
 
-#. To find this string, click on "Publications -> Bible -> Readonline". 
+#. To find this string, click on "Publications -> Bible -> Readonline".
 #. This string is the title of the page
 msgctxt "#30010"
 msgid "Books of the Bible"
 msgstr ""
 
-#. To find this string, click on "Publications -> Music". 
-#. This string is the last part of url ("/music-songs/"), in plural form 
+#. To find this string, click on "Publications -> Music".
+#. This string is the last part of url ("/music-songs/"), in plural form
 #. and with an 'and' beetween words
 msgctxt "#30011"
 msgid "Music and songs"
 msgstr ""
 
-#. To find this string, click on "Publications -> Online Libray". 
+#. To find this string, click on "Publications -> Online Libray".
 #. This string is the third item in the menu, with "Bible" and "Publications", without extra capital letters
 msgctxt "#30012"
 msgid "Daily text"
 msgstr ""
 
-#. To find this string, click on "Publications -> Dramas". 
+#. To find this string, click on "Publications -> Dramas".
 #. This string is the bold header of the page, , without extra capital letters
 msgctxt "#30013"
 msgid "Bible dramas"
 msgstr ""
 
-#. To find this string, click on "Publications -> Dramatic bible readings". 
+#. To find this string, click on "Publications -> Dramatic bible readings".
 #. This string is the bold header of the page, without extra capital letters
 msgctxt "#30014"
 msgid "Dramatic bible readings"
@@ -172,14 +172,15 @@ msgctxt "#30035"
 msgid "Theocratic Ministry School"
 msgstr ""
 
+#empty string with id 30036
+
 #. To find this string, from homepage click on "About us" (last main link)
-#. This string is the second link on the left bar 
+#. This string is the second link on the left bar
 msgctxt "#30037"
 msgid "Activities"
 msgstr ""
 
-#. Showed after the body text of a news 
+#. Showed after the body text of a news
 msgctxt "#30038"
 msgid "End of the article"
 msgstr ""
-
