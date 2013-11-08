@@ -31,6 +31,7 @@
         <description lang="nl">Directe streaming van www.jw.org, je kan:[CR]- Video`s bekijken[CR]- naar tijdschriftlezingen, Liedjes en volksliederen, Bijbellezingen, audio drama`s en dramatische Bijbellezingen luisteren[CR]- lees het dagelijkse citaat uit de bijbel en nieuws</description>
         <description lang="pl">Przeglądaj internetową bibliotekę multimedialną serwisu www.jw.org.[CR] - Oglądaj filmy[CR] - Słuchaj melodii, słuchowisk, adaptacji dźwiękowych Biblii, czytaj Biblie[CR] - Przeczytaj słowo na dziś i nowości</description>
         <description lang="pt">Transmissões de www.jw.org, você poderá:[CR]- ver vídeos[CR]- escutar leituras de magazine, músicas e canções, leituras da bíblia, dramatizações áudio e dramatizações de leituras da bíblia[CR]- Ler texto diário</description>
+        <description lang="pt_BR">Transmissões de www.jw.org, você poderá:[CR]- ver vídeos[CR]- escutar leituras de magazine, músicas e canções, leituras da bíblia, dramatizações áudio e dramatizações de leituras da bíblia[CR]- Ler texto diário</description>
         <language>it en pl nl es pt</language>
         <platform />
         <website>http://realtebo.github.io/plugin.video.jworg/</website>

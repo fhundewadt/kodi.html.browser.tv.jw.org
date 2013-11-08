@@ -119,3 +119,21 @@ msgstr "Νέα της Ημέρας"
 msgctxt "#30033"
 msgid "Unable to load remote content"
 msgstr "Αδυναμία φόρτωσης απομακρυσμένου περιεχομένου"
+
+msgctxt "#30034"
+msgid "Week program"
+msgstr "Εβδομαδιαίο πρόγραμμα"
+
+msgctxt "#30035"
+msgid "Theocratic Ministry School"
+msgstr "Θεοκρατική Κληρική Σχολή"
+
+#empty string with id 30036
+
+msgctxt "#30037"
+msgid "Activities"
+msgstr "Δραστηριότητες"
+
+msgctxt "#30038"
+msgid "End of the article"
+msgstr "Τέλος του άρθρου"

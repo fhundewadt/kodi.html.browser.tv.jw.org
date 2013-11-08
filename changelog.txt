@@ -9,6 +9,7 @@ New program features:
 New languages supported
 + Afrikaans ("Afrikaans") - This locale has no audio files for bible and for magazines
 + Greek ("Ελληνική") - This locale has no audio files for bible
++ Portuguese of Brasil ("Português (Brasil)") - Diffences in strings, but same remote contents than Portuguese
 
 Language Files:
 + Updated to lastest translations available from transifex

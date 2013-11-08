@@ -119,3 +119,22 @@ msgstr "Nuuskamer"
 msgctxt "#30033"
 msgid "Unable to load remote content"
 msgstr "Kan nie eksterne inhoud aflaai nie"
+
+msgctxt "#30034"
+msgid "Week program"
+msgstr "Program van die week"
+
+msgctxt "#30035"
+msgid "Theocratic Ministry School"
+msgstr "Teokratiese Bedieningskool"
+
+#empty string with id 30036
+
+msgctxt "#30037"
+msgid "Activities"
+msgstr "Bedrywighede"
+
+#. Showed after the body text of a news
+msgctxt "#30038"
+msgid "End of the article"
+msgstr "Einde van die artikel"

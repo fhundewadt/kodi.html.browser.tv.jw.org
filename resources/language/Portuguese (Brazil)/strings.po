@@ -91,3 +91,21 @@ msgstr "Recentes"
 msgctxt "#30033"
 msgid "Unable to load remote content"
 msgstr "Não consegui carregar o conteúdo remoto"
+
+msgctxt "#30034"
+msgid "Week program"
+msgstr "Programa Semanal"
+
+msgctxt "#30035"
+msgid "Theocratic Ministry School"
+msgstr "Escola do Ministério Teocrático"
+
+#empty string with id 30036
+
+msgctxt "#30037"
+msgid "Activities"
+msgstr "Atividades"
+
+msgctxt "#30038"
+msgid "End of the article"
+msgstr "Fim do artigo"

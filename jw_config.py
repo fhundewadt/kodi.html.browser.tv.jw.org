@@ -12,14 +12,15 @@ import jw_common
 
 # key is english name, value is the name of the locale IN the locale
 locale_2_lang = {
-	"Italian"		: "Italiano",
-	"Polish"		: "Polski",
-	"Dutch"			: "Nederlands",
-	"Spanish"		: "Español",
-	"German"		: "Deutsch",
-	"Portuguese" 	: "Português",
-	"Afrikaans"		: "Afrikaans",
-	"Greek"			: "Ελληνική",
+	"Italian"				: "Italiano",
+	"Polish"				: "Polski",
+	"Dutch"					: "Nederlands",
+	"Spanish"				: "Español",
+	"German"				: "Deutsch",
+	"Portuguese" 			: "Português",
+	"Portuguese (Brazil)"	: "Português",
+	"Afrikaans"				: "Afrikaans",
+	"Greek"					: "Ελληνική",
 }
 
 main_url = "http://www.jw.org/"
@@ -225,4 +226,5 @@ if language == "":
 	if actual_locale in locale_2_lang :
 		language = locale_2_lang[actual_locale]
 	else :
+		print "JWORG xmbc locale not supported: " + actual_locale
 		language = "English"

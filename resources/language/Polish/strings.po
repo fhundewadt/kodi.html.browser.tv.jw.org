@@ -119,3 +119,21 @@ msgstr "Dla mediów"
 msgctxt "#30033"
 msgid "Unable to load remote content"
 msgstr "Nie można załadować zawartości"
+
+msgctxt "#30034"
+msgid "Week program"
+msgstr "Program tygodniowy"
+
+msgctxt "#30035"
+msgid "Theocratic Ministry School"
+msgstr "Teokratycznej szkoły służby kaznodziejskiej"
+
+#empty string with id 30036
+
+msgctxt "#30037"
+msgid "Activities"
+msgstr "Działalność"
+
+msgctxt "#30038"
+msgid "End of the article"
+msgstr "Koniec artykułu"

@@ -119,3 +119,22 @@ msgstr "Sala stampa"
 msgctxt "#30033"
 msgid "Unable to load remote content"
 msgstr "Impossibile caricare i contenuti dal sito"
+
+msgctxt "#30034"
+msgid "Week program"
+msgstr "Programma della settimana"
+
+msgctxt "#30035"
+msgid "Theocratic Ministry School"
+msgstr "Scuola di ministero teocratico"
+
+#empty string with id 30036
+
+msgctxt "#30037"
+msgid "Activities"
+msgstr "Attività"
+
+#. Showed after the body text of a news
+msgctxt "#30038"
+msgid "End of the article"
+msgstr "Fine dell'articolo"
