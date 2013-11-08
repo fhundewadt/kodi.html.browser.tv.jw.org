@@ -44,6 +44,10 @@ msgctxt "#30013"
 msgid "Bible dramas"
 msgstr "Drammi biblici"
 
+msgctxt "#30014"
+msgid "Dramatic bible readings"
+msgstr "Brani biblici recitati"
+
 msgctxt "#30015"
 msgid "Musics, dramas, and dramatic readings"
 msgstr "Musica, drammi e brani recitati"

@@ -42,7 +42,11 @@ msgstr "Słowo na dziś"
 
 msgctxt "#30013"
 msgid "Bible dramas"
-msgstr "Nauki Biblijne "
+msgstr "Nauki Biblijne"
+
+msgctxt "#30014"
+msgid "Dramatic bible readings"
+msgstr "Adaptacje dźwiękowe fragmentów Biblii"
 
 msgctxt "#30015"
 msgid "Musics, dramas, and dramatic readings"
