@@ -125,8 +125,8 @@ msgid "Week program"
 msgstr "Programm der Woche"
 
 msgctxt "#30035"
-msgid "Theocratic Ministry School"
-msgstr "Theokratische Predigtdienstschule"
+msgid "Theocratic Ministry
+msgstr "Theokratische Predi
 
 #empty string with id 30036
 
@@ -137,3 +137,4 @@ msgstr "Aktivitäten"
 msgctxt "#30038"
 msgid "End of the article"
 msgstr "Ende des artikels"
+
