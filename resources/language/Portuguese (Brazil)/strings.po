@@ -113,3 +113,4 @@ msgstr "Atividades"
 msgctxt "#30038"
 msgid "End of the article"
 msgstr "Fim do artigo"
+
