@@ -128,8 +128,6 @@ msgctxt "#30035"
 msgid "Theocratic Ministry School"
 msgstr "Escuela del Ministerio Teocrático"
 
-#empty string with id 30036
-
 msgctxt "#30037"
 msgid "Activities"
 msgstr "Quiénes somos y qué hacemos"
@@ -137,3 +135,4 @@ msgstr "Quiénes somos y qué hacemos"
 msgctxt "#30038"
 msgid "End of the article"
 msgstr "Fin del artículo"
+
