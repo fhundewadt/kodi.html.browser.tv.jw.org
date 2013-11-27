@@ -124,23 +124,17 @@ msgctxt "#30034"
 msgid "Week program"
 msgstr "Week Programma"
 
-#. To find this string, click on "Publications", then click on "Online Library"
-#. then click on Daily Text (top menu, third item)
-#. After the daily text you find the right string, please stop at "school"
-#. Camelize to your personal preference
 msgctxt "#30035"
 msgid "Theocratic Ministry School"
 msgstr "Theocratische bedieningsschool"
 
 #empty string with id 30036
 
-#. To find this string, from homepage click on "About us" (last main link)
-#. This string is the second link on the left bar
 msgctxt "#30037"
 msgid "Activities"
 msgstr "Activiteiten"
 
-#. Showed after the body text of a news
 msgctxt "#30038"
 msgid "End of the article"
 msgstr "Einde van het artikel"
+
