@@ -225,7 +225,9 @@ language		= xbmcplugin.getSetting(plugin_pid, "language")
 
 if language == "":
 	actual_locale = xbmc.getLanguage()
+	print "JWORG: XBMC language: " + actual_locale
 	if actual_locale in locale_2_lang :
 		language = locale_2_lang[actual_locale]
 	else :
+		
 		language = "English"
