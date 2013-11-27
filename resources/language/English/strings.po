@@ -54,7 +54,7 @@ msgid "Daily text"
 msgstr ""
 
 #. To find this string, click on "Publications -> Dramas".
-#. This string is the bold header of the page, , without extra capital letters
+#. This string is the bold header of the page, without extra capital letters
 msgctxt "#30013"
 msgid "Bible dramas"
 msgstr ""
