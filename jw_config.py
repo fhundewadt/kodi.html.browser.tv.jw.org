@@ -23,6 +23,7 @@ locale_2_lang = {
 	"Portuguese (Brazil)"	: "Português",
 	"Afrikaans"				: "Afrikaans",
 	"Greek"					: "Ελληνική",
+	"Franch"				: "Français",
 }
 
 main_url = "http://www.jw.org/"
@@ -47,6 +48,24 @@ const = {
 		"date_format"				: "%d/%m/%Y",
 		"news_index"				: "news/",
 		"activity_index"			: "testimoni-di-geova/attivit%C3%A0/",
+ 	},
+ 	"Français" : {
+		"lang_code"					: "F",
+		"url_lang_code"				: "fr",
+		"video_path" 				: "videos",
+		
+		"bible_index_audio"			: "publications/bible/nwt/livres/",
+		"magazine_index"			: "publications/revues/",
+		'has_simplified_edition'	: True,
+
+		"music_index"				: "publications/musique-cantiques/",
+		"dramas_index"				: "publications/representations-dramatiques/",
+		"dramatic_reading_index"	: "publications/lectures-bibliques-theatrales/",
+		
+		'wol'						: "r30/lp-f",
+		"date_format"				: "%d/%m/%Y",
+		"news_index"				: "actualites/",
+		"activity_index"			: "temoins-de-jehovah/activites/",
  	},
 	"English" 	: {
 		"lang_code"					: "E",
