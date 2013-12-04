@@ -24,6 +24,7 @@ locale_2_lang = {
 	"Afrikaans"				: "Afrikaans",
 	"Greek"					: "Ελληνική",
 	"French"				: "Français",
+	"Hungarian"				: "Magyar",
 }
 
 main_url = "http://www.jw.org/"
@@ -48,6 +49,24 @@ const = {
 		"date_format"				: "%d/%m/%Y",
 		"news_index"				: "news/",
 		"activity_index"			: "testimoni-di-geova/attivit%C3%A0/",
+ 	},
+ 	"Magyar" : {
+		"lang_code"					: "H",
+		"url_lang_code"				: "hu",
+		"video_path" 				: "videok",
+		
+		"bible_index_audio"			: "kiadvanyok/biblia/nwt/könyvek/",
+		"magazine_index"			: "kiadvanyok/folyoiratok/",
+		'has_simplified_edition'	: False,
+
+		"music_index"				: "kiadvanyok/zene-enekek/",
+		"dramas_index"				: False,
+		"dramatic_reading_index"	: "kiadvanyok/bibliai-hangjatekok/",
+		
+		'wol'						: "r17/lp-h",
+		"date_format"				: "%d/%m/%Y",
+		"news_index"				: "hirek/",
+		"activity_index"			: "jehova-tanui/tevekenysegek/",
  	},
  	"Français" : {
 		"lang_code"					: "F",

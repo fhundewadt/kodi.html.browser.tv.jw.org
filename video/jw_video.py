@@ -129,6 +129,17 @@ def showVideoJsonUrl(json_url, thumb):
 		for mp4 in json["files"][language_code]["MP4"]:
 			res 				= mp4["label"]	
 			url_to_play			= mp4["file"]["url"]
+			mp4_title_cleaned 	= jw_common.cleanUpText (mp4["title"])
+			title 				= "[" + res + "] - " + mp4_title_cleaned
+
+			listItem = xbmcgui.ListItem(
+				label 			=  title
+			)
+			listItem.setInfo(
+				type 		= 'Video', 
+				infoLabels 	= {'Title': mp4_title_cleaned}
+			)
+
 			if (max_resolution +"p") == res :
 				break;
 
@@ -136,7 +147,7 @@ def showVideoJsonUrl(json_url, thumb):
 	# If user selected a 'low' res and it's matched, previous for breaks, so
 	# the playback will be at the desidered resolution					
 	if url_to_play is not None :
-		xbmc.Player().play(url_to_play)
+		xbmc.Player().play(item=url_to_play, listitem=listItem)
 		return
 
 

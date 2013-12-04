@@ -186,3 +186,9 @@ msgctxt "#30039"
 msgid "Default video resolution (0: ask every time)"
 msgstr ""
 
+#. This strings is visible when user has not choosen a default
+#. video resolution, so when user selected a video, under all available
+#. resolutions, this strings will popup the addon config window
+msgctxt "#30040"
+msgid "Choose a default video resolution"
+msgstr ""

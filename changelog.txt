@@ -4,12 +4,15 @@
 New setting:
 + Default resolution: it's used as "max resolution", so this resolution will be used if available, otherwise the max resolution available will be used (As asked in Issue #17)
 
+New languages supported:
++ French ("Français")
++ Hungarian ("Magyar")
+
 Bug fixes:
 + Modified "Newsroom" to react to jw.org html changes
 
-New languages supported:
-+ French ("Français")
-
+Small enhancements:
++ In video resolution choose screen, added a link to add config to addresss users to this new feature
 
 0.3.0
 -----
