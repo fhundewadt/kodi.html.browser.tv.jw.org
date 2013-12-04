@@ -23,7 +23,7 @@ locale_2_lang = {
 	"Portuguese (Brazil)"	: "Português",
 	"Afrikaans"				: "Afrikaans",
 	"Greek"					: "Ελληνική",
-	"Franch"				: "Français",
+	"French"				: "Français",
 }
 
 main_url = "http://www.jw.org/"
