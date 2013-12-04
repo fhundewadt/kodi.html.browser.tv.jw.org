@@ -1,3 +1,10 @@
+0.4.0
+-----
+
+New setting:
++ Default resolution: it's used as "max resolution", so this resolution will be used if available, otherwise the max resolution available will be used (As asked in Issue #17)
+
+
 0.3.0
 -----
 

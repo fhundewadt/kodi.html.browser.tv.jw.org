@@ -3,6 +3,7 @@
 VIDEO RELATED FUNCTIONS
 """
 
+import xbmc
 import xbmcplugin
 import xbmcgui
 
@@ -100,11 +101,14 @@ def showVideoIndex(start, video_filter):
 
 
 # show available resolutions for a video (ed eventually other related titles, like interviews, etc.)	
+# v 0.4.0: if user choose a default max resolution, it will be used (or the highest under it if not
+# available )
 def showVideoJsonUrl(json_url, thumb):
 
-	language 	= jw_config.language
-	json_url 	= "http://www.jw.org" + json_url
-	json 		= jw_common.loadJsonFromUrl(url = json_url,  ajax = False)
+	language 		= jw_config.language
+	json_url 		= "http://www.jw.org" + json_url
+	json 			= jw_common.loadJsonFromUrl(url = json_url,  ajax = False)
+	max_resolution	= xbmcplugin.getSetting(jw_config.plugin_pid, "max_resolution")
 
 	# json equals to [] when a cached json was empty
 	if json is None or json == [] :
@@ -119,6 +123,26 @@ def showVideoJsonUrl(json_url, thumb):
 	if len(json["languages"]) == 0:
 		language_code = ""
  	
+ 	# Trying to detect user selected max resolution
+ 	url_to_play = None
+	if max_resolution != "0" :
+		for mp4 in json["files"][language_code]["MP4"]:
+			res 				= mp4["label"]	
+			url_to_play			= mp4["file"]["url"]
+			if (max_resolution +"p") == res :
+				break;
+
+	# If I have at least ONE minum resolution, I'll use it
+	# If user selected a 'low' res and it's matched, previous for breaks, so
+	# the playback will be at the desidered resolution					
+	if url_to_play is not None :
+		xbmc.Player().play(url_to_play)
+		return
+
+
+	# This portion of code will be executed only if 
+	# - user has not choosen a default max resolution in addon config
+	# - the default max resolution is UNDER the min resolution available
 	for mp4 in json["files"][language_code]["MP4"]:
 
 		url 				= mp4["file"]["url"]
@@ -147,4 +171,6 @@ def showVideoJsonUrl(json_url, thumb):
 		# xbmcplugin.setResolvedUrl( handle=jw_config.plugin_pid, succeeded=True, listitem=listItem)
 
 	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
+
+
 
