@@ -11,6 +11,9 @@ New languages supported:
 Bug fixes:
 + Modified "Newsroom" to react to changes in jw.org html code
 
+Small enhancements:
++ When opening audio indexes, if there is only one playable file, it will be started without the need to confirm it clicking on the file title in the track list; one step less for user happyness
+
 0.3.0
 -----
 
