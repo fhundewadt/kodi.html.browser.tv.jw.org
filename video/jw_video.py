@@ -52,6 +52,7 @@ def showVideoIndex(start, video_filter):
 	language 	= jw_config.language
 	url 		= jw_common.getUrl(language) + jw_config.const[language]["video_path"] + "/?start=" + str(start) + "&videoFilter=" + video_filter  + "&sortBy=" + jw_config.video_sorting
 	html 		= jw_common.loadUrl (url)
+	max_resolution	= xbmcplugin.getSetting(jw_config.plugin_pid, "max_resolution")
 
 	# Grep video titles
 	regexp_video_title = 'data-onpagetitle="([^"]+)"'
@@ -71,6 +72,7 @@ def showVideoIndex(start, video_filter):
 		return
 
 	count = 0
+	
 	# Output video list 
 	for title in videos:
 		listItem = xbmcgui.ListItem(
@@ -177,7 +179,7 @@ def showVideoJsonUrl(json_url, thumb):
 			xbmc.Player().play(item=url_to_play, listitem=listItem)
 
 			return;
-		# This is an error condition, could be not verify ...
+		# This is an error condition, could not verify never ...
 		elif  len(right_resoluction_dict) == 0 :
 			print "JWORG: NO  one video at res " + max_resolution
 		# There are many video at the right res: enable listing of ONLY these
@@ -196,7 +198,7 @@ def showVideoJsonUrl(json_url, thumb):
 
 		if (list_only is not False) and (res != max_resolution) : 
 			# if user has choosen a res, and there are more than one video on this res
-			# I skipp every video of different resolution, but show a list
+			# I skip every video of different resolution, but show a list
 			# of all available video of this resolution
 			continue;
 
@@ -216,6 +218,7 @@ def showVideoJsonUrl(json_url, thumb):
 			listitem	= listItem, 
 			isFolder	= False 
 		) 
+
 
 	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
 

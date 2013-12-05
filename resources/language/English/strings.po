@@ -181,14 +181,7 @@ msgstr ""
 
 #. Add on settings. 
 #. This is the max resolution automatically selected
-#. when playing video
+#. when playing video. Note: '0' it's the digit 'zero' not an uppercase letter 'o'
 msgctxt "#30039"
 msgid "Default video resolution (0: ask every time)"
-msgstr ""
-
-#. This strings is visible when user has not choosen a default
-#. video resolution, so when user selected a video, under all available
-#. resolutions, this strings will popup the addon config window
-msgctxt "#30040"
-msgid "Choose a default video resolution"
 msgstr ""

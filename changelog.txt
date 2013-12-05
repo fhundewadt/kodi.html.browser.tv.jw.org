@@ -1,4 +1,4 @@
-0.4.0
+0.3.1
 -----
 
 New setting:
@@ -9,10 +9,7 @@ New languages supported:
 + Hungarian ("Magyar")
 
 Bug fixes:
-+ Modified "Newsroom" to react to jw.org html changes
-
-Small enhancements:
-+ In video resolution choose screen, added a link to add config to addresss users to this new feature
++ Modified "Newsroom" to react to changes in jw.org html code
 
 0.3.0
 -----
