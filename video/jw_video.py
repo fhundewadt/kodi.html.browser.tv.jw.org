@@ -100,6 +100,7 @@ def showVideoIndex(start, video_filter):
 	jw_common.setThumbnailView()
 
 
+
 # show available resolutions for a video (ed eventually other related titles, like interviews, etc.)	
 # v 0.4.0: if user choose a default max resolution, it will be used (or the highest under it if not
 # available )
@@ -123,14 +124,47 @@ def showVideoJsonUrl(json_url, thumb):
 	if len(json["languages"]) == 0:
 		language_code = ""
  	
- 	# Trying to detect user selected max resolution
- 	url_to_play = None
+
+	# Create in memory dict of dict with all available videos
+	video_dict = {}
+	for mp4 in json["files"][language_code]["MP4"]:
+		res 				= mp4["label"]		
+		url_to_play			= mp4["file"]["url"]
+		mp4_title_cleaned 	= jw_common.cleanUpText (mp4["title"])
+		title 				= "[" + res + "] - " + mp4_title_cleaned
+
+		if res not in video_dict :
+			video_dict[res] = {}
+
+		video_dict[res].update({mp4_title_cleaned:  url_to_play})
+
+	# Try do autodetect the video to play basaed on user setting of
+	# default video resolution
+	list_only = False;
 	if max_resolution != "0" :
-		for mp4 in json["files"][language_code]["MP4"]:
-			res 				= mp4["label"]	
-			url_to_play			= mp4["file"]["url"]
-			mp4_title_cleaned 	= jw_common.cleanUpText (mp4["title"])
-			title 				= "[" + res + "] - " + mp4_title_cleaned
+	
+		print "JWORG found videos"
+		print video_dict
+		right_resoluction_dict = None
+		max_resolution = max_resolution + "p"
+
+		# If found default resolution video, I use this
+		# else I use the latest added (because it's the the highest) res available
+		if max_resolution in video_dict is not None :
+			print "JWORG found resolution choosen by user: " + max_resolution
+			right_resoluction_dict = video_dict[max_resolution]
+		else :
+			print "JWORG NOT found resolution choosen by user: " + max_resolution
+			max_resolution, right_resoluction_dict = video_dict.popitem()
+
+		print "JWORG I'll use the following dict, at res " + max_resolution
+		print right_resoluction_dict
+
+		# If I've only one video at right res, I play It
+		if len(right_resoluction_dict) == 1 :
+	
+			title, url_to_play = right_resoluction_dict.popitem() 				
+			print "JWORG: ONE video only at res " + max_resolution.encode("utf8") + ": " + title.encode("utf8") + " - " + url_to_play.encode("utf8");
 
 			listItem = xbmcgui.ListItem(
 				label 			=  title
@@ -140,26 +174,31 @@ def showVideoJsonUrl(json_url, thumb):
 				infoLabels 	= {'Title': mp4_title_cleaned}
 			)
 
-			if (max_resolution +"p") == res :
-				break;
+			xbmc.Player().play(item=url_to_play, listitem=listItem)
 
-	# If I have at least ONE minum resolution, I'll use it
-	# If user selected a 'low' res and it's matched, previous for breaks, so
-	# the playback will be at the desidered resolution					
-	if url_to_play is not None :
-		xbmc.Player().play(item=url_to_play, listitem=listItem)
-		return
+			return;
+		# This is an error condition, could be not verify ...
+		elif  len(right_resoluction_dict) == 0 :
+			print "JWORG: NO  one video at res " + max_resolution
+		# There are many video at the right res: enable listing of ONLY these
+		else :
+			print "JWORG: MORE than one video at res " +  max_resolution	
+			list_only = max_resolution
+	
 
-
-	# This portion of code will be executed only if 
-	# - user has not choosen a default max resolution in addon config
-	# - the default max resolution is UNDER the min resolution available
+	# Standard listing code
 	for mp4 in json["files"][language_code]["MP4"]:
 
 		url 				= mp4["file"]["url"]
 		res 				= mp4["label"]
 		mp4_title_cleaned 	= jw_common.cleanUpText (mp4["title"])
 		title 				= "[" + res + "] - " + mp4_title_cleaned
+
+		if (list_only is not False) and (res != max_resolution) : 
+			# if user has choosen a res, and there are more than one video on this res
+			# I skipp every video of different resolution, but show a list
+			# of all available video of this resolution
+			continue;
 
 		listItem = xbmcgui.ListItem(
 			label 			= title,
@@ -176,12 +215,7 @@ def showVideoJsonUrl(json_url, thumb):
 			url			= url, 
 			listitem	= listItem, 
 			isFolder	= False 
-		)  
-		
-		
-		# xbmcplugin.setResolvedUrl( handle=jw_config.plugin_pid, succeeded=True, listitem=listItem)
+		) 
 
 	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
-
-
 
