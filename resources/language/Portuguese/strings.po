@@ -44,6 +44,10 @@ msgctxt "#30013"
 msgid "Bible dramas"
 msgstr "Dramatizações da bíblia"
 
+msgctxt "#30014"
+msgid "Dramatic bible readings"
+msgstr "Leituras dramatizadas da bíblia"
+
 msgctxt "#30015"
 msgid "Musics, dramas, and dramatic readings"
 msgstr "Música, drama e leituras dramatizadas"
@@ -135,4 +139,3 @@ msgstr "Actividades"
 msgctxt "#30038"
 msgid "End of the article"
 msgstr "Fim do artigo"
-
