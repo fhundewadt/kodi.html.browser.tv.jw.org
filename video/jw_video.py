@@ -143,30 +143,25 @@ def showVideoJsonUrl(json_url, thumb):
 	# Try do autodetect the video to play basaed on user setting of
 	# default video resolution
 	list_only = False;
-	if max_resolution != "0" :
 	
-		print "JWORG found videos"
-		print video_dict
+	print "JWORG: max_resolution: '" + max_resolution + "'"
+
+	if (max_resolution != "0" and max_resolution != "") or max_resolution is None :
+	
 		right_resoluction_dict = None
 		max_resolution = max_resolution + "p"
 
 		# If found default resolution video, I use this
 		# else I use the latest added (because it's the the highest) res available
 		if max_resolution in video_dict is not None :
-			print "JWORG found resolution choosen by user: " + max_resolution
 			right_resoluction_dict = video_dict[max_resolution]
 		else :
-			print "JWORG NOT found resolution choosen by user: " + max_resolution
 			max_resolution, right_resoluction_dict = video_dict.popitem()
-
-		print "JWORG I'll use the following dict, at res " + max_resolution
-		print right_resoluction_dict
 
 		# If I've only one video at right res, I play It
 		if len(right_resoluction_dict) == 1 :
 	
 			title, url_to_play = right_resoluction_dict.popitem() 				
-			print "JWORG: ONE video only at res " + max_resolution.encode("utf8") + ": " + title.encode("utf8") + " - " + url_to_play.encode("utf8");
 
 			listItem = xbmcgui.ListItem(
 				label 			=  title
@@ -184,7 +179,6 @@ def showVideoJsonUrl(json_url, thumb):
 			print "JWORG: NO  one video at res " + max_resolution
 		# There are many video at the right res: enable listing of ONLY these
 		else :
-			print "JWORG: MORE than one video at res " +  max_resolution	
 			list_only = max_resolution
 	
 
