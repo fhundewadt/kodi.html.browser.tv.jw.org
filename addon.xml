@@ -42,7 +42,7 @@
         <description lang="pt_BR">Fluxo direto de www.jw.org, você pode:[CR]- assistir vídeos[CR]- ouvir leitura de revistas, músicas e cantigos, leituras da bíblia, dramas em áudio e leituras bíblicas dramatizadas[CR]- Ler textos do dia e notícias</description>
         <language>af de el en es it nl pl pt pt_BR</language>
         <platform />
-        <website>
+        <website>http://realtebo.github.io/plugin.video.jworg/</website>
         <source>https://github.com/realtebo/plugin.video.jworg</source>
         <license>GNU GENERAL PUBLIC LICENSE. Version 2, June 1991</license>
         <email></email>
