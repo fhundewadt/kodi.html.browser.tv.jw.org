@@ -3,6 +3,7 @@
 
 Code:
 + Change audio list play mode; now addon is ultrafast in listing audio item !
++ Changed print into xbmc.log
 
 0.3.2
 -----

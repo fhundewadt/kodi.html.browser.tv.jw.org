@@ -11,7 +11,7 @@ import os
 import jw_common
 
 # key is english name, value is the name of the locale IN the locale
-# used for first run if no language setted; it takes XBMC language setting
+# used for first run if no language setted. It takes XBMC language setting
 # and convert into "our" locale settings
 
 # <setting id="language" type="labelenum" label="30002" 

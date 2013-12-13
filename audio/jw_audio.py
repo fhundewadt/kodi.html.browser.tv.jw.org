@@ -37,7 +37,7 @@ def showAudioIndex():
 
         # Case Afrikaans: has no bible audio !
         if item["enable"] == False :
-            continue;
+            continue
 
         listItem    = xbmcgui.ListItem( item["title"] )     
         params      = {
@@ -71,6 +71,10 @@ def showAudioJson(json_url):
     
     for mp3 in json["files"][language_code]["MP3"]:
 
+        # Skip 'zip' files
+        if mp3["mimetype"] != "audio/mpeg":
+            continue
+
         params = {
             "content_type"  : "audio", 
             "mode"          : "play_mp3", 
@@ -81,10 +85,6 @@ def showAudioJson(json_url):
         url = jw_config.plugin_name + '?' + urllib.urlencode(params)    
 
         title   = jw_common.cleanUpText(mp3["title"])
-
-        # Skip 'zip' files
-        if mp3["mimetype"] != "audio/mpeg":
-            continue;
 
         listItem = xbmcgui.ListItem(
             label           = title,
@@ -110,7 +110,7 @@ def showAudioJson(json_url):
     if len(json["files"][language_code]["MP3"]) == 1 :
 
         xbmc.Player().play(item=url, listitem=listItem)
-        return;
+        return
 
 
     xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)    

@@ -43,7 +43,7 @@ def setNextPageLink(html, mode, type, param_name = None, param_value = None):
 		return 
 
 	next_start  = next_link[0][0]
-	title 		= t(30001);	
+	title 		= t(30001)
 	listItem 	= xbmcgui.ListItem(title)
 	params 		= {
 		"content_type" 	: type, 
