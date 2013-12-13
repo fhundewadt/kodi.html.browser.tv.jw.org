@@ -70,7 +70,16 @@ def showAudioJson(json_url):
     cover_image     = json["pubImage"]["url"]
     
     for mp3 in json["files"][language_code]["MP3"]:
-        url     = mp3["file"]["url"]
+
+        params = {
+            "content_type"  : "audio", 
+            "mode"          : "play_mp3", 
+            "file_url"      : mp3["file"]["url"]
+        }
+
+        #url     = mp3["file"]["url"]
+        url = jw_config.plugin_name + '?' + urllib.urlencode(params)    
+
         title   = jw_common.cleanUpText(mp3["title"])
 
         # Skip 'zip' files
@@ -86,6 +95,8 @@ def showAudioJson(json_url):
             type        = 'Music', 
             infoLabels  = {'Title': title }
         )
+
+        listItem.setProperty("IsPlayable","true")
 
         xbmcplugin.addDirectoryItem(
             handle      = jw_config.plugin_pid, 

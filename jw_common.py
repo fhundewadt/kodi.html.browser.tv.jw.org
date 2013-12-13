@@ -100,15 +100,15 @@ def loadNotCachedJsonFromUrl(url, ajax):
 		data = json.loads(response)
 
 	except urllib2.URLError, e: 
-		print "JWORG http error"
-		print e.code
-		print e.read()
+		xbmc.log ("JWORG http error", xbmc.LOGERROR)
+		xbmc.log (e.code, xbmc.LOGERROR)
+		xbmc.log (e.read(), xbmc.LOGERROR)
 		pass
 		
 	except urllib2.HTTPError, e:
-		print "JWORG http error"
-		print e.code
-		print e.read()
+		xbmc.log ("JWORG http error", xbmc.LOGERROR)
+		xbmc.log (e.code, xbmc.LOGERROR)
+		xbmc.log (e.read(), xbmc.LOGERROR)
 		pass
 
 	# other exception give exceptions
@@ -125,3 +125,10 @@ URL HELPER
 def getUrl(language):
 	return jw_config.main_url + jw_config.const[language]["url_lang_code"]  + "/" 
 
+
+"""
+AUDIO HELPER
+"""
+def playMp3(url):
+	item = xbmcgui.ListItem(path=url)
+	xbmcplugin.setResolvedUrl(handle=jw_config.plugin_pid, succeeded=True, listitem=item)
