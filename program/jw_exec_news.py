@@ -21,7 +21,7 @@ def showNewsIndex():
 	url 		= url + jw_config.const[language]["news_index"] 
 	
 	html 		= jw_common.loadUrl(url)
-
+	
 	regexp_title = '<h3 class="tsrTtle"><a href="([^"]+)"( title="[^"]+")?>([^<]+)</a></h3>'
 	news_found = re.findall(regexp_title, html)
 
@@ -33,10 +33,16 @@ def showNewsIndex():
 	for news in news_found:
 
 		title = jw_common.cleanUpText( news[2] ) 
+
+		# Stop news parsing at the first lateral link (an head) found
+		if "/?v=" in news[0] :
+			break;
+
 		listItem = xbmcgui.ListItem( 
 			label  			= title,
 			thumbnailImage 	= images[count][2]
 		)	
+
 		params = {
 			"content_type"  : "executable", 
 			"mode" 			: "open_news_page", 

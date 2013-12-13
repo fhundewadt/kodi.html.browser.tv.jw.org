@@ -1,8 +1,12 @@
 0.3.3
 -----
 
+Bug fixes:
++ Modified "Newsroom" to react (again) to changes in jw.org html code
++ Modified "Activities" to react (again) to changes in jw.org html code
+
 Code:
-+ Change audio list play mode; now addon is ultrafast in listing audio item !
++ Change audio list play mode; now addon is ultrafast in listing audio item ! 
 + Changed print into xbmc.log
 
 0.3.2
