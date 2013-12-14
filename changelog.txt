@@ -11,7 +11,7 @@ Code:
 + Switched from xbmcplugin to xbmcaddon in the setting related code
 
 Small enhancements:
-+ Auto save of language if detected a supported language; user can see the right language setted when opening for the first time th addon setting window
++ Auto save of language if detected a supported language; user can see the right language setted when opening for the first time the addon setting window
 
 0.3.1
 -----
