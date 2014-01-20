@@ -6,6 +6,7 @@ import jw_config
 import jw_common
 
 from video import jw_video
+from video import jw_sign
 
 from audio import jw_audio
 from audio import jw_audio_bible
@@ -52,6 +53,8 @@ if content_type == "video" :
 		thumb 		= params["thumb"][0]
 		jw_video.showVideoJsonUrl(json_url, thumb)
 
+	if mode == "open_sign_index":
+		jw_sign.showVideoFilter()
 
 if content_type == "audio" :
 	if mode is None :

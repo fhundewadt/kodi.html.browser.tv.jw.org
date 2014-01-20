@@ -181,6 +181,8 @@ const = {
 		"date_format"				: "%d-%m-%Y",
 		"news_index"				: "aktuelle-meldungen/",
 		"activity_index"			: "jehovas-zeugen/aktivitaeten/",
+
+		"sign_index"				:  "http://www.jw.org/apps/X_QrYQZRQVNFVTr?selLang=DGS",
 	},		
 	"Português" : {
 		"lang_code"					: "T",
