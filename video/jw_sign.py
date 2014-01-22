@@ -14,7 +14,6 @@ import jw_config
 
 # show available video categories
 def showVideoFilter():
-	import re
 
 	language 	= jw_config.language;
 	url 		= jw_config.main_url  + jw_config.const[language]["sign_index"] 
@@ -22,17 +21,12 @@ def showVideoFilter():
 		print "No sign language support for language " + language
 		xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
 		return;
-		
-	print  "JWORG sign url: " + url
 
-	html 		= jw_common.loadUrl(url)
-
- 	
-
-	soup = BeautifulSoup(html)
+	html 	= jw_common.loadUrl(url)
+	soup 	= BeautifulSoup(html)
 
 	# print soup.prettify()
-	boxes = soup.findAll('div',{"class":"box"})
+	boxes 	= soup.findAll('div',{"class":"box"})
 
 	for box in boxes :
 		box_content = box.findAll('div',{'class':'boxcontent'})
@@ -58,9 +52,9 @@ def showVideoFilter():
 			url = jw_config.plugin_name + '?' + urllib.urlencode(params)
 			xbmcplugin.addDirectoryItem(
 				handle	 = jw_config.plugin_pid, 
-				url 	 = category_link, 
-				listitem =listItem, 
-				isFolder =True 
+				url 	 = url, 
+				listitem = listItem, 
+				isFolder = True 
 			)  
 
 	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)

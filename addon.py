@@ -56,6 +56,10 @@ if content_type == "video" :
 	if mode == "open_sign_index":
 		jw_sign.showVideoFilter()
 
+	if mode == "open_sign_video_category":
+		print "JWORG: not implemented yet"
+		print params
+
 if content_type == "audio" :
 	if mode is None :
 		jw_audio.showAudioIndex()
