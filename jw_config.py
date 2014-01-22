@@ -55,6 +55,8 @@ const = {
 		"date_format"				: "%d/%m/%Y",
 		"news_index"				: "news/",
 		"activity_index"			: "testimoni-di-geova/attivit%C3%A0/",
+
+		"sign_index"				: "apps/I_QrYQZRQVNFVTr?selLang=ISL",
  	},
  	"Magyar" : {
 		"lang_code"					: "H",
@@ -182,7 +184,7 @@ const = {
 		"news_index"				: "aktuelle-meldungen/",
 		"activity_index"			: "jehovas-zeugen/aktivitaeten/",
 
-		"sign_index"				:  "http://www.jw.org/apps/X_QrYQZRQVNFVTr?selLang=DGS",
+		"sign_index"				:  "apps/X_QrYQZRQVNFVTr?selLang=DGS",
 	},		
 	"Português" : {
 		"lang_code"					: "T",
