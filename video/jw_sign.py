@@ -37,9 +37,7 @@ def showVideoFilter():
 	for box in boxes :
 		box_content = box.findAll('div',{'class':'boxcontent'})
 		for content in box_content :
-			print "JWORG box content"
-			print content
-			
+
 			content_divs = content.findAll('div');
 			img_src 		= content_divs[0].findAll('img')[0].get("src")
 			category_link 	= content_divs[1].find('a').get('href')
