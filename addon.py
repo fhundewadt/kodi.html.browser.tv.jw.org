@@ -57,8 +57,15 @@ if content_type == "video" :
 		jw_sign.showVideoFilter()
 
 	if mode == "open_sign_video_category":
-		print "JWORG: not implemented yet"
-		print params
+		url 	= params ["url"][0]
+		thumb 	= params ["thumb"][0]
+		jw_sign.showVideoCategory(url, thumb)
+
+	if mode == "open_sign_video_category_with_specific_issue":
+		url 			= params ["url"][0]
+		thumb 			= params ["thumb"][0]
+		pub_title_index = params ["pub_title_index"][0]
+		jw_sign.showVideoCategorySpecificIssue(url, thumb, pub_title_index)
 
 if content_type == "audio" :
 	if mode is None :
@@ -144,4 +151,5 @@ if content_type == "executable" :
 	if mode == "open_activity_article" :
 		url = params["url"][0]
 		jw_exec_activity.showArticle(url)
+
 
