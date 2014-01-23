@@ -67,6 +67,12 @@ if content_type == "video" :
 		pub_title_index = params ["pub_title_index"][0]
 		jw_sign.showVideoCategorySpecificIssue(url, thumb, pub_title_index)
 
+	if mode == "open_sign_video_category_specific_row":
+		url 		= params ["url"][0]
+		thumb 		= params ["thumb"][0]
+		row_index 	= params ["row_index"][0]		
+		jw_sign.showVideoCategorySpecificRow(url, thumb, row_index)
+
 if content_type == "audio" :
 	if mode is None :
 		jw_audio.showAudioIndex()

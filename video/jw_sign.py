@@ -116,10 +116,9 @@ def showVideoCategory(category_url, thumb) :
 # all of chapters not related to the specified issue
 def showVideoCategorySpecificIssue(category_url, thumb, pub_title_index) :
 
-	html 	= jw_common.loadUrl(category_url)
-	soup 	= BeautifulSoup(html)
-
 	pub_title_index = int(pub_title_index) #because it's a string actually !
+	html 			= jw_common.loadUrl(category_url)
+	soup 			= BeautifulSoup(html)
 
 	rows = soup.findAll('tr')
 
@@ -141,15 +140,12 @@ def showVideoCategorySpecificIssue(category_url, thumb, pub_title_index) :
 			continue
 
 		if row_class is None and pub_index_found == pub_title_index:
-			print "JWORG of searched pub issue"
 			first_cell_class = row.findAll("td")[0]["class"]
-			print first_cell_class
 			if first_cell_class == "calign" :
 				cell = row.findAll("td")[2]
 			else :
 				cell = row.findAll("td")[1]
 			chapter_title = cell.contents[0].encode("utf-8")
-			print chapter_title
 
 			listItem = xbmcgui.ListItem(
 				label 			= chapter_title, 
@@ -174,3 +170,59 @@ def showVideoCategorySpecificIssue(category_url, thumb, pub_title_index) :
 
 	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)	
 
+
+# Get the list of playable item (a list of video resolution and title)
+# from a specific row of the page
+def showVideoCategorySpecificRow(category_url, thumb, row_index) :
+
+	row_index = int(row_index) #because it's a string actually !
+	html 		= jw_common.loadUrl(category_url)
+	soup 		= BeautifulSoup(html)
+
+	row = soup.findAll('tr')[row_index]
+
+	#print "JWORG looking for media at specific row"
+	#print row
+
+	row_cells = row.findAll("td")
+
+	start_cell = 2 # zero-base indexing
+	first_cell_class = row.findAll("td")[0]["class"]
+	if first_cell_class == "calign":
+		start_cell = 3
+
+	cell_index = -1
+	for cell in row_cells :
+		cell_index = cell_index + 1
+		if cell_index == (start_cell -1): 
+			#print "JWORG title cell"
+			article_title = cell.contents[0].encode("utf-8")
+			#print article_title
+
+		if cell_index >= start_cell :
+			#print "JWORG usefull cell"
+			#print cell
+			video_src 		= cell.find("a").get("href")
+			video_quality 	= cell.find("a").contents[0].encode("utf-8")
+			#print video_src
+			#print video_quality
+
+			listItem = xbmcgui.ListItem(
+				label 			= "[" + video_quality + "] - " + article_title,
+				thumbnailImage	= thumb
+			)
+
+			listItem.setInfo(
+				type 		= 'Video', 
+				infoLabels 	= {'Title': article_title}
+			)
+			listItem.setProperty("IsPlayable","true")
+
+			xbmcplugin.addDirectoryItem(
+				handle		= jw_config.plugin_pid, 
+				url			= video_src, 
+				listitem	= listItem, 
+				isFolder	= False 
+			) 
+
+	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)		
