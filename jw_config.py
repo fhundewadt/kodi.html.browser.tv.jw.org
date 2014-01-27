@@ -30,6 +30,7 @@ locale_2_lang = {
 	"Dutch"					: "Nederlands",
 	"Polish"				: "Polski",
 	"Portuguese" 			: "Português",
+	
 }
 
 
@@ -258,6 +259,7 @@ const = {
 
 		"sign_index"				: "apps/G_QrYQZRQVNFVTr?selLang=GSL",
 	},
+
 }
 
 

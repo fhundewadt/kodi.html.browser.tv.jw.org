@@ -1,8 +1,11 @@
-0.3.3
+0.4.0
 -----
 
-Small enhancements:
-+ Added support for touch in program -> newsroom and program -> activity code
+New feature:
++ Video: now you can see videos in sign language (in all supported language)
+
+Code:
++ Introduced dependency from BeautifulSoap 3; using this the plugin could be even more stable and resilient to very small html changes
 
 0.3.2
 -----
