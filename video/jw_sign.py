@@ -8,6 +8,7 @@ import xbmcgui
 
 from BeautifulSoup import BeautifulSoup 
 import urllib
+import re
 
 import jw_common
 import jw_config
@@ -65,7 +66,7 @@ def showVideoCategory(category_url, thumb) :
 	html 	= jw_common.loadUrl(category_url)
 	soup 	= BeautifulSoup(html)
 
-	pub_title = soup.findAll('tr', {'class' : "pubTitle"})
+	pub_title = soup.findAll('tr', {'class' : re.compile(r'\bpubTitle\b')})
 
 	pub_title_found = len(pub_title)
 	
@@ -106,9 +107,13 @@ def showVideoCategory(category_url, thumb) :
 		xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
 		return
 
-	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
-
-
+	elif  pub_title_found == 1 :
+		print "JWORG exactly one pub title"		
+		showVideoCategorySpecificIssue(category_url, thumb, 0) 
+	else :
+		showVideoCategorySpecificIssue(category_url, thumb, -1) 
+		print "JWORG NO pub title found"		
+		
 
 # This specific version is for watchtower page, which has more than one pub per page
 # The previous folder has already showed the list of issue of this category of publication
@@ -121,6 +126,9 @@ def showVideoCategorySpecificIssue(category_url, thumb, pub_title_index) :
 	soup 			= BeautifulSoup(html)
 
 	rows = soup.findAll('tr')
+
+	print "JWORG showVideoCategorySpecificIssue rows found"
+	print len(rows)
 
 	pub_index_found = -1
 	first_chapter_row = None
@@ -135,8 +143,13 @@ def showVideoCategorySpecificIssue(category_url, thumb, pub_title_index) :
 		except:
 			pass
 
-		if row_class is not None and row_class == 'pubTitle' :
+		if row_class is not None :
+			print "JWORG row index " + str(row_index) + " class name '" + row_class.encode("utf-8") + "'";
+
+		if row_class is not None and 'pubTitle' in row_class :
+			print "JWORG showVideoCategorySpecificIssue pub title found"
 			pub_index_found = pub_index_found + 1	
+			print pub_index_found
 			continue
 
 		if row_class is None and pub_index_found == pub_title_index:
@@ -145,7 +158,13 @@ def showVideoCategorySpecificIssue(category_url, thumb, pub_title_index) :
 				cell = row.findAll("td")[2]
 			else :
 				cell = row.findAll("td")[1]
-			chapter_title = cell.contents[0].encode("utf-8")
+
+			# Needed for publications without videos !
+			# Example: http://www.jw.org/apps/I_QrYQFVTrCsVrGlBBX?selLang=ISL&selPub=224
+			try :
+				chapter_title = cell.contents[0].encode("utf-8")
+			except :
+				continue
 
 			listItem = xbmcgui.ListItem(
 				label 			= chapter_title, 
@@ -195,17 +214,22 @@ def showVideoCategorySpecificRow(category_url, thumb, row_index) :
 	for cell in row_cells :
 		cell_index = cell_index + 1
 		if cell_index == (start_cell -1): 
-			#print "JWORG title cell"
+			print "JWORG title cell"
 			article_title = cell.contents[0].encode("utf-8")
-			#print article_title
+			print article_title
 
 		if cell_index >= start_cell :
-			#print "JWORG usefull cell"
-			#print cell
+			print "JWORG usefull cell"
+			print cell
+
+			# This is needed for resolution cell empty
+			if cell.find("a") is None :
+				continue;
+
 			video_src 		= cell.find("a").get("href")
 			video_quality 	= cell.find("a").contents[0].encode("utf-8")
-			#print video_src
-			#print video_quality
+			print video_src
+			print video_quality
 
 			listItem = xbmcgui.ListItem(
 				label 			= "[" + video_quality + "] - " + article_title,
