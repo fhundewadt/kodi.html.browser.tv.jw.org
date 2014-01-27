@@ -18,10 +18,6 @@ def showVideoFilter():
 
 	language 	= jw_config.language;
 	url 		= jw_config.main_url  + jw_config.const[language]["sign_index"] 
-	if url is False :
-		print "No sign language support for language " + language
-		xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
-		return;
 
 	html 	= jw_common.loadUrl(url)
 	soup 	= BeautifulSoup(html)
