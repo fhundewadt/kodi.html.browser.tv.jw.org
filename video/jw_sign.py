@@ -22,7 +22,6 @@ def showVideoFilter():
 	html 	= jw_common.loadUrl(url)
 	soup 	= BeautifulSoup(html)
 
-	# print soup.prettify()
 	boxes 	= soup.findAll('div',{"class":"box"})
 
 	for box in boxes :
@@ -65,7 +64,7 @@ def showVideoCategory(category_url, thumb) :
 	html 	= jw_common.loadUrl(category_url)
 	soup 	= BeautifulSoup(html)
 
-	# search "select year" box [italian sing language, for example]
+	# search "select year" box [italian watchtower sing language, for example]
 	sel_year_label = soup.findAll('label', {'for' : 'selYear' })
 
 	if len(sel_year_label) > 0 :
@@ -84,6 +83,35 @@ def showVideoCategory(category_url, thumb) :
 		params = { 
 			"content_type" 		: "video", 
 			"mode" 				: "open_sign_video_sel_year", 
+			"url"				: category_url,
+			'thumb'				: thumb,
+		}
+		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
+		xbmcplugin.addDirectoryItem(
+			handle	 = jw_config.plugin_pid, 
+			url 	 = url, 
+			listitem = listItem, 
+			isFolder = True 
+		)  
+
+	# search "select book" box [italian bible sing language, for example]
+	sel_book_labels = soup.findAll('label', {'for' : 'selBook' })
+	if len(sel_book_labels) > 0 :
+
+		book_selector = soup.findAll('select', {'id' : 'selBook'})
+		selected_book = book_selector[0].findAll('option', {'selected':'selected'})
+
+		listItem = xbmcgui.ListItem(
+			label 			= "[COLOR blue][B]" +
+								sel_book_labels[0].contents[0].encode("utf-8") + " (" +
+							  	selected_book[0].contents[0].encode("utf-8") + ") " +
+								"[/B][/COLOR]",
+
+			thumbnailImage  = thumb,
+		)	
+		params = { 
+			"content_type" 		: "video", 
+			"mode" 				: "open_sign_video_sel_book", 
 			"url"				: category_url,
 			'thumb'				: thumb,
 		}
@@ -137,12 +165,10 @@ def showVideoCategory(category_url, thumb) :
 		xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
 		return
 
-	elif  pub_title_found == 1 :
-		print "JWORG exactly one pub title"		
+	elif  pub_titles_found == 1 :
 		showVideoCategorySpecificIssue(category_url, thumb, 0) 
 	else :
 		showVideoCategorySpecificIssue(category_url, thumb, -1) 
-		print "JWORG NO pub title found"		
 		
 
 # This specific version is for watchtower page, which has more than one pub per page
@@ -157,9 +183,6 @@ def showVideoCategorySpecificIssue(category_url, thumb, pub_title_index) :
 
 	rows = soup.findAll('tr')
 
-	print "JWORG showVideoCategorySpecificIssue rows found"
-	print len(rows)
-
 	pub_index_found = -1
 	first_chapter_row = None
 	last_chapter_row = None
@@ -173,13 +196,8 @@ def showVideoCategorySpecificIssue(category_url, thumb, pub_title_index) :
 		except:
 			pass
 
-		if row_class is not None :
-			print "JWORG row index " + str(row_index) + " class name '" + row_class.encode("utf-8") + "'"
-
 		if row_class is not None and 'pubTitle' in row_class :
-			print "JWORG showVideoCategorySpecificIssue pub title found"
 			pub_index_found = pub_index_found + 1	
-			print pub_index_found
 			continue
 
 		if row_class is None and pub_index_found == pub_title_index:
@@ -230,9 +248,6 @@ def showVideoCategorySpecificRow(category_url, thumb, row_index) :
 
 	row = soup.findAll('tr')[row_index]
 
-	#print "JWORG looking for media at specific row"
-	#print row
-
 	row_cells = row.findAll("td")
 
 	start_cell = 2 # zero-base indexing
@@ -244,13 +259,9 @@ def showVideoCategorySpecificRow(category_url, thumb, row_index) :
 	for cell in row_cells :
 		cell_index = cell_index + 1
 		if cell_index == (start_cell -1): 
-			print "JWORG title cell"
 			article_title = cell.contents[0].encode("utf-8")
-			print article_title
 
 		if cell_index >= start_cell :
-			print "JWORG usefull cell"
-			print cell
 
 			# This is needed for resolution cell empty
 			if cell.find("a") is None :
@@ -258,8 +269,6 @@ def showVideoCategorySpecificRow(category_url, thumb, row_index) :
 
 			video_src 		= cell.find("a").get("href")
 			video_quality 	= cell.find("a").contents[0].encode("utf-8")
-			print video_src
-			print video_quality
 
 			listItem = xbmcgui.ListItem(
 				label 			= "[" + video_quality + "] - " + article_title,
@@ -291,20 +300,13 @@ def selYear(category_url, thumb) :
 
 	year_selector = soup.findAll('select', {'id' : 'selYear'})
 
-	print "JWORG selectors:"
-	print year_selector
-
 	if len(year_selector)==1 :
 
 		options = year_selector[0].findAll('option')
-		print "JWORG year options"
-		print options
 
 		for option in options :
 
-			print option
-			year = option.contents[0].encode("utf-8");
-			print year
+			year = option.contents[0].encode("utf-8")
 
 			listItem = xbmcgui.ListItem(
 				label 			= year, 
@@ -316,6 +318,49 @@ def selYear(category_url, thumb) :
 				"content_type" 		: "video", 
 				"mode" 				: "open_sign_video_category", 
 				"url"				: category_url,
+				"thumb" 			: thumb,
+			} 
+
+			url = jw_config.plugin_name + '?' + urllib.urlencode(params)
+			xbmcplugin.addDirectoryItem(
+				handle	 = jw_config.plugin_pid, 
+				url 	 = url, 
+				listitem = listItem, 
+				isFolder = True 
+			)  
+
+	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)	
+
+
+# Book selector
+# This happens only for the bible 
+def selBook(category_url, thumb) :
+
+	html 	= jw_common.loadUrl(category_url)
+	soup 	= BeautifulSoup(html)
+
+	book_selector = soup.findAll('select', {'id' : 'selBook'})
+
+	if len(book_selector)==1 :
+
+		options = book_selector[0].findAll('option')
+
+		for option in options :
+
+			book = option.contents[0].encode("utf-8")
+			book_num = option.get("value").encode("utf-8") 
+
+			listItem = xbmcgui.ListItem(
+				label 			= book, 
+				thumbnailImage	= thumb,
+			)
+
+			category_url_with_book = category_url + "&selBook=" + book_num
+
+			params = { 
+				"content_type" 		: "video", 
+				"mode" 				: "open_sign_video_category", 
+				"url"				: category_url_with_book,
 				"thumb" 			: thumb,
 			} 
 

@@ -78,6 +78,11 @@ if content_type == "video" :
 		thumb 		= params ["thumb"][0]
 		jw_sign.selYear(url, thumb)
 
+	if mode == "open_sign_video_sel_book":
+		url 		= params ["url"][0]
+		thumb 		= params ["thumb"][0]
+		jw_sign.selBook(url, thumb)		
+
 if content_type == "audio" :
 	if mode is None :
 		jw_audio.showAudioIndex()
