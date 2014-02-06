@@ -73,6 +73,11 @@ if content_type == "video" :
 		row_index 	= params ["row_index"][0]		
 		jw_sign.showVideoCategorySpecificRow(url, thumb, row_index)
 
+	if mode == "open_sign_video_sel_year":
+		url 		= params ["url"][0]
+		thumb 		= params ["thumb"][0]
+		jw_sign.selYear(url, thumb)
+
 if content_type == "audio" :
 	if mode is None :
 		jw_audio.showAudioIndex()
