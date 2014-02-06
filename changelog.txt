@@ -5,7 +5,7 @@ New feature:
 + Video: now you can see videos in sign language (in all supported language)
 
 Code:
-+ Introduced dependency from BeautifulSoap 3; using this, the plugin could be even more stable and resilient to website html changes
++ Introduced dependency from BeautifulSoup 3; using this, the plugin could be even more stable and resilient to website html changes
 
 0.3.2
 -----
