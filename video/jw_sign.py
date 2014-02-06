@@ -201,14 +201,19 @@ def showVideoCategorySpecificIssue(category_url, thumb, pub_title_index) :
 			continue
 
 		if row_class is None and pub_index_found == pub_title_index:
-			first_cell_class = row.findAll("td")[0]["class"]
+			first_cell = row.findAll("td")[0]
+			first_cell_class = first_cell["class"]
+
+			# This is needed because watchtower, for example, has one image for a whole issue
+			# so after first row of the issue, the other rows have no images
 			if first_cell_class == "calign" :
 				cell = row.findAll("td")[2]
+				thumb = first_cell.findAll('img')[0].get('src')
 			else :
 				cell = row.findAll("td")[1]
 
 			# Needed for publications without videos !
-			# Example: http://www.jw.org/apps/I_QrYQFVTrCsVrGlBBX?selLang=ISL&selPub=224
+			# Example: http://www.jw.org/apps/I_QrYQFVTrCsVrGlBBX?selLang=ISL&selPub=938
 			try :
 				chapter_title = cell.contents[0].encode("utf-8")
 			except :
