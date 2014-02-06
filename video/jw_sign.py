@@ -32,6 +32,7 @@ def showVideoFilter():
 			img_src 		= content_divs[0].findAll('img')[0].get("src")
 			category_link 	= content_divs[1].find('a').get('href')
 			category_name	= content_divs[1].find('a').contents[0].encode("utf-8")
+			category_name	= jw_common.cleanUpText(category_name)
 
 			listItem = xbmcgui.ListItem(
 				label 			= category_name, 
@@ -216,6 +217,7 @@ def showVideoCategorySpecificIssue(category_url, thumb, pub_title_index) :
 			# Example: http://www.jw.org/apps/I_QrYQFVTrCsVrGlBBX?selLang=ISL&selPub=938
 			try :
 				chapter_title = cell.contents[0].encode("utf-8")
+				chapter_title = jw_common.cleanUpText(chapter_title)
 			except :
 				continue
 
@@ -264,7 +266,7 @@ def showVideoCategorySpecificRow(category_url, thumb, row_index) :
 	for cell in row_cells :
 		cell_index = cell_index + 1
 		if cell_index == (start_cell -1): 
-			article_title = cell.contents[0].encode("utf-8")
+			article_title = jw_common.cleanUpText(cell.contents[0].encode("utf-8"))
 
 		if cell_index >= start_cell :
 
