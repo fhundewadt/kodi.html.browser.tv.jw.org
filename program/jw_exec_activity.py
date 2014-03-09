@@ -67,10 +67,6 @@ def showActivitySection(url):
 
 	url 	= "http://www.jw.org" + url
 	html 	= jw_common.loadUrl(url)
-
-	print "JWORG: url: "
-	print url 
-
 	soup 	= BeautifulSoup(html)
 
     # container of news, so we can leave out the sidebar
@@ -81,7 +77,6 @@ def showActivitySection(url):
 	for n in news : 
 
 		anchor = n.findAll("a")
-		print "JWORG: news :"
 		link = anchor[1].get("href")
 
 		# Lookup news title
@@ -94,8 +89,6 @@ def showActivitySection(url):
 			content = anchor[1].findAll(text=True)
 			content_string = " ".join(content)
 			title = jw_common.cleanUpText(content_string.encode("utf-8"))
-
-		print title
 
 		image = n.findAll("img")
 		image_src = image[0].get("src")
