@@ -115,9 +115,13 @@ def loadNotCachedJsonFromUrl(url, ajax):
 
 	return data
 
-def loadJsonFromUrl (url, ajax):
-	data = jw_config.cache.cacheFunction(loadNotCachedJsonFromUrl, url, ajax)	
+def loadJsonFromUrl (url, ajax, month_cache = False ):
+	if month_cache == True :
+		data = jw_config.cache_month.cacheFunction(loadNotCachedJsonFromUrl, url, ajax)	
+	else :
+		data = jw_config.cache.cacheFunction(loadNotCachedJsonFromUrl, url, ajax)	
 	return data
+
 
 """
 URL HELPER

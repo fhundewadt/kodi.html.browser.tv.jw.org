@@ -41,6 +41,9 @@ Call router
 """
 if content_type == "video" :
 	if mode is None :
+		jw_video.showVideoIndex(0, "none")
+
+	if mode == "open_video_filter":
 		jw_video.showVideoFilter()
 
 	if mode == "open_video_index":
@@ -82,6 +85,7 @@ if content_type == "video" :
 		url 		= params ["url"][0]
 		thumb 		= params ["thumb"][0]
 		jw_sign.selBook(url, thumb)		
+
 
 if content_type == "audio" :
 	if mode is None :

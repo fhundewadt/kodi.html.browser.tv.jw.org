@@ -43,34 +43,15 @@ def showVideoFilter():
 			isFolder	= True 
 		)  
 
-	# Sign language link
-	sign_index = jw_config.const[language]["sign_index"] 
-	if sign_index != False :
-
-		title = jw_common.t(30040)
-		listItem = xbmcgui.ListItem( title )
-		params = {
-			'content_type' 	: 'video',
-			'mode'			: "open_sign_index",
-		}
-		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
-		xbmcplugin.addDirectoryItem(
-				handle		= jw_config.plugin_pid, 
-				url			= url, 
-				listitem	= listItem, 
-				isFolder	= True 
-		)
-
 	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
 
 
 # show available video pages
 def showVideoIndex(start, video_filter):
 
-	language 	= jw_config.language
-	url 		= jw_common.getUrl(language) + jw_config.const[language]["video_path"] + "/?start=" + str(start) + "&videoFilter=" + video_filter  + "&sortBy=" + jw_config.video_sorting
-	html 		= jw_common.loadUrl (url)
-	max_resolution	= xbmcplugin.getSetting(jw_config.plugin_pid, "max_resolution")
+	language 		= jw_config.language
+	url 			= jw_common.getUrl(language) + jw_config.const[language]["video_path"] + "/?start=" + str(start) + "&videoFilter=" + video_filter  + "&sortBy=" + jw_config.video_sorting
+	html 			= jw_common.loadUrl (url)
 
 	# Grep video titles
 	regexp_video_title = 'data-onpagetitle="([^"]+)"'
@@ -91,19 +72,40 @@ def showVideoIndex(start, video_filter):
 
 	count = 0
 	
+	total = len(videos)
+
+	progress = xbmcgui.DialogProgress()
+	progress.create(jw_common.t(30042), jw_common.t(30043), jw_common.t(30044) )
+
 	# Output video list 
 	for title in videos:
+		
+		json_url = video_json[count]
+
+		# if video has a video in default resolution
+		# the url will be a playable item
+		# otherwise it will be a xbmc folder url
+		setVideoUrl(title, json_url, posters[count])
+
+		count = count + 1
+		percent = float(count) / float(total)  * 100
+		message = jw_common.t(30045).format(count, total)
+		progress.update( int(percent), "", "", message)
+		
+		if progress.iscanceled():
+			break
+	
+	progress.close()	
+
+	# if it's the first page, I show the 'filter'
+	if start == 0 :
 		listItem = xbmcgui.ListItem(
-			label 			= title, 
-			thumbnailImage 	= posters[count]
+			label 			= jw_common.t(30041)
 		)
 
-		json_url = video_json[count]
 		params = { 
 			"content_type" 	: "video", 
-			"mode" 			: "open_json_video", 
-			"json_url"		: json_url,
-			"thumb" 		: posters[count]
+			"mode" 			: "open_video_filter", 
 		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
 		xbmcplugin.addDirectoryItem(
@@ -111,14 +113,178 @@ def showVideoIndex(start, video_filter):
 			url=url, 
 			listitem=listItem, 
 			isFolder=True 
-		)  
-		count = count + 1
+		)  	
+
+		# Sign language link
+		sign_index = jw_config.const[language]["sign_index"] 
+		if sign_index != False :
+
+			title = jw_common.t(30040)
+			listItem = xbmcgui.ListItem( title )
+			params = {
+				'content_type' 	: 'video',
+				'mode'			: "open_sign_index",
+			}
+			url = jw_config.plugin_name + '?' + urllib.urlencode(params)
+			xbmcplugin.addDirectoryItem(
+					handle		= jw_config.plugin_pid, 
+					url			= url, 
+					listitem	= listItem, 
+					isFolder	= True 
+			)		
 
 	jw_common.setNextPageLink(html, "open_video_index", "video", "video_filter", video_filter)
 
 	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
 	jw_common.setThumbnailView()
 
+
+def setVideoUrl(main_video_title, json_url, thumb) :
+	language 		= jw_config.language
+	json_url 		= "http://www.jw.org" + json_url
+	json 			= jw_common.loadJsonFromUrl(url = json_url,  ajax = False, month_cache = True)
+
+	max_resolution			= xbmcplugin.getSetting(jw_config.plugin_pid, "max_resolution")
+	max_resolution_string 	= max_resolution + "p"
+
+	# json equals to [] when a cached json was empty
+	if json is None or json == [] :
+		string = jw_common.t(30033) + " "
+		xbmcgui.Dialog().ok("jw.org browser", string)
+		return	
+
+	language_code = jw_config.const[language]["lang_code"]
+
+	# Case: "Bible from Japan" Video
+	# No speak, so no language, so only one "" entry suitable for every language
+	if len(json["languages"]) == 0:
+		language_code = ""
+
+	video_dict = {}
+	for mp4 in json["files"][language_code]["MP4"]:
+		res 				= mp4["label"]		
+		url_to_play			= mp4["file"]["url"]
+		mp4_title_cleaned 	= jw_common.cleanUpText (mp4["title"])
+		title 				= "[" + res + "] - " + mp4_title_cleaned
+
+		if mp4_title_cleaned not in video_dict :
+			video_dict[mp4_title_cleaned] = {}
+
+		if res not in video_dict[mp4_title_cleaned] :
+			video_dict[mp4_title_cleaned][res] = {}
+
+		video_dict[mp4_title_cleaned][res] = {"title" : title, "full_title" : mp4_title_cleaned, "url" : url_to_play, "resolution" : res }
+                
+	if (len(video_dict) ==1) :
+		# good, only one video title 
+		if max_resolution_string in video_dict[mp4_title_cleaned] :
+			# max resolution available !
+			addPlayableItem(video_dict[mp4_title_cleaned][max_resolution_string], thumb )
+		else :
+			# look max resolution available under the choosen one
+			for available_res in video_dict[mp4_title_cleaned] :
+				if available_res < max_resolution_string :
+					addPlayableItem(video_dict[mp4_title_cleaned][available_res], thumb )	
+					break 
+	else : 
+		# more then one video related to this title - show the list
+  		addVideoFolder(main_video_title, json_url, thumb )
+
+	return
+
+	
+
+
+	keys = sorted(list(video_dict.keys()), reverse=True)	
+
+	for key in keys :
+		print "JWORG video key"
+		print key
+	  	if (key <= max_resolution_string )  :
+	  		addPlayableItem(video_dict[key][title], thumb )
+	  		return
+ 	
+ 	# if i'm still here, i need to add a standard folder item
+	# Standard listing code
+	for mp4 in json["files"][language_code]["MP4"]:
+
+		url 				= mp4["file"]["url"]
+		res 				= mp4["label"]
+		mp4_title_cleaned 	= jw_common.cleanUpText (mp4["title"])
+		title 				= "[" + res + "] - " + mp4_title_cleaned
+
+		if (list_only is not False) and (res != max_resolution) : 
+			# if user has choosen a res, and there are more than one video on this res
+			# I skip every video of different resolution, but show a list
+			# of all available video of this resolution
+			continue
+
+		listItem = xbmcgui.ListItem(
+			label 			= title,
+			thumbnailImage	= thumb
+		)
+		listItem.setInfo(
+			type 		= 'Video', 
+			infoLabels 	= {'Title': mp4_title_cleaned}
+		)
+		listItem.setProperty("IsPlayable","true")
+
+		xbmcplugin.addDirectoryItem(
+			handle		= jw_config.plugin_pid, 
+			url			= url, 
+			listitem	= listItem, 
+			isFolder	= False 
+		) 
+
+	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid) 	
+
+
+# helper
+def addVideoFolder(main_video_title, json_url, thumb) :
+
+	listItem = xbmcgui.ListItem(
+		label 			= "[lista] " + main_video_title,
+		thumbnailImage	= thumb
+	)
+
+	params = { 
+		"content_type" 	: "video", 
+		"mode" 			: "open_json_video", 
+		"json_url"		: json_url,
+		"thumb" 		: thumb
+	} 
+	url = jw_config.plugin_name + '?' + urllib.urlencode(params)
+	xbmcplugin.addDirectoryItem(
+		handle		= jw_config.plugin_pid, 
+		url 		= url, 
+		listitem 	= listItem, 
+		isFolder	= True 
+	)	
+
+
+# helper
+def addPlayableItem(video_data, thumb) :
+
+	title 				= video_data["title"]
+	mp4_title_cleaned	= video_data["full_title"]
+	url					= video_data["url"]
+
+	listItem = xbmcgui.ListItem(
+		label 			= title,
+		thumbnailImage	= thumb
+	)
+	listItem.setInfo(
+		type 		= 'Video', 
+		infoLabels 	= {'Title': mp4_title_cleaned}
+	)
+	listItem.setProperty("IsPlayable","true")
+
+	xbmcplugin.addDirectoryItem(
+		handle		= jw_config.plugin_pid, 
+		url			= url, 
+		listitem	= listItem, 
+		isFolder	= False 
+	) 
 
 
 # show available resolutions for a video (ed eventually other related titles, like interviews, etc.)	
