@@ -209,15 +209,15 @@ msgstr ""
 
 #. Progress bar row 1
 msgctxt "#30043"
-msgid "Reading video infos, be patient"
+msgid "Reading video infos, please wait."
 msgstr ""
 
 #. Progress bar row 2
 msgctxt "#30044"
-msgid "Opening of videos will be faster"
+msgid "This helps video list browsing."
 msgstr ""
 
-#. Progress bar row 3
+#. Progress bar row 3 - It's like "Video 9 out of 10"
 msgctxt "#30045"
 msgid "Video {0} out of {1}"
 msgstr ""

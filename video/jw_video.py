@@ -165,7 +165,7 @@ def setVideoUrl(main_video_title, json_url, thumb) :
 		res 				= mp4["label"]		
 		url_to_play			= mp4["file"]["url"]
 		mp4_title_cleaned 	= jw_common.cleanUpText (mp4["title"])
-		title 				= "[" + res + "] - " + mp4_title_cleaned
+		title 				= mp4_title_cleaned + " [" + res + "]"
 
 		if mp4_title_cleaned not in video_dict :
 			video_dict[mp4_title_cleaned] = {}
@@ -175,6 +175,10 @@ def setVideoUrl(main_video_title, json_url, thumb) :
 
 		video_dict[mp4_title_cleaned][res] = {"title" : title, "full_title" : mp4_title_cleaned, "url" : url_to_play, "resolution" : res }
                 
+	if max_resolution == '0' :
+		addVideoFolderItem(main_video_title, json_url, thumb )
+		return
+
 	if (len(video_dict) ==1) :
 		# good, only one video title 
 		if max_resolution_string in video_dict[mp4_title_cleaned] :
@@ -188,62 +192,17 @@ def setVideoUrl(main_video_title, json_url, thumb) :
 					break 
 	else : 
 		# more then one video related to this title - show the list
-  		addVideoFolder(main_video_title, json_url, thumb )
+  		addVideoFolderItem(main_video_title, json_url, thumb )
 
 	return
 
-	
-
-
-	keys = sorted(list(video_dict.keys()), reverse=True)	
-
-	for key in keys :
-		print "JWORG video key"
-		print key
-	  	if (key <= max_resolution_string )  :
-	  		addPlayableItem(video_dict[key][title], thumb )
-	  		return
- 	
- 	# if i'm still here, i need to add a standard folder item
-	# Standard listing code
-	for mp4 in json["files"][language_code]["MP4"]:
-
-		url 				= mp4["file"]["url"]
-		res 				= mp4["label"]
-		mp4_title_cleaned 	= jw_common.cleanUpText (mp4["title"])
-		title 				= "[" + res + "] - " + mp4_title_cleaned
-
-		if (list_only is not False) and (res != max_resolution) : 
-			# if user has choosen a res, and there are more than one video on this res
-			# I skip every video of different resolution, but show a list
-			# of all available video of this resolution
-			continue
-
-		listItem = xbmcgui.ListItem(
-			label 			= title,
-			thumbnailImage	= thumb
-		)
-		listItem.setInfo(
-			type 		= 'Video', 
-			infoLabels 	= {'Title': mp4_title_cleaned}
-		)
-		listItem.setProperty("IsPlayable","true")
-
-		xbmcplugin.addDirectoryItem(
-			handle		= jw_config.plugin_pid, 
-			url			= url, 
-			listitem	= listItem, 
-			isFolder	= False 
-		) 
-
-	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid) 	
-
-
 # helper
-def addVideoFolder(main_video_title, json_url, thumb) :
+def addVideoFolderItem(main_video_title, json_url, thumb) :
 
 	listItem = xbmcgui.ListItem(
-		label 			= "[lista] " + main_video_title,
+		label 			= "[COLOR blue][B]" 
+							+ main_video_title
+							+"[/B][/COLOR]",
 		thumbnailImage	= thumb
 	)
 
@@ -293,8 +252,8 @@ def addPlayableItem(video_data, thumb) :
 def showVideoJsonUrl(json_url, thumb):
 
 	language 		= jw_config.language
-	json_url 		= "http://www.jw.org" + json_url
-	json 			= jw_common.loadJsonFromUrl(url = json_url,  ajax = False)
+	json_url 		= json_url
+	json 			= jw_common.loadJsonFromUrl(url = json_url,  ajax = False, month_cache = True)
 	max_resolution	= xbmcplugin.getSetting(jw_config.plugin_pid, "max_resolution")
 
 	# json equals to [] when a cached json was empty

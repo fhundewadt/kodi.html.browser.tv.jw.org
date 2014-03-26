@@ -83,6 +83,7 @@ def loadUrl (url):
 		pass 
 	return html	
 
+
 def loadNotCachedJsonFromUrl(url, ajax):
 	data = ""
 	try:
@@ -100,9 +101,9 @@ def loadNotCachedJsonFromUrl(url, ajax):
 		data = json.loads(response)
 
 	except urllib2.URLError, e: 
-		xbmc.log ("JWORG http error", xbmc.LOGERROR)
-		xbmc.log (e.code, xbmc.LOGERROR)
-		xbmc.log (e.read(), xbmc.LOGERROR)
+		xbmc.log ("JWORG url error", xbmc.LOGERROR)
+		for arg in e.args :
+			print arg
 		pass
 		
 	except urllib2.HTTPError, e:
@@ -115,7 +116,9 @@ def loadNotCachedJsonFromUrl(url, ajax):
 
 	return data
 
+
 def loadJsonFromUrl (url, ajax, month_cache = False ):
+
 	if month_cache == True :
 		data = jw_config.cache_month.cacheFunction(loadNotCachedJsonFromUrl, url, ajax)	
 	else :
