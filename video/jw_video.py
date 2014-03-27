@@ -7,6 +7,7 @@ import xbmc
 import xbmcplugin
 import xbmcgui
 
+from BeautifulSoup import BeautifulSoup 
 import re
 import urllib
 
@@ -49,17 +50,38 @@ def showVideoFilter():
 # show available video pages
 def showVideoIndex(start, video_filter):
 
-	language 		= jw_config.language
-	url 			= jw_common.getUrl(language) + jw_config.const[language]["video_path"] + "/?start=" + str(start) + "&videoFilter=" + video_filter  + "&sortBy=" + jw_config.video_sorting
-	html 			= jw_common.loadUrl (url)
+	language 	= jw_config.language
+	url 		= jw_common.getUrl(language) + jw_config.const[language]["video_path"] + "/?start=" + str(start) + "&videoFilter=" + video_filter  + "&sortBy=" + jw_config.video_sorting
+	html 		= jw_common.loadUrl (url)
+
+	# I mix two method to patch quick and dirty. One day I'll cleanup
+	soup 		= BeautifulSoup(html)
+	index_list 	= soup.findAll("div", { "id" : 'videosIndexList' })
+	boxes 		= index_list[0].findAll("div", { "class" : re.compile(r'\bmixDesc\b') }, recursive=False)
+
+	count = 0
+	posters = {}
+
+	# Scraping for video images
+	for box in boxes :
+		img = box.find("span", {"class" : 'jsRespImg' })
+		if img is None :
+			img = box.find("img")
+			if img is None :	
+				posters[count] = None
+			else :
+				posters[count] = img.get('src')	
+		else :
+			posters[count] = img.get('data-img-size-lg')
+			if posters[count] is None :
+				posters[count] = img.get('data-img-size-md')
+
+		count = count + 1
+
 
 	# Grep video titles
 	regexp_video_title = 'data-onpagetitle="([^"]+)"'
 	videos = re.findall(regexp_video_title, html)  
-
-	# Grep poster of video
-	regexp_video_poster = 'data-img-size-md=["\']([^"\']+)["\']'
-	posters = re.findall(regexp_video_poster, html)
 
 	# Grep url of json wich contain data on different version of the video [240,360, etc..]
 	regexp_video_json = '.*[^"] data-jsonurl="([^"]+)".*'
@@ -79,7 +101,10 @@ def showVideoIndex(start, video_filter):
 
 	# Output video list 
 	for title in videos:
-		
+		if posters[count] is None :
+			count = count + 1
+			continue;
+
 		json_url = video_json[count]
 
 		# if video has a video in default resolution
@@ -109,10 +134,10 @@ def showVideoIndex(start, video_filter):
 		} 
 		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
 		xbmcplugin.addDirectoryItem(
-			handle=jw_config.plugin_pid, 
-			url=url, 
-			listitem=listItem, 
-			isFolder=True 
+			handle 	 = jw_config.plugin_pid, 
+			url 	 = url, 
+			listitem = listItem, 
+			isFolder = True 
 		)  	
 
 		# Sign language link
@@ -159,6 +184,12 @@ def setVideoUrl(main_video_title, json_url, thumb) :
 	# No speak, so no language, so only one "" entry suitable for every language
 	if len(json["languages"]) == 0:
 		language_code = ""
+
+	try :
+		temp = json["files"][language_code]
+	except :
+		language_code = "univ"
+		pass
 
 	video_dict = {}
 	for mp4 in json["files"][language_code]["MP4"]:
@@ -356,4 +387,5 @@ def showVideoJsonUrl(json_url, thumb):
 
 
 	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
+
 
