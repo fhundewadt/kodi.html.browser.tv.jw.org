@@ -222,15 +222,17 @@ msgctxt "#30045"
 msgid "Video {0} out of {1}"
 msgstr ""
 
-# 
+# Use the same string used in main screen
 msgctxt "#30046"
-msgid "Video"
+msgid "Videos"
 msgstr ""
 
+# Use the same string used in main screen
 msgctxt "#30047"
-msgid "Audio"
+msgid "Music"
 msgstr ""
 
+# Use the same string used in main screen
 msgctxt "#30048"
-msgid "Program"
+msgid "Programs"
 msgstr ""
