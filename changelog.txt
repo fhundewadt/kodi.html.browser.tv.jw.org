@@ -11,10 +11,8 @@ Changes:
 + Enhanched fallback for video images detection; now you can play even the some old videos that was causing crashes before of today
 
 Fix:
-+ I happy to tell that all of this work fixes issue (#23), related to gotham 
-
-Known Issues:
-+ Issue #24 - Unable to start plugin from shortcut on confluence start screen. I'll work on it soon.
++ I happy to tell that all of this work fixes issue (#23), related to "gotham" (xbmc v13). 
++ Also Issue #24 is closed, now you can start plugin from shortcut on confluence start screen. 
 
 0.4.3
 -----
