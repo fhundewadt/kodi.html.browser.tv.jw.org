@@ -21,13 +21,20 @@ from program import jw_exec_news
 from program import jw_exec_week_program
 from program import jw_exec_activity
 
+from generic import jw_menu
+
 """
 START
 """
 # call arguments
 params 		 = jw_config.plugin_params
+print sys.argv
 
-content_type = params["content_type"][0]
+try:
+	content_type = params["content_type"][0]
+except:
+	content_type = "menu" 
+	pass
 
 mode = None
 try: 	
@@ -39,6 +46,9 @@ except:
 """
 Call router
 """
+if content_type == "menu" :
+	jw_menu.showMenu()
+
 if content_type == "video" :
 	if mode is None :
 		jw_video.showVideoIndex(0, "none")

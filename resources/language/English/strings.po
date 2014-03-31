@@ -221,3 +221,16 @@ msgstr ""
 msgctxt "#30045"
 msgid "Video {0} out of {1}"
 msgstr ""
+
+# 
+msgctxt "#30046"
+msgid "Video"
+msgstr ""
+
+msgctxt "#30047"
+msgid "Audio"
+msgstr ""
+
+msgctxt "#30048"
+msgid "Program"
+msgstr ""
