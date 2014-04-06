@@ -14,9 +14,6 @@ Fix:
 + I happy to tell that all of this work fixes issue (#23), related to "gotham" (xbmc v13). 
 + Also Issue #24 is closed, now you can start plugin from shortcut on confluence start screen. 
 
-Name:
-+ Narrowed from "Jw.org audio/video browser" to "Jw.org browser"
-
 0.4.3
 -----
 
