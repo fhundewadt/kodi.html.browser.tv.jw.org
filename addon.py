@@ -28,7 +28,6 @@ START
 """
 # call arguments
 params 		 = jw_config.plugin_params
-print sys.argv
 
 try:
 	content_type = params["content_type"][0]
