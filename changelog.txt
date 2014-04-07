@@ -11,8 +11,9 @@ Changes:
 + Enhanched fallback for video images detection; now you can play even the some old videos that was causing crashes before of today
 
 Fix:
-+ I happy to tell that all of this work fixes issue (#23), related to "gotham" (xbmc v13). 
++ I'm happy to tell that all of this work finally fixes issue (#23) related to "gotham" (xbmc v13). 
 + Also Issue #24 is closed, now you can start plugin from shortcut on confluence start screen. 
++ Forced default view for audio menu, because of some strange differences on gotham 13 on some android
 
 0.4.3
 -----

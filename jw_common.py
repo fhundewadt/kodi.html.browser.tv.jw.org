@@ -67,6 +67,9 @@ def setThumbnailView() :
 	if jw_config.skin_used == 'skin.confluence': 
 		xbmc.executebuiltin('Container.SetViewMode(500)') 
 
+def setDefaultView() :
+	xbmc.executebuiltin('Container.SetViewMode(50)') 
+
 """
 REMOTE CONTENT LOAD 
 """
