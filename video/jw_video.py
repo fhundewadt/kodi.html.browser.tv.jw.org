@@ -175,7 +175,7 @@ def setVideoUrl(main_video_title, json_url, thumb) :
 	# json equals to [] when a cached json was empty
 	if json is None or json == [] :
 		string = jw_common.t(30033) + " "
-		xbmcgui.Dialog().ok("jw.org browser", string)
+		xbmcgui.Dialog().ok("Jw.org audio/video browser", string)
 		return	
 
 	language_code = jw_config.const[language]["lang_code"]
