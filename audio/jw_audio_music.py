@@ -29,18 +29,11 @@ def showMusicIndex(start):
 		title = publication.find('h3').contents[0].encode("utf-8");
 		title = jw_common.cleanUpText(title);
 
-		# print "JWORG publication"
-		# print publication
-
-		print "JWORG: album title"
-		print title;
-
 		json_url = None
 		try :
 			json_url = publication.find("a", { "class" : "jsDownload" }).get('data-jsonurl')
 		except :
 			pass
-		print json_url
 
 		# placeholder if cover is missing
 		cover_url = "http://assets.jw.org/themes/content-theme/images/thumbProduct_placeholder.jpg"
@@ -48,7 +41,6 @@ def showMusicIndex(start):
 			cover_url = publication.findAll("img")[1].get('src')
 		except :
 			pass 
-		print cover_url
 
 		listItem = xbmcgui.ListItem(
 			label 			= title,
