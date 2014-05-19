@@ -22,7 +22,7 @@ def showAudioBibleIndex():
 	soup 		= BeautifulSoup(html)
 	cover_div 	= soup.findAll('div',{"class": re.compile(r'\bcvr\b')})
 	span 		= cover_div[0].findAll('span')
-	img_url     = span[0].get('data-img-size-md');
+	img_url     = span[0].get('data-img-size-md')
 
 	boxes 	= soup.findAll('li',{"class": re.compile(r'\bbookName\b')})
 

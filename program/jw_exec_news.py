@@ -36,7 +36,7 @@ def showNewsIndex():
 
 		# Stop news parsing at the first lateral link (an head) found
 		if "/?v=" in news[0] :
-			break;
+			break
 
 		listItem = xbmcgui.ListItem( 
 			label  			= title,

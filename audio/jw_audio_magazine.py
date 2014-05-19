@@ -5,6 +5,8 @@ import urllib
 import sys
 import re
 
+from BeautifulSoup import BeautifulSoup 
+
 import xbmcgui
 import xbmcplugin
 
@@ -65,7 +67,8 @@ def showMagazineFilterIndex(pub_filter = None):
         if item["title"] == "-" :
             continue
 
-        listItem    = xbmcgui.ListItem( item["title"] )     
+        title_text  = jw_common.cleanUpText( item["title"] )
+        listItem    = xbmcgui.ListItem( title_text )     
 
         params      = {
             "content_type"  : "audio", 
@@ -94,6 +97,62 @@ def showMagazineFilteredIndex(pub_filter = None, year_filter = None):
     magazine_url    = magazine_url + "?pubFilter=" + pub_filter .strip() + "&yearFilter=" + year_filter.strip()
     
     html            = jw_common.loadUrl(magazine_url) 
+
+    soup            = BeautifulSoup(html)
+    publications    = soup.findAll("div", { "class" : re.compile(r'\bPublicationIssue\b') })
+
+    for publication in publications :
+
+        cover_title = publication.find("span", { "class" : re.compile(r'\bperiodicalTitleBlock\b') })
+
+        issue_date = cover_title.find("span", { "class" : re.compile(r'\bissueDate\b') }).contents[0].encode("utf-8")
+        issue_date = jw_common.cleanUpText(issue_date)
+        try :
+            # wp and g
+            issue_title = cover_title.find("span", { "class" : re.compile(r'\bcvrTtl\b') }).contents[0].encode("utf-8")
+        except :
+            # w (study edtion)
+            issue_title = cover_title.find("span", { "class" : re.compile(r'\bpubName\b') }).contents[0].encode("utf-8")
+
+        issue_title = jw_common.cleanUpText(issue_title)
+
+        json_url = None
+        try :
+            json_url = publication.find("a", { "class" : re.compile(r'\bstream\b') }).get('data-jsonurl')
+        except :
+            pass
+
+        # placeholder if cover is missing
+        cover_url = "http://assets.jw.org/themes/content-theme/images/thumbProduct_placeholder.jpg"
+
+        try :
+            cover_url = publication.findAll("img")[1].get('src')
+        except :
+            pass 
+
+        listItem    = xbmcgui.ListItem( 
+            label           = issue_date + ": " + issue_title,
+            thumbnailImage  = cover_url
+        ) 
+
+        params      = {
+            "content_type"  : "audio", 
+            "mode"          : "open_magazine_json",
+            "json_url"      : json_url,
+        } 
+
+        url = jw_config.plugin_name + '?' + urllib.urlencode(params)
+
+        xbmcplugin.addDirectoryItem(
+            handle      = jw_config.plugin_pid, 
+            url         = url, 
+            listitem    = listItem, 
+            isFolder    = True 
+        )
+
+    xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
+
+"""
 
     # Grep issue date and publication title
     regexp_issue = "<span class='issueDate'>([^<]+)</span> (<span class='cvrTtl'>([^<]+)</span>)?"
@@ -129,6 +188,8 @@ def showMagazineFilteredIndex(pub_filter = None, year_filter = None):
         title = issue[0]
         if issue[2].strip() != "":
             title = title + " - " + issue[2]
+
+        title = jw_common.cleanUpText(title)
 
         # somethings like "wp-20131201" or "g-201401"
         pub_date = pub_dates[count][0] + "-" + pub_dates[count][1]
@@ -166,3 +227,5 @@ def showMagazineFilteredIndex(pub_filter = None, year_filter = None):
         count = count +1
     
     xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
+
+"""

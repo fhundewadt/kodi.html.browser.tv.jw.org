@@ -103,7 +103,7 @@ def showVideoIndex(start, video_filter):
 	for title in videos:
 		if posters[count] is None :
 			count = count + 1
-			continue;
+			continue
 
 		json_url = video_json[count]
 
@@ -312,11 +312,11 @@ def showVideoJsonUrl(json_url, thumb):
 	except :
 		try:
 			temp = json["files"]["univ"]
-			language_code = "univ";
+			language_code = "univ"
 		except:
 			# e.g. http://www.jw.org/apps/TRGCHlZRQVNYVrXF?docid=802014548&output=json&fileformat=mp4&alllangs=1&track=1&langwritten=I&txtCMSLang=I
 			temp = json["files"]["E"] 
-			language_code = "E";
+			language_code = "E"
 			pass
 
 	# Create in memory dict of dict with all available videos

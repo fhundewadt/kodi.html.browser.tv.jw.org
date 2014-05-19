@@ -1,12 +1,15 @@
-0.5.1
+0.6.0
 -----
 
 Fix:
 + Video issue due to json layout of some new video
++ Fixed magazine index parsing to fix a bug when 'All magazine' mode
++ Stripped out '&nbsp;' from some titles from magazines' index
++ Fixed music index, due to another changes in html of website
 
 Enhancements:
 + Bible book index now load faster !
-+ 
+
 
 0.5.0
 -----
