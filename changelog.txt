@@ -7,6 +7,7 @@ Fix:
 + Stripped out '&nbsp;' from some titles from magazines' index
 + Fixed music index, due to another changes in html of website
 + Fixed dramas index, due, you can guess, to html changes 
++ And also fixed dramatic reading issues, for the same reason
 
 Enhancements:
 + Bible book index now load faster !
