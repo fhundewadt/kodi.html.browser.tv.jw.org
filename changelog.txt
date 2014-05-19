@@ -1,3 +1,13 @@
+0.5.1
+-----
+
+Fix:
++ Video issue due to json layout of some new video
+
+Enhancements:
++ Bible book index now load faster !
++ 
+
 0.5.0
 -----
 
