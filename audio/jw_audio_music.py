@@ -35,8 +35,8 @@ def showMusicIndex(start):
 		if "disabled" in audio_format["class"] :
 			continue;
 
-		title = publication.find('h3').contents[0].encode("utf-8");
-		title = jw_common.cleanUpText(title);
+		title = publication.find('h3').contents[0].encode("utf-8")
+		title = jw_common.cleanUpText(title)
 
 		json_url = None
 		try :

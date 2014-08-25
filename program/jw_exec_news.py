@@ -22,6 +22,60 @@ def showNewsIndex():
 	url 		= url + jw_config.const[language]["news_index"] 
 	
 	html 		= jw_common.loadUrl(url)
+	soup 		= BeautifulSoup(html)
+
+	news       = soup.findAll("div", { "class" : re.compile(r'synopsis\b') })
+
+	for new in news :
+		print "JWORG: "
+		print new
+
+		# Find titke
+		links = new.findAll('a')
+		title = jw_common.cleanUpText(links[1].contents[0].encode("utf-8"))
+
+		print "JWORG: title " + title
+
+		images = new.findAll("div", { "class" : re.compile(r'jsVideoPoster\b') })
+
+		if len(images) > 0 :
+			image = images[0]
+			src = image["data-src"]
+			print "JWORG: image link"
+			print src
+		else  :
+			image = new.find('img')
+			src = image["src"]
+			
+		print "JWORG: image link by second method"
+		print src
+
+		href = jw_common.cleanUpText(links[1]["href"])
+
+		print "JWORG href"
+		print href
+
+		listItem = xbmcgui.ListItem( 
+			label  			= title,
+			thumbnailImage 	= src
+		)	
+
+		params = {
+			"content_type"  : "executable", 
+			"mode" 			: "open_news_page", 
+			"url"			: href
+		} 
+
+		url = jw_config.plugin_name + '?' + urllib.urlencode(params)
+		xbmcplugin.addDirectoryItem(
+			handle		= jw_config.plugin_pid, 
+			url			= url, 
+			listitem	= listItem, 
+			isFolder	= False 
+		)  
+
+
+	"""
 	
 	regexp_title = '<h3 class="tsrTtle"><a href="([^"]+)"( title="[^"]+")?>([^<]+)</a></h3>'
 	news_found = re.findall(regexp_title, html)
@@ -58,6 +112,8 @@ def showNewsIndex():
 		)  
 		count = count + 1
 	
+	"""
+
 	xbmcplugin.endOfDirectory(handle=jw_config.plugin_pid)
 
 
