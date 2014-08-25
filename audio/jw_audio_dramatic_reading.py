@@ -27,7 +27,7 @@ def showDramaticReadingIndex(start):
 	publications    = soup.findAll("div", { "class" : re.compile(r'\bPublication\b') })
 
 	for publication in publications :
-		title = publication.find('h3').contents[0].encode("utf-8");
+		title = publication.find('h3').contents[0].encode("utf-8")
 		title = jw_common.cleanUpText(title);
 
 		json_url = None

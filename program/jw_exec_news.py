@@ -27,33 +27,21 @@ def showNewsIndex():
 	news       = soup.findAll("div", { "class" : re.compile(r'synopsis\b') })
 
 	for new in news :
-		print "JWORG: "
-		print new
-
 		# Find titke
 		links = new.findAll('a')
 		title = jw_common.cleanUpText(links[1].contents[0].encode("utf-8"))
 
-		print "JWORG: title " + title
 
 		images = new.findAll("div", { "class" : re.compile(r'jsVideoPoster\b') })
 
 		if len(images) > 0 :
 			image = images[0]
 			src = image["data-src"]
-			print "JWORG: image link"
-			print src
 		else  :
 			image = new.find('img')
 			src = image["src"]
 			
-		print "JWORG: image link by second method"
-		print src
-
 		href = jw_common.cleanUpText(links[1]["href"])
-
-		print "JWORG href"
-		print href
 
 		listItem = xbmcgui.ListItem( 
 			label  			= title,
@@ -226,7 +214,7 @@ class News(xbmcgui.WindowDialog):
 			text =  re.sub("<strong>", "[B]", text)
 			text =  re.sub("</strong>", "[/B]", text)
 			
-			out = out + text + "\n\n";
+			out = out + text + "\n\n"
 
 		out = out + "\n\n[COLOR=FF0000FF][I]" + jw_common.t(30038).encode("utf8") + "[/I][/COLOR]"
 		return out

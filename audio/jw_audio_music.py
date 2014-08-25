@@ -33,7 +33,7 @@ def showMusicIndex(start):
 
 		audio_format = publication.find("div", { "class" : re.compile(r'\bjsAudioFormat\b') } )
 		if "disabled" in audio_format["class"] :
-			continue;
+			continue
 
 		title = publication.find('h3').contents[0].encode("utf-8")
 		title = jw_common.cleanUpText(title)
