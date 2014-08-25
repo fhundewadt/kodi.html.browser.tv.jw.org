@@ -221,10 +221,6 @@ class Activity(xbmcgui.WindowDialog):
 
 	def getText(self, text):
 
-
-		print "JWORG: html of news"
-		print text
-
 		text =  re.sub("<strong>", "[B]", text)
 		text =  re.sub("</strong>", "[/B]", text)
 		text =  re.sub("<a[^>]+>", "", text)

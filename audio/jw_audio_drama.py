@@ -29,7 +29,7 @@ def showDramaIndex(start):
 
 	for publication in publications :
 		title = publication.find('h3').contents[0].encode("utf-8")
-		title = jw_common.cleanUpText(title);
+		title = jw_common.cleanUpText(title)
 
 		json_url = None
 		try :
