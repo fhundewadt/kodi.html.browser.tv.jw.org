@@ -1,5 +1,3 @@
-<h2>Visit the 
+## Fork of http://realtebo.github.io/plugin.video.jworg
 
-<a href="http://realtebo.github.io/plugin.video.jworg">project website</a>
-
-to get more info</H2>
+The goal is to create an html-browser which supports tv.jw.org in KODI media-center software.
